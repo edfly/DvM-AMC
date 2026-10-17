@@ -1,0 +1,58 @@
+{
+ "scope_A": "STMP-only (as originally reported)",
+ "scope_B": "STMP + MSPE (measured eval-protocol estimate)",
+ "rows": [
+  {
+   "dataset": "MUTAG",
+   "acc_pct": 71.66666783723566,
+   "stmp_ops": 38680,
+   "mspe_ops_est": 41150,
+   "mspe_fire_pct": 50.0,
+   "full_ops": 79830,
+   "ann_ops": 1862800,
+   "e_snn_stmp_mJ": 3.4812000000000005e-05,
+   "reduction_stmp_pct": 99.59373920512365,
+   "e_snn_full_mJ": 7.1847e-05,
+   "reduction_full_pct": 99.16153569661378
+  },
+  {
+   "dataset": "PROTEINS",
+   "acc_pct": 52.75555625061193,
+   "stmp_ops": 55494,
+   "mspe_ops_est": 88900,
+   "mspe_fire_pct": 50.0,
+   "full_ops": 144394,
+   "ann_ops": 1862800,
+   "e_snn_stmp_mJ": 4.99446e-05,
+   "reduction_stmp_pct": 99.41713969620301,
+   "e_snn_full_mJ": 0.0001299546,
+   "reduction_full_pct": 98.48341206785484
+  },
+  {
+   "dataset": "NCI1",
+   "acc_pct": 52.08888953593041,
+   "stmp_ops": 7952,
+   "mspe_ops_est": 69491,
+   "mspe_fire_pct": 49.947530331780804,
+   "full_ops": 77443,
+   "ann_ops": 1862800,
+   "e_snn_stmp_mJ": 7.156800000000001e-06,
+   "reduction_stmp_pct": 99.91647916647216,
+   "e_snn_full_mJ": 6.96987e-05,
+   "reduction_full_pct": 99.18660665104424
+  },
+  {
+   "dataset": "DD",
+   "acc_pct": 52.355556256241265,
+   "stmp_ops": 374655,
+   "mspe_ops_est": 629579,
+   "mspe_fire_pct": 46.97200983639826,
+   "full_ops": 1004234,
+   "ann_ops": 1862800,
+   "e_snn_stmp_mJ": 0.0003371895,
+   "reduction_stmp_pct": 96.06495247920381,
+   "e_snn_full_mJ": 0.0009038106,
+   "reduction_full_pct": 89.45240684896976
+  }
+ ]
+}

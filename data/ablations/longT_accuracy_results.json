@@ -1,0 +1,609 @@
+{
+  "meta": {
+    "started": "2026-10-13T02:20:32.241068",
+    "device": "cuda",
+    "epochs": 3,
+    "n_runs": 1,
+    "shot": 1,
+    "M_fixed": 8,
+    "seed_formula": "seed_base + run_id*100 + shot*10 (identical to run_experiment)",
+    "regimes": [
+      "truncated",
+      "full"
+    ],
+    "Ts": [
+      16,
+      32,
+      64
+    ],
+    "finished": "2026-10-13T05:22:43.748557"
+  },
+  "results": {
+    "MUTAG": {
+      "T16": {
+        "truncated": {
+          "accs": [
+            0.6800000044703484
+          ],
+          "best_accs": [
+            0.6500000096857548
+          ],
+          "peak_mem_mb": [
+            93.82144
+          ],
+          "T": 16,
+          "regime": "truncated",
+          "mean_acc": 0.6800000044703484,
+          "std_acc": 0.0,
+          "mean_peak_mb": 93.82144,
+          "max_peak_mb": 93.82144
+        },
+        "full": {
+          "accs": [
+            0.6780000051856041
+          ],
+          "best_accs": [
+            0.6520000101625919
+          ],
+          "peak_mem_mb": [
+            154.03264
+          ],
+          "T": 16,
+          "regime": "full",
+          "mean_acc": 0.6780000051856041,
+          "std_acc": 0.0,
+          "mean_peak_mb": 154.03264,
+          "max_peak_mb": 154.03264
+        }
+      },
+      "T32": {
+        "truncated": {
+          "accs": [
+            0.6860000033676624
+          ],
+          "best_accs": [
+            0.6780000105500221
+          ],
+          "peak_mem_mb": [
+            105.666048
+          ],
+          "T": 32,
+          "regime": "truncated",
+          "mean_acc": 0.6860000033676624,
+          "std_acc": 0.0,
+          "mean_peak_mb": 105.666048,
+          "max_peak_mb": 105.666048
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            284.816896
+          ],
+          "T": 32,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 284.816896,
+              "T": 32,
+              "regime": "full",
+              "dv_m_window": 32,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 284.816896,
+          "max_peak_mb": 284.816896
+        }
+      },
+      "T64": {
+        "truncated": {
+          "accs": [
+            0.6000000029802323
+          ],
+          "best_accs": [
+            0.5760000085830689
+          ],
+          "peak_mem_mb": [
+            160.121344
+          ],
+          "T": 64,
+          "regime": "truncated",
+          "mean_acc": 0.6000000029802323,
+          "std_acc": 0.0,
+          "mean_peak_mb": 160.121344,
+          "max_peak_mb": 160.121344
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            524.461568
+          ],
+          "T": 64,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 524.461568,
+              "T": 64,
+              "regime": "full",
+              "dv_m_window": 64,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 524.461568,
+          "max_peak_mb": 524.461568
+        }
+      }
+    },
+    "PROTEINS": {
+      "T16": {
+        "truncated": {
+          "accs": [
+            0.5100000071525573
+          ],
+          "best_accs": [
+            0.49200001001358035
+          ],
+          "peak_mem_mb": [
+            313.024
+          ],
+          "T": 16,
+          "regime": "truncated",
+          "mean_acc": 0.5100000071525573,
+          "std_acc": 0.0,
+          "mean_peak_mb": 313.024,
+          "max_peak_mb": 313.024
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            407.705088
+          ],
+          "T": 16,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 407.705088,
+              "T": 16,
+              "regime": "full",
+              "dv_m_window": 16,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 407.705088,
+          "max_peak_mb": 407.705088
+        }
+      },
+      "T32": {
+        "truncated": {
+          "accs": [
+            0.4780000075697899
+          ],
+          "best_accs": [
+            0.5180000071227551
+          ],
+          "peak_mem_mb": [
+            367.662592
+          ],
+          "T": 32,
+          "regime": "truncated",
+          "mean_acc": 0.4780000075697899,
+          "std_acc": 0.0,
+          "mean_peak_mb": 367.662592,
+          "max_peak_mb": 367.662592
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            714.456064
+          ],
+          "T": 32,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 714.456064,
+              "T": 32,
+              "regime": "full",
+              "dv_m_window": 32,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 714.456064,
+          "max_peak_mb": 714.456064
+        }
+      },
+      "T64": {
+        "truncated": {
+          "accs": [
+            0.4800000059604645
+          ],
+          "best_accs": [
+            0.5100000087916851
+          ],
+          "peak_mem_mb": [
+            588.1088
+          ],
+          "T": 64,
+          "regime": "truncated",
+          "mean_acc": 0.4800000059604645,
+          "std_acc": 0.0,
+          "mean_peak_mb": 588.1088,
+          "max_peak_mb": 588.1088
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            1406.946816
+          ],
+          "T": 64,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 1406.946816,
+              "T": 64,
+              "regime": "full",
+              "dv_m_window": 64,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 1406.946816,
+          "max_peak_mb": 1406.946816
+        }
+      }
+    },
+    "NCI1": {
+      "T16": {
+        "truncated": {
+          "accs": [
+            0.5540000058710575
+          ],
+          "best_accs": [
+            0.5060000096261501
+          ],
+          "peak_mem_mb": [
+            18.087936,
+            180.091392
+          ],
+          "T": 16,
+          "regime": "truncated",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 18.087936,
+              "T": 16,
+              "regime": "truncated",
+              "dv_m_window": 8,
+              "dvm_mode": "truncated",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "KeyError('NCI1')"
+            }
+          ],
+          "mean_peak_mb": 99.089664,
+          "max_peak_mb": 180.091392,
+          "mean_acc": 0.5540000058710575,
+          "std_acc": 0.0
+        },
+        "full": {
+          "accs": [
+            0.5420000086724758
+          ],
+          "best_accs": [
+            0.5100000052154064
+          ],
+          "peak_mem_mb": [
+            18.087936,
+            309.784064
+          ],
+          "T": 16,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 18.087936,
+              "T": 16,
+              "regime": "full",
+              "dv_m_window": 16,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "KeyError('NCI1')"
+            }
+          ],
+          "mean_peak_mb": 163.936,
+          "max_peak_mb": 309.784064,
+          "mean_acc": 0.5420000086724758,
+          "std_acc": 0.0
+        }
+      },
+      "T32": {
+        "truncated": {
+          "accs": [
+            0.5020000040531158
+          ],
+          "best_accs": [
+            0.5040000075101853
+          ],
+          "peak_mem_mb": [
+            18.087936,
+            210.878976
+          ],
+          "T": 32,
+          "regime": "truncated",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 18.087936,
+              "T": 32,
+              "regime": "truncated",
+              "dv_m_window": 8,
+              "dvm_mode": "truncated",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "KeyError('NCI1')"
+            }
+          ],
+          "mean_peak_mb": 114.48345599999999,
+          "max_peak_mb": 210.878976,
+          "mean_acc": 0.5020000040531158,
+          "std_acc": 0.0
+        },
+        "full": {
+          "accs": [
+            0.5540000042319297
+          ],
+          "best_accs": [
+            0.5100000067055226
+          ],
+          "peak_mem_mb": [
+            18.087936,
+            598.595072
+          ],
+          "T": 32,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 18.087936,
+              "T": 32,
+              "regime": "full",
+              "dv_m_window": 32,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "KeyError('NCI1')"
+            }
+          ],
+          "mean_peak_mb": 308.341504,
+          "max_peak_mb": 598.595072,
+          "mean_acc": 0.5540000042319297,
+          "std_acc": 0.0
+        }
+      },
+      "T64": {
+        "truncated": {
+          "accs": [
+            0.490000007301569
+          ],
+          "best_accs": [
+            0.48800000935792925
+          ],
+          "peak_mem_mb": [
+            18.087936,
+            333.946368
+          ],
+          "T": 64,
+          "regime": "truncated",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 18.087936,
+              "T": 64,
+              "regime": "truncated",
+              "dv_m_window": 8,
+              "dvm_mode": "truncated",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "KeyError('NCI1')"
+            }
+          ],
+          "mean_peak_mb": 176.017152,
+          "max_peak_mb": 333.946368,
+          "mean_acc": 0.490000007301569,
+          "std_acc": 0.0
+        },
+        "full": {
+          "accs": [
+            0.5380000075697899
+          ],
+          "best_accs": [
+            0.510000008046627
+          ],
+          "peak_mem_mb": [
+            18.087936,
+            1174.62272
+          ],
+          "T": 64,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 18.087936,
+              "T": 64,
+              "regime": "full",
+              "dv_m_window": 64,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "KeyError('NCI1')"
+            }
+          ],
+          "mean_peak_mb": 596.355328,
+          "max_peak_mb": 1174.62272,
+          "mean_acc": 0.5380000075697899,
+          "std_acc": 0.0
+        }
+      }
+    },
+    "DD": {
+      "T16": {
+        "truncated": {
+          "accs": [
+            0.4980000069737434
+          ],
+          "best_accs": [
+            0.4880000053346157
+          ],
+          "peak_mem_mb": [
+            1334.142464
+          ],
+          "T": 16,
+          "regime": "truncated",
+          "mean_acc": 0.4980000069737434,
+          "std_acc": 0.0,
+          "mean_peak_mb": 1334.142464,
+          "max_peak_mb": 1334.142464
+        },
+        "full": {
+          "accs": [
+            0.4980000069737434
+          ],
+          "best_accs": [
+            0.48800000563263896
+          ],
+          "peak_mem_mb": [
+            2427.958784
+          ],
+          "T": 16,
+          "regime": "full",
+          "mean_acc": 0.4980000069737434,
+          "std_acc": 0.0,
+          "mean_peak_mb": 2427.958784,
+          "max_peak_mb": 2427.958784
+        }
+      },
+      "T32": {
+        "truncated": {
+          "accs": [
+            0.504000005722046
+          ],
+          "best_accs": [
+            0.4820000059902668
+          ],
+          "peak_mem_mb": [
+            1573.2608
+          ],
+          "T": 32,
+          "regime": "truncated",
+          "mean_acc": 0.504000005722046,
+          "std_acc": 0.0,
+          "mean_peak_mb": 1573.2608,
+          "max_peak_mb": 1573.2608
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            4064.99328
+          ],
+          "T": 32,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 4064.99328,
+              "T": 32,
+              "regime": "full",
+              "dv_m_window": 32,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 4064.99328,
+          "max_peak_mb": 4064.99328
+        }
+      },
+      "T64": {
+        "truncated": {
+          "accs": [
+            0.49800000548362733
+          ],
+          "best_accs": [
+            0.504000005722046
+          ],
+          "peak_mem_mb": [
+            2554.653184
+          ],
+          "T": 64,
+          "regime": "truncated",
+          "mean_acc": 0.49800000548362733,
+          "std_acc": 0.0,
+          "mean_peak_mb": 2554.653184,
+          "max_peak_mb": 2554.653184
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            8412.877312
+          ],
+          "T": 64,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 8412.877312,
+              "T": 64,
+              "regime": "full",
+              "dv_m_window": 64,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 8412.877312,
+          "max_peak_mb": 8412.877312
+        }
+      }
+    }
+  }
+}

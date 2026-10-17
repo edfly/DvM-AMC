@@ -1,0 +1,4404 @@
+{
+  "config": {
+    "purpose": "D group: significance testing with BH-FDR and Hedges' g",
+    "family": "all pairwise method comparisons within each dataset",
+    "alpha": 0.05,
+    "correction": "Benjamini-Hochberg FDR",
+    "paired_assumption": "run index i of every script corresponds to the same (seed, fold); unpaired Mann-Whitney reported as robustness check",
+    "power_floor_note": "two-sided Wilcoxon with n paired samples cannot return p < 2/2^n; n=3 -> 0.25, n=9 -> 0.0039"
+  },
+  "missing_sources": [
+    {
+      "dataset": "NCI1",
+      "method": "OM (SpikeRPGNN full)",
+      "file": "rerun_outputs/NCI1_OM/NCI1_1shot_full.json"
+    },
+    {
+      "dataset": "DD",
+      "method": "OM (SpikeRPGNN full)",
+      "file": "rerun_outputs/DD_OM/DD_1shot_full.json"
+    }
+  ],
+  "per_dataset": {
+    "MUTAG": {
+      "methods": {
+        "OM (SpikeRPGNN full)": {
+          "n": 9,
+          "mean": 0.7166666783723566,
+          "std": 0.09086803853064439,
+          "source": "rerun_outputs/MUTAG_OM/MUTAG_1shot_full.json"
+        },
+        "No-Spikes": {
+          "n": 9,
+          "mean": 0.5,
+          "std": 0.0,
+          "source": "rerun_outputs/MUTAG_NoSpikes/MUTAG_1shot_no_spikes.json"
+        },
+        "Full BPTT": {
+          "n": 9,
+          "mean": 0.7948889032171832,
+          "std": 0.05764643542372598,
+          "source": "programfiles/final_results_MUTAG.json"
+        },
+        "AMC M=8": {
+          "n": 9,
+          "mean": 0.740000010629495,
+          "std": 0.03546829604770036,
+          "source": "programfiles/final_results_MUTAG.json"
+        },
+        "AMC M=4": {
+          "n": 9,
+          "mean": 0.7128889002237055,
+          "std": 0.04613145608758899,
+          "source": "programfiles/final_results_MUTAG.json"
+        },
+        "No Correction M=8": {
+          "n": 9,
+          "mean": 0.8055555698937841,
+          "std": 0.05239063110080398,
+          "source": "programfiles/final_results_MUTAG.json"
+        },
+        "Full BPTT + MC": {
+          "n": 9,
+          "mean": 0.7340000104738607,
+          "std": 0.045934738107780336,
+          "source": "programfiles/final_results_MUTAG.json"
+        },
+        "Proto-GNN (ANN)": {
+          "n": 9,
+          "mean": 0.8564444600045681,
+          "std": 0.03665757312929211,
+          "source": "programfiles/final_results_MUTAG.json"
+        },
+        "SGC": {
+          "n": 9,
+          "mean": 0.5373333393534024,
+          "std": 0.004690416179179332,
+          "source": "programfiles/gnn_sgc_MUTAG.json"
+        },
+        "GIN": {
+          "n": 9,
+          "mean": 0.8264444585641226,
+          "std": 0.009527736280796756,
+          "source": "programfiles/gnn_gin_MUTAG.json"
+        },
+        "GCN": {
+          "n": 9,
+          "mean": 0.6091111183497642,
+          "std": 0.019725899223658683,
+          "source": "programfiles/gnn_gcn_MUTAG.json"
+        },
+        "SAGE": {
+          "n": 9,
+          "mean": 0.6213333412011464,
+          "std": 0.022627416921907662,
+          "source": "programfiles/gnn_sage_MUTAG.json"
+        },
+        "MSG*": {
+          "n": 9,
+          "mean": 0.537555560933219,
+          "std": 0.02564717917851675,
+          "source": "msg_results/msgstar_results.json"
+        }
+      },
+      "n_runs": {
+        "OM (SpikeRPGNN full)": 9,
+        "No-Spikes": 9,
+        "Full BPTT": 9,
+        "AMC M=8": 9,
+        "AMC M=4": 9,
+        "No Correction M=8": 9,
+        "Full BPTT + MC": 9,
+        "Proto-GNN (ANN)": 9,
+        "SGC": 9,
+        "GIN": 9,
+        "GCN": 9,
+        "SAGE": 9,
+        "MSG*": 9
+      },
+      "family_size": 78,
+      "focal_methods": [
+        "AMC M=8",
+        "OM (SpikeRPGNN full)",
+        "AMC M=4"
+      ],
+      "rows": [
+        {
+          "A": "AMC M=4",
+          "B": "AMC M=8",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.740000010629495,
+          "std_B": 0.03546829604770036,
+          "diff_pp": -2.7111110405789507,
+          "hedges_g": -0.6275125154585675,
+          "g_ci95": [
+            -1.654141298834832,
+            0.39911626791769717
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.203125,
+          "p_mannwhitney": 0.21637300805763748,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.2296195652173913
+        },
+        {
+          "A": "AMC M=4",
+          "B": "Full BPTT",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.7948889032171832,
+          "std_B": 0.05764643542372598,
+          "diff_pp": -8.200000299347765,
+          "hedges_g": -1.4958656943491757,
+          "g_ci95": [
+            -2.6416890501490764,
+            -0.35004233854927524
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.01953125,
+          "p_mannwhitney": 0.010444271101370226,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.02497438524590164
+        },
+        {
+          "A": "AMC M=4",
+          "B": "Full BPTT + MC",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.7340000104738607,
+          "std_B": 0.045934738107780336,
+          "diff_pp": -2.1111110250155107,
+          "hedges_g": -0.43676777486554713,
+          "g_ci95": [
+            -1.4494162982642378,
+            0.5758807485331434
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.42578125,
+          "p_mannwhitney": 0.6588432549492806,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.4487964527027027
+        },
+        {
+          "A": "AMC M=4",
+          "B": "GCN",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.6091111183497642,
+          "std_B": 0.019725899223658683,
+          "diff_pp": 10.377778187394139,
+          "hedges_g": 2.7859241874295657,
+          "g_ci95": [
+            1.3407066048440988,
+            4.231141770015032
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.0007922682038502908,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.01069078947368421
+        },
+        {
+          "A": "AMC M=4",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.8264444585641226,
+          "std_B": 0.009527736280796756,
+          "diff_pp": -11.35555583404171,
+          "hedges_g": -3.2468805174781825,
+          "g_ci95": [
+            -4.821425114208775,
+            -1.67233592074759
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=4",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.537555560933219,
+          "std_B": 0.02564717917851675,
+          "diff_pp": 17.533333929048656,
+          "hedges_g": 4.474126875789169,
+          "g_ci95": [
+            2.5222260712909668,
+            6.426027680287372
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=4",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.8055555698937841,
+          "std_B": 0.05239063110080398,
+          "diff_pp": -9.266666967007852,
+          "hedges_g": -1.7879524877100557,
+          "g_ci95": [
+            -2.991120447191031,
+            -0.5847845282290804
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.004718198728115028,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.01069078947368421
+        },
+        {
+          "A": "AMC M=4",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 21.288890022370555,
+          "hedges_g": 6.21557847959783,
+          "g_ci95": [
+            3.680969076368315,
+            8.750187882827344
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=4",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": -0.3777778148651101,
+          "hedges_g": -0.049929424886506105,
+          "g_ci95": [
+            -1.049437519682117,
+            0.9495786699091049
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 1.0,
+          "p_mannwhitney": 0.6588432549492806,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 1.0
+        },
+        {
+          "A": "AMC M=4",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -14.355555978086254,
+          "hedges_g": -3.281427440883104,
+          "g_ci95": [
+            -4.865998032788756,
+            -1.696856848977452
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=4",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": 9.15555590225592,
+          "hedges_g": 2.3999340342599838,
+          "g_ci95": [
+            1.0554856018271608,
+            3.744382466692807
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.0019976900972723025,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.01069078947368421
+        },
+        {
+          "A": "AMC M=4",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.7128889002237055,
+          "std_A": 0.04613145608758899,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 17.55555608703031,
+          "hedges_g": 5.0992913256407535,
+          "g_ci95": [
+            2.9428059008283247,
+            7.255776750453182
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=8",
+          "B": "Full BPTT",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.7948889032171832,
+          "std_B": 0.05764643542372598,
+          "diff_pp": -5.488889258768815,
+          "hedges_g": -1.092256742844312,
+          "g_ci95": [
+            -2.1721695591779677,
+            -0.012343926510656189
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.01711823970479015,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.047607421875
+        },
+        {
+          "A": "AMC M=8",
+          "B": "Full BPTT + MC",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.7340000104738607,
+          "std_B": 0.045934738107780336,
+          "diff_pp": 0.60000001556344,
+          "hedges_g": 0.139248622215837,
+          "g_ci95": [
+            -0.861445854475993,
+            1.139943098907667
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.42578125,
+          "p_mannwhitney": 0.5364994693194564,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.4487964527027027
+        },
+        {
+          "A": "AMC M=8",
+          "B": "GCN",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.6091111183497642,
+          "std_B": 0.019725899223658683,
+          "diff_pp": 13.088889227973088,
+          "hedges_g": 4.343772192791419,
+          "g_ci95": [
+            2.433670023357446,
+            6.253874362225392
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=8",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.8264444585641226,
+          "std_B": 0.009527736280796756,
+          "diff_pp": -8.644444793462757,
+          "hedges_g": -3.170243362826435,
+          "g_ci95": [
+            -4.722701071165434,
+            -1.6177856544874352
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=8",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.537555560933219,
+          "std_B": 0.02564717917851675,
+          "diff_pp": 20.244444969627608,
+          "hedges_g": 6.229583369394549,
+          "g_ci95": [
+            3.690149946617811,
+            8.769016792171286
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=8",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.8055555698937841,
+          "std_B": 0.05239063110080398,
+          "diff_pp": -6.555555926428902,
+          "hedges_g": -1.3955791093593932,
+          "g_ci95": [
+            -2.523492260156986,
+            -0.26766595856180087
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.013418657920497472,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.01069078947368421
+        },
+        {
+          "A": "AMC M=8",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 24.000001062949504,
+          "hedges_g": 9.113740004271065,
+          "g_ci95": [
+            5.555167650012611,
+            12.67231235852952
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=8",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": 2.3333332257138406,
+          "hedges_g": 0.32217961442177573,
+          "g_ci95": [
+            -0.684420452315545,
+            1.3287796811590964
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.91015625,
+          "p_mannwhitney": 0.859819205054158,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.9341077302631579
+        },
+        {
+          "A": "AMC M=8",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -11.644444937507304,
+          "hedges_g": -3.0747470782985418,
+          "g_ci95": [
+            -4.599991903705708,
+            -1.5495022528913756
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0005736335109885613,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=8",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": 11.866666942834868,
+          "hedges_g": 3.7989870781845965,
+          "g_ci95": [
+            2.059590007617568,
+            5.538384148751625
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "AMC M=8",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.740000010629495,
+          "std_A": 0.03546829604770036,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 20.26666712760926,
+          "hedges_g": 7.629622379903507,
+          "g_ci95": [
+            4.6008123488497645,
+            10.65843241095725
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT",
+          "B": "Full BPTT + MC",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.7340000104738607,
+          "std_B": 0.045934738107780336,
+          "diff_pp": 6.088889274332255,
+          "hedges_g": 1.1126010336862027,
+          "g_ci95": [
+            0.029775474850966432,
+            2.195426592521439
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.034069195144143936,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.047607421875
+        },
+        {
+          "A": "Full BPTT",
+          "B": "GCN",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.6091111183497642,
+          "std_B": 0.019725899223658683,
+          "diff_pp": 18.577778486741902,
+          "hedges_g": 4.106789781988016,
+          "g_ci95": [
+            2.2717842224835136,
+            5.941795341492518
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.8264444585641226,
+          "std_B": 0.009527736280796756,
+          "diff_pp": -3.1555555346939435,
+          "hedges_g": -0.7274058858190241,
+          "g_ci95": [
+            -1.7632507091799465,
+            0.30843893754189844
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.12890625,
+          "p_mannwhitney": 0.42677673653298365,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.15234375
+        },
+        {
+          "A": "Full BPTT",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.537555560933219,
+          "std_B": 0.02564717917851675,
+          "diff_pp": 25.73333422839642,
+          "hedges_g": 5.493279644785217,
+          "g_ci95": [
+            3.204934408229563,
+            7.7816248813408695
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.8055555698937841,
+          "std_B": 0.05239063110080398,
+          "diff_pp": -1.0666666676600878,
+          "hedges_g": -0.18443170549274032,
+          "g_ci95": [
+            -1.1861518839342855,
+            0.8172884729488049
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.25,
+          "p_mannwhitney": 0.5962416305866567,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.2785714285714286
+        },
+        {
+          "A": "Full BPTT",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 29.48889032171832,
+          "hedges_g": 6.8898802098339,
+          "g_ci95": [
+            4.12125324065695,
+            9.65850717901085
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": 7.822222484482655,
+          "hedges_g": 0.9790378546365569,
+          "g_ci95": [
+            -0.08551733418639762,
+            2.0435930434595115
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.1640625,
+          "p_mannwhitney": 0.052058768750600205,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.18818933823529413
+        },
+        {
+          "A": "Full BPTT",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -6.155555678738489,
+          "hedges_g": -1.2136102013911745,
+          "g_ci95": [
+            -2.3115672091944557,
+            -0.11565319358789306
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.01171875,
+          "p_mannwhitney": 0.01711823970479015,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.01575969827586207
+        },
+        {
+          "A": "Full BPTT",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": 17.355556201603683,
+          "hedges_g": 3.774637383648274,
+          "g_ci95": [
+            2.042701087415238,
+            5.50657367988131
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.7948889032171832,
+          "std_A": 0.05764643542372598,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 25.755556386378075,
+          "hedges_g": 5.997791086081978,
+          "g_ci95": [
+            3.537975497452989,
+            8.457606674710968
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "GCN",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.6091111183497642,
+          "std_B": 0.019725899223658683,
+          "diff_pp": 12.48888921240965,
+          "hedges_g": 3.364780323707182,
+          "g_ci95": [
+            1.7558478883128636,
+            4.973712759101501
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.8264444585641226,
+          "std_B": 0.009527736280796756,
+          "diff_pp": -9.244444809026199,
+          "hedges_g": -2.654106968621412,
+          "g_ci95": [
+            -4.064052924869331,
+            -1.2441610123734932
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.0014784647972275091,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.01069078947368421
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.537555560933219,
+          "std_B": 0.02564717917851675,
+          "diff_pp": 19.644444954064166,
+          "hedges_g": 5.029210777201836,
+          "g_ci95": [
+            2.8959631728719897,
+            7.162458381531683
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.8055555698937841,
+          "std_B": 0.05239063110080398,
+          "diff_pp": -7.155555941992342,
+          "hedges_g": -1.3831980722278974,
+          "g_ci95": [
+            -2.508967340542208,
+            -0.2574288039135868
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.013418657920497472,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.01069078947368421
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 23.400001047386066,
+          "hedges_g": 6.8612039817820705,
+          "g_ci95": [
+            4.1025962346560965,
+            9.619811728908044
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": 1.7333332101504006,
+          "hedges_g": 0.22928793085727617,
+          "g_ci95": [
+            -0.7737322784457676,
+            1.23230814016032
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 1.0,
+          "p_mannwhitney": 0.9296365245070707,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 1.0
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -12.244444953070744,
+          "hedges_g": -2.8061934267441364,
+          "g_ci95": [
+            -4.2569077891140745,
+            -1.3554790643741985
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0005736335109885613,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": 11.26666692727143,
+          "hedges_g": 2.963499083788335,
+          "g_ci95": [
+            1.4694997754555308,
+            4.457498392121139
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.7340000104738607,
+          "std_A": 0.045934738107780336,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 19.666667112045822,
+          "hedges_g": 5.736709365779952,
+          "g_ci95": [
+            3.365962727288185,
+            8.10745600427172
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GCN",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.6091111183497642,
+          "std_A": 0.019725899223658683,
+          "mean_B": 0.8264444585641226,
+          "std_B": 0.009527736280796756,
+          "diff_pp": -21.733334021435844,
+          "hedges_g": -13.362315441064576,
+          "g_ci95": [
+            -18.468584182182454,
+            -8.256046699946696
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GCN",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.6091111183497642,
+          "std_A": 0.019725899223658683,
+          "mean_B": 0.537555560933219,
+          "std_B": 0.02564717917851675,
+          "diff_pp": 7.155555741654518,
+          "hedges_g": 2.9786451652996444,
+          "g_ci95": [
+            1.4804217733229548,
+            4.476868557276334
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GCN",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.6091111183497642,
+          "std_A": 0.019725899223658683,
+          "mean_B": 0.8055555698937841,
+          "std_B": 0.05239063110080398,
+          "diff_pp": -19.64444515440199,
+          "hedges_g": -4.726325608883441,
+          "g_ci95": [
+            -6.759987265727007,
+            -2.6926639520398745
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GCN",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.6091111183497642,
+          "std_A": 0.019725899223658683,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 10.911111834976417,
+          "hedges_g": 7.450027843446096,
+          "g_ci95": [
+            4.484668793562571,
+            10.41538689332962
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GCN",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.6091111183497642,
+          "std_A": 0.019725899223658683,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": -10.755556002259247,
+          "hedges_g": -1.5579307452553737,
+          "g_ci95": [
+            -2.7153109071840293,
+            -0.400550583326718
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.01953125,
+          "p_mannwhitney": 0.04226010608395664,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.02497438524590164
+        },
+        {
+          "A": "GCN",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.6091111183497642,
+          "std_A": 0.019725899223658683,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -24.733334165480393,
+          "hedges_g": -8.002450944152168,
+          "g_ci95": [
+            -11.163490551144305,
+            -4.8414113371600305
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GCN",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.6091111183497642,
+          "std_A": 0.019725899223658683,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": -1.2222222851382192,
+          "hedges_g": -0.5483864658881072,
+          "g_ci95": [
+            -1.5686314181790928,
+            0.4718584864028783
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.359375,
+          "p_mannwhitney": 0.28931483238198774,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.394806338028169
+        },
+        {
+          "A": "GCN",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.6091111183497642,
+          "std_A": 0.019725899223658683,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 7.1777778996361725,
+          "hedges_g": 4.767998510623684,
+          "g_ci95": [
+            2.7207211331620664,
+            6.815275888085302
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GIN",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.8264444585641226,
+          "std_A": 0.009527736280796756,
+          "mean_B": 0.537555560933219,
+          "std_B": 0.02564717917851675,
+          "diff_pp": 28.888889763090365,
+          "hedges_g": 14.221471347322183,
+          "g_ci95": [
+            8.79909402648779,
+            19.643848668156576
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GIN",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.8264444585641226,
+          "std_A": 0.009527736280796756,
+          "mean_B": 0.8055555698937841,
+          "std_B": 0.05239063110080398,
+          "diff_pp": 2.0888888670338557,
+          "hedges_g": 0.5283502543021455,
+          "g_ci95": [
+            -0.490408796569182,
+            1.547109305173473
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.42578125,
+          "p_mannwhitney": 0.9296365245070707,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.4487964527027027
+        },
+        {
+          "A": "GIN",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.8264444585641226,
+          "std_A": 0.009527736280796756,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 32.64444585641226,
+          "hedges_g": 46.14719114174042,
+          "g_ci95": [
+            28.824688320873733,
+            63.46969396260711
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GIN",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.8264444585641226,
+          "std_A": 0.009527736280796756,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": 10.977778019176599,
+          "hedges_g": 1.6182838244669695,
+          "g_ci95": [
+            0.44933134360710447,
+            2.7872363053268345
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.0014784647972275091,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.01069078947368421
+        },
+        {
+          "A": "GIN",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.8264444585641226,
+          "std_A": 0.009527736280796756,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -3.0000001440445456,
+          "hedges_g": -1.0668130215153395,
+          "g_ci95": [
+            -2.143147909835649,
+            0.009521866804969914
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.02734375,
+          "p_mannwhitney": 0.01711823970479015,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.034400201612903226
+        },
+        {
+          "A": "GIN",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.8264444585641226,
+          "std_A": 0.009527736280796756,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": 20.51111173629763,
+          "hedges_g": 11.252170152754037,
+          "g_ci95": [
+            6.918622021734339,
+            15.585718283773733
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "GIN",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.8264444585641226,
+          "std_A": 0.009527736280796756,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 28.91111192107202,
+          "hedges_g": 36.66728520519945,
+          "g_ci95": [
+            22.8899346158747,
+            50.444635794524196
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "MSG*",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.537555560933219,
+          "std_A": 0.02564717917851675,
+          "mean_B": 0.8055555698937841,
+          "std_B": 0.05239063110080398,
+          "diff_pp": -26.80000089605651,
+          "hedges_g": -6.18810771512036,
+          "g_ci95": [
+            -8.71325966026241,
+            -3.6629557699783084
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "MSG*",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.537555560933219,
+          "std_A": 0.02564717917851675,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 3.755556093321899,
+          "hedges_g": 1.9722426483223494,
+          "g_ci95": [
+            0.7292898519620075,
+            3.215195444682691
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "MSG*",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.537555560933219,
+          "std_A": 0.02564717917851675,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": -17.911111743913764,
+          "hedges_g": -2.555012153548667,
+          "g_ci95": [
+            -3.9390115215354564,
+            -1.171012785561878
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0010862466258220339,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "MSG*",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.537555560933219,
+          "std_A": 0.02564717917851675,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -31.88888990713491,
+          "hedges_g": -9.600222199056814,
+          "g_ci95": [
+            -13.334118433329666,
+            -5.866325964783963
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "MSG*",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.537555560933219,
+          "std_A": 0.02564717917851675,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": -8.377778026792736,
+          "hedges_g": -3.2991560734322443,
+          "g_ci95": [
+            -4.8888881453867565,
+            -1.7094240014777322
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "MSG*",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.537555560933219,
+          "std_A": 0.02564717917851675,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 0.022222157981655055,
+          "hedges_g": 0.011479644513589458,
+          "g_ci95": [
+            -0.9878625569029742,
+            1.010821845930153
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.91015625,
+          "p_mannwhitney": 0.859819205054158,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.9341077302631579
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.8055555698937841,
+          "std_A": 0.05239063110080398,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 30.555556989378406,
+          "hedges_g": 7.855290916078064,
+          "g_ci95": [
+            4.74652219783892,
+            10.96405963431721
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.8055555698937841,
+          "std_A": 0.05239063110080398,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": 8.888889152142742,
+          "hedges_g": 1.1414101695708911,
+          "g_ci95": [
+            0.054381810495744975,
+            2.2284385286460373
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.09765625,
+          "p_mannwhitney": 0.034069195144143936,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.1171875
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.8055555698937841,
+          "std_A": 0.05239063110080398,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -5.088889011078401,
+          "hedges_g": -1.07192329243564,
+          "g_ci95": [
+            -2.1489709729216093,
+            0.0051243880503293315
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.1640625,
+          "p_mannwhitney": 0.04226010608395664,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.18818933823529413
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.8055555698937841,
+          "std_A": 0.05239063110080398,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": 18.42222286926377,
+          "hedges_g": 4.347840844179532,
+          "g_ci95": [
+            2.4364391052842276,
+            6.259242583074837
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.8055555698937841,
+          "std_A": 0.05239063110080398,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 26.82222305403816,
+          "hedges_g": 6.868047554296967,
+          "g_ci95": [
+            4.107049219950844,
+            9.629045888643091
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "No-Spikes",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.5,
+          "std_A": 0.0,
+          "mean_B": 0.7166666783723566,
+          "std_B": 0.09086803853064439,
+          "diff_pp": -21.666667837235664,
+          "hedges_g": -3.2114907143241695,
+          "g_ci95": [
+            -4.775809171234862,
+            -1.6471722574134777
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "No-Spikes",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5,
+          "std_A": 0.0,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -35.64444600045681,
+          "hedges_g": -13.096458113223576,
+          "g_ci95": [
+            -18.105061418138476,
+            -8.087854808308677
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "No-Spikes",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5,
+          "std_A": 0.0,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": -12.133334120114636,
+          "hedges_g": -7.2222227148218625,
+          "g_ci95": [
+            -10.107349089532928,
+            -4.337096340110797
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "No-Spikes",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5,
+          "std_A": 0.0,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": -3.733333935340244,
+          "hedges_g": -10.720404132970868,
+          "g_ci95": [
+            -14.860299121999319,
+            -6.580509143942417
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "OM (SpikeRPGNN full)",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.7166666783723566,
+          "std_A": 0.09086803853064439,
+          "mean_B": 0.8564444600045681,
+          "std_B": 0.03665757312929211,
+          "diff_pp": -13.977778163221144,
+          "hedges_g": -1.9213683236661991,
+          "g_ci95": [
+            -3.153079785525918,
+            -0.68965686180648
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0005736335109885613,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "OM (SpikeRPGNN full)",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.7166666783723566,
+          "std_A": 0.09086803853064439,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": 9.533333717121028,
+          "hedges_g": 1.3711830913593899,
+          "g_ci95": [
+            0.24747991377034495,
+            2.494886268948435
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.01953125,
+          "p_mannwhitney": 0.04226010608395664,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.02497438524590164
+        },
+        {
+          "A": "OM (SpikeRPGNN full)",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.7166666783723566,
+          "std_A": 0.09086803853064439,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 17.93333390189542,
+          "hedges_g": 2.654591997824327,
+          "g_ci95": [
+            1.244517812439494,
+            4.064666183209161
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Proto-GNN (ANN)",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.8564444600045681,
+          "std_A": 0.03665757312929211,
+          "mean_B": 0.6213333412011464,
+          "std_B": 0.022627416921907662,
+          "diff_pp": 23.511111880342174,
+          "hedges_g": 7.350821810005116,
+          "g_ci95": [
+            4.420438683749987,
+            10.281204936260245
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "Proto-GNN (ANN)",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.8564444600045681,
+          "std_A": 0.03665757312929211,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 31.911112065116566,
+          "hedges_g": 11.629944271477825,
+          "g_ci95": [
+            7.158521819216733,
+            16.101366723738916
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        },
+        {
+          "A": "SAGE",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.6213333412011464,
+          "std_A": 0.022627416921907662,
+          "mean_B": 0.5373333393534024,
+          "std_B": 0.004690416179179332,
+          "diff_pp": 8.400000184774392,
+          "hedges_g": 4.895920596337928,
+          "g_ci95": [
+            2.806672533547555,
+            6.9851686591283
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00041229480206169127,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.00609375
+        }
+      ]
+    },
+    "PROTEINS": {
+      "methods": {
+        "OM (SpikeRPGNN full)": {
+          "n": 9,
+          "mean": 0.5275555625061193,
+          "std": 0.02235570960406055,
+          "source": "rerun_outputs/PROTEINS_OM/PROTEINS_1shot_full.json"
+        },
+        "No-Spikes": {
+          "n": 9,
+          "mean": 0.5,
+          "std": 0.0,
+          "source": "rerun_outputs/PROTEINS_NoSpikes/PROTEINS_1shot_no_spikes.json"
+        },
+        "Full BPTT": {
+          "n": 9,
+          "mean": 0.5622222305834293,
+          "std": 0.0338444160605953,
+          "source": "programfiles/final_results_PROTEINS.json"
+        },
+        "AMC M=8": {
+          "n": 9,
+          "mean": 0.5437777850694127,
+          "std": 0.01953060275204875,
+          "source": "programfiles/final_results_PROTEINS.json"
+        },
+        "AMC M=4": {
+          "n": 9,
+          "mean": 0.5597777857879798,
+          "std": 0.021223675939284453,
+          "source": "programfiles/final_results_PROTEINS.json"
+        },
+        "No Correction M=8": {
+          "n": 9,
+          "mean": 0.562222230500645,
+          "std": 0.03043755013909222,
+          "source": "programfiles/final_results_PROTEINS.json"
+        },
+        "Full BPTT + MC": {
+          "n": 9,
+          "mean": 0.546000007076396,
+          "std": 0.02473863316461385,
+          "source": "programfiles/final_results_PROTEINS.json"
+        },
+        "Proto-GNN (ANN)": {
+          "n": 9,
+          "mean": 0.5553333407640457,
+          "std": 0.023280893934970553,
+          "source": "programfiles/final_results_PROTEINS.json"
+        },
+        "SGC": {
+          "n": 9,
+          "mean": 0.5495555631650819,
+          "std": 0.008875686230941197,
+          "source": "programfiles/gnn_sgc_PROTEINS.json"
+        },
+        "GIN": {
+          "n": 9,
+          "mean": 0.5893333416846063,
+          "std": 0.018275666064967572,
+          "source": "programfiles/gnn_gin_PROTEINS.json"
+        },
+        "GCN": {
+          "n": 9,
+          "mean": 0.5651111187206374,
+          "std": 0.024064727044085805,
+          "source": "programfiles/gnn_gcn_PROTEINS.json"
+        },
+        "SAGE": {
+          "n": 9,
+          "mean": 0.5495555636949009,
+          "std": 0.00669161994015378,
+          "source": "programfiles/gnn_sage_PROTEINS.json"
+        },
+        "MSG*": {
+          "n": 9,
+          "mean": 0.5473333396679826,
+          "std": 0.015556348245303407,
+          "source": "msg_results/msgstar_results.json"
+        }
+      },
+      "n_runs": {
+        "OM (SpikeRPGNN full)": 9,
+        "No-Spikes": 9,
+        "Full BPTT": 9,
+        "AMC M=8": 9,
+        "AMC M=4": 9,
+        "No Correction M=8": 9,
+        "Full BPTT + MC": 9,
+        "Proto-GNN (ANN)": 9,
+        "SGC": 9,
+        "GIN": 9,
+        "GCN": 9,
+        "SAGE": 9,
+        "MSG*": 9
+      },
+      "family_size": 78,
+      "focal_methods": [
+        "AMC M=8",
+        "OM (SpikeRPGNN full)",
+        "AMC M=4"
+      ],
+      "rows": [
+        {
+          "A": "AMC M=4",
+          "B": "AMC M=8",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5437777850694127,
+          "std_B": 0.01953060275204875,
+          "diff_pp": 1.600000071856711,
+          "hedges_g": 0.7471590229567874,
+          "g_ci95": [
+            -0.2906584270240965,
+            1.7849764729376711
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.18532630419857943,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.0896139705882353
+        },
+        {
+          "A": "AMC M=4",
+          "B": "Full BPTT",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5622222305834293,
+          "std_B": 0.0338444160605953,
+          "diff_pp": -0.24444447954495852,
+          "hedges_g": -0.08241468497643824,
+          "g_ci95": [
+            -1.0822247693764837,
+            0.9173953994236071
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.734375,
+          "p_mannwhitney": 0.859819205054158,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.8183035714285715
+        },
+        {
+          "A": "AMC M=4",
+          "B": "Full BPTT + MC",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.546000007076396,
+          "std_B": 0.02473863316461385,
+          "diff_pp": 1.377777871158381,
+          "hedges_g": 0.569313916309857,
+          "g_ci95": [
+            -0.4525396356560344,
+            1.5911674682757484
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.203125,
+          "p_mannwhitney": 0.18509940741248154,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.3371010638297872
+        },
+        {
+          "A": "AMC M=4",
+          "B": "GCN",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5651111187206374,
+          "std_B": 0.024064727044085805,
+          "diff_pp": -0.5333332932657586,
+          "hedges_g": -0.223871861718043,
+          "g_ci95": [
+            -1.2267202342768098,
+            0.7789765108407237
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.5703125,
+          "p_mannwhitney": 0.9296365245070707,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.695068359375
+        },
+        {
+          "A": "AMC M=4",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5893333416846063,
+          "std_B": 0.018275666064967572,
+          "diff_pp": -2.9555555896626506,
+          "hedges_g": -1.421293435237046,
+          "g_ci95": [
+            -2.5537070165585254,
+            -0.2888798539155668
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.02734375,
+          "p_mannwhitney": 0.00807148742526801,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.07899305555555555
+        },
+        {
+          "A": "AMC M=4",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5473333396679826,
+          "std_B": 0.015556348245303407,
+          "diff_pp": 1.2444446119997177,
+          "hedges_g": 0.6369551004272163,
+          "g_ci95": [
+            -0.39049001245050863,
+            1.6644002133049411
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.1640625,
+          "p_mannwhitney": 0.1577043874630777,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.2781929347826087
+        },
+        {
+          "A": "AMC M=4",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.562222230500645,
+          "std_B": 0.03043755013909222,
+          "diff_pp": -0.24444447126652502,
+          "hedges_g": -0.08872713772826414,
+          "g_ci95": [
+            -1.088613092681343,
+            0.9111588172248148
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 1.0,
+          "p_mannwhitney": 0.7910815129207817,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 1.0
+        },
+        {
+          "A": "AMC M=4",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 5.9777785787979765,
+          "hedges_g": 3.793542180231171,
+          "g_ci95": [
+            2.0558148115131476,
+            5.531269548949194
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "AMC M=4",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": 3.222222328186042,
+          "hedges_g": 1.4078896671083792,
+          "g_ci95": [
+            0.2778299827492976,
+            2.5379493514674607
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.01711823970479015,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "AMC M=4",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": 0.44444450239340405,
+          "hedges_g": 0.19001598406474812,
+          "g_ci95": [
+            -0.8118507602920577,
+            1.191882728421554
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.65234375,
+          "p_mannwhitney": 0.7910815129207817,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.7482766544117647
+        },
+        {
+          "A": "AMC M=4",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": 1.022222209307888,
+          "hedges_g": 0.6186869557688973,
+          "g_ci95": [
+            -0.407189289438992,
+            1.6445632009767865
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.25,
+          "p_mannwhitney": 0.15748992952257435,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.38235294117647056
+        },
+        {
+          "A": "AMC M=4",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5597777857879798,
+          "std_A": 0.021223675939284453,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": 1.0222222622897847,
+          "hedges_g": 0.5984832441983761,
+          "g_ci95": [
+            -0.4257083995589288,
+            1.622674887955681
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.30078125,
+          "p_mannwhitney": 0.21542339468489857,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.4265625
+        },
+        {
+          "A": "AMC M=8",
+          "B": "Full BPTT",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5622222305834293,
+          "std_B": 0.0338444160605953,
+          "diff_pp": -1.8444445514016694,
+          "hedges_g": -0.6357517694019124,
+          "g_ci95": [
+            -1.6630922104196717,
+            0.391588671615847
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.28931483238198774,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.0896139705882353
+        },
+        {
+          "A": "AMC M=8",
+          "B": "Full BPTT + MC",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.546000007076396,
+          "std_B": 0.02473863316461385,
+          "diff_pp": -0.22222220069832987,
+          "hedges_g": -0.09496014228973335,
+          "g_ci95": [
+            -1.0949264982606006,
+            0.9050062136811339
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.91015625,
+          "p_mannwhitney": 0.8597475663409357,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.9593538851351351
+        },
+        {
+          "A": "AMC M=8",
+          "B": "GCN",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5651111187206374,
+          "std_B": 0.024064727044085805,
+          "diff_pp": -2.1333333651224695,
+          "hedges_g": -0.9270927521180374,
+          "g_ci95": [
+            -1.9850967479045951,
+            0.13091124366852025
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.09765625,
+          "p_mannwhitney": 0.11196135426374831,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.18136160714285715
+        },
+        {
+          "A": "AMC M=8",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5893333416846063,
+          "std_B": 0.018275666064967572,
+          "diff_pp": -4.555555661519362,
+          "hedges_g": -2.293924435090342,
+          "g_ci95": [
+            -3.612128040782112,
+            -0.975720829398572
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.0010862466258220339,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.027698863636363636
+        },
+        {
+          "A": "AMC M=8",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5473333396679826,
+          "std_B": 0.015556348245303407,
+          "diff_pp": -0.3555554598569932,
+          "hedges_g": -0.19179363113594422,
+          "g_ci95": [
+            -1.1937079446085126,
+            0.810120682336624
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.65234375,
+          "p_mannwhitney": 0.47992869214595724,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.7482766544117647
+        },
+        {
+          "A": "AMC M=8",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.562222230500645,
+          "std_B": 0.03043755013909222,
+          "diff_pp": -1.844444543123236,
+          "hedges_g": -0.6869195444499283,
+          "g_ci95": [
+            -1.7188754197060967,
+            0.3450363308062401
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.21637300805763748,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "AMC M=8",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 4.377778506941265,
+          "hedges_g": 3.019005031515687,
+          "g_ci95": [
+            1.509479200585555,
+            4.528530862445819
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "AMC M=8",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": 1.622222256329331,
+          "hedges_g": 0.7360263127663094,
+          "g_ci95": [
+            -0.3006733419919678,
+            1.7727259675245866
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.21637300805763748,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.0896139705882353
+        },
+        {
+          "A": "AMC M=8",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": -1.1555555694633068,
+          "hedges_g": -0.5121664690242783,
+          "g_ci95": [
+            -1.5297641829370368,
+            0.50543124488848
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.30078125,
+          "p_mannwhitney": 0.331387096247615,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.4265625
+        },
+        {
+          "A": "AMC M=8",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": -0.5777778625488228,
+          "hedges_g": -0.37693681156779857,
+          "g_ci95": [
+            -1.3862038092419144,
+            0.6323301861063174
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.25,
+          "p_mannwhitney": 0.5362890990054856,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.38235294117647056
+        },
+        {
+          "A": "AMC M=8",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5437777850694127,
+          "std_A": 0.01953060275204875,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": -0.5777778095669261,
+          "hedges_g": -0.3627460994364902,
+          "g_ci95": [
+            -1.3712825405246951,
+            0.6457903416517148
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.42578125,
+          "p_mannwhitney": 0.3762376593385316,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.5444415983606558
+        },
+        {
+          "A": "Full BPTT",
+          "B": "Full BPTT + MC",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.546000007076396,
+          "std_B": 0.02473863316461385,
+          "diff_pp": 1.6222223507033395,
+          "hedges_g": 0.5211890392893657,
+          "g_ci95": [
+            -0.4970518355205482,
+            1.5394299140992795
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.01953125,
+          "p_mannwhitney": 0.18509940741248154,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.05859375
+        },
+        {
+          "A": "Full BPTT",
+          "B": "GCN",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.5651111187206374,
+          "std_B": 0.024064727044085805,
+          "diff_pp": -0.2888888137208001,
+          "hedges_g": -0.09369530422947125,
+          "g_ci95": [
+            -1.0936449040028347,
+            0.906254295543892
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 1.0,
+          "p_mannwhitney": 0.6588432549492806,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 1.0
+        },
+        {
+          "A": "Full BPTT",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.5893333416846063,
+          "std_B": 0.018275666064967572,
+          "diff_pp": -2.711111110117692,
+          "hedges_g": -0.9493441559844595,
+          "g_ci95": [
+            -2.0101156629420602,
+            0.11142735097314094
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0546875,
+          "p_mannwhitney": 0.01711823970479015,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.11848958333333333
+        },
+        {
+          "A": "Full BPTT",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.5473333396679826,
+          "std_B": 0.015556348245303407,
+          "diff_pp": 1.4888890915446762,
+          "hedges_g": 0.5383692443337249,
+          "g_ci95": [
+            -0.4811261809955605,
+            1.5578646696630103
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.09765625,
+          "p_mannwhitney": 0.11196135426374831,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.18136160714285715
+        },
+        {
+          "A": "Full BPTT",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.562222230500645,
+          "std_B": 0.03043755013909222,
+          "diff_pp": 8.278433494268711e-09,
+          "hedges_g": 2.4495743462050848e-09,
+          "g_ci95": [
+            -0.9993329392521898,
+            0.9993329441513384
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.734375,
+          "p_mannwhitney": 1.0,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.8183035714285715
+        },
+        {
+          "A": "Full BPTT",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 6.222223058342935,
+          "hedges_g": 2.476191619085459,
+          "g_ci95": [
+            1.1124606816734637,
+            3.839922556497454
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "Full BPTT",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": 3.4666668077310003,
+          "hedges_g": 1.151133025523223,
+          "g_ci95": [
+            0.06266574825087479,
+            2.239600302795571
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.01953125,
+          "p_mannwhitney": 0.01711823970479015,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.05859375
+        },
+        {
+          "A": "Full BPTT",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": 0.6888889819383626,
+          "hedges_g": 0.22587084983605463,
+          "g_ci95": [
+            -0.7770404702086879,
+            1.2287821698807972
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.65234375,
+          "p_mannwhitney": 0.859819205054158,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.7482766544117647
+        },
+        {
+          "A": "Full BPTT",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": 1.2666666888528466,
+          "hedges_g": 0.4945087848874136,
+          "g_ci95": [
+            -0.5218615973496445,
+            1.510879167124472
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.30078125,
+          "p_mannwhitney": 0.3769783016625522,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.4265625
+        },
+        {
+          "A": "Full BPTT",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5622222305834293,
+          "std_A": 0.0338444160605953,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": 1.2666667418347433,
+          "hedges_g": 0.48759351687116015,
+          "g_ci95": [
+            -0.5283075476234204,
+            1.5034945813657408
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.25,
+          "p_mannwhitney": 0.3762376593385316,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.38235294117647056
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "GCN",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.5651111187206374,
+          "std_B": 0.024064727044085805,
+          "diff_pp": -1.9111111644241396,
+          "hedges_g": -0.7458225668600551,
+          "g_ci95": [
+            -1.7835050057715807,
+            0.29185987205147046
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.25,
+          "p_mannwhitney": 0.06355298780940026,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.38235294117647056
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.5893333416846063,
+          "std_B": 0.018275666064967572,
+          "diff_pp": -4.333333460821032,
+          "hedges_g": -1.8975894383104193,
+          "g_ci95": [
+            -3.1241129487842993,
+            -0.6710659278365392
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0035514648077060724,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.5473333396679826,
+          "std_B": 0.015556348245303407,
+          "diff_pp": -0.13333325915866334,
+          "hedges_g": -0.06145189407367332,
+          "g_ci95": [
+            -1.0610501470119582,
+            0.9381463588646115
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.91015625,
+          "p_mannwhitney": 0.5960519337626051,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.9593538851351351
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.562222230500645,
+          "std_B": 0.03043755013909222,
+          "diff_pp": -1.622222342424906,
+          "hedges_g": -0.557051272315146,
+          "g_ci95": [
+            -1.5779552488643291,
+            0.46385270423403724
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.09765625,
+          "p_mannwhitney": 0.18509940741248154,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.18136160714285715
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 4.6000007076395955,
+          "hedges_g": 2.504424227937676,
+          "g_ci95": [
+            1.1334720801820612,
+            3.875376375693291
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00015957125616391894,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": 1.8444444570276608,
+          "hedges_g": 0.7450446431868387,
+          "g_ci95": [
+            -0.29255931177426264,
+            1.78264859814794
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.1640625,
+          "p_mannwhitney": 0.15748992952257435,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.2781929347826087
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": -0.933333368764977,
+          "hedges_g": -0.37004930145838366,
+          "g_ci95": [
+            -1.3789582862234218,
+            0.6388596833066544
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.30078125,
+          "p_mannwhitney": 0.3769783016625522,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.4265625
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": -0.3555556618504929,
+          "hedges_g": -0.1868633292882385,
+          "g_ci95": [
+            -1.1886467938296819,
+            0.814920135253205
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.359375,
+          "p_mannwhitney": 0.3308875570965121,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.5005580357142857
+        },
+        {
+          "A": "Full BPTT + MC",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.546000007076396,
+          "std_A": 0.02473863316461385,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": -0.3555556088685963,
+          "hedges_g": -0.1822065789645019,
+          "g_ci95": [
+            -1.183869568545229,
+            0.8194564106162251
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.8203125,
+          "p_mannwhitney": 0.2880676004318764,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.888671875
+        },
+        {
+          "A": "GCN",
+          "B": "GIN",
+          "n": 9,
+          "mean_A": 0.5651111187206374,
+          "std_A": 0.024064727044085805,
+          "mean_B": 0.5893333416846063,
+          "std_B": 0.018275666064967572,
+          "diff_pp": -2.422222296396892,
+          "hedges_g": -1.079637336613555,
+          "g_ci95": [
+            -2.1577665400323953,
+            -0.0015081331947144339
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.09765625,
+          "p_mannwhitney": 0.034069195144143936,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.18136160714285715
+        },
+        {
+          "A": "GCN",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.5651111187206374,
+          "std_A": 0.024064727044085805,
+          "mean_B": 0.5473333396679826,
+          "std_B": 0.015556348245303407,
+          "diff_pp": 1.7777779052654763,
+          "hedges_g": 0.8356073523033549,
+          "g_ci95": [
+            -0.21163919250351992,
+            1.8828538971102298
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.07421875,
+          "p_mannwhitney": 0.0933976745287926,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.15234375
+        },
+        {
+          "A": "GCN",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.5651111187206374,
+          "std_A": 0.024064727044085805,
+          "mean_B": 0.562222230500645,
+          "std_B": 0.03043755013909222,
+          "diff_pp": 0.2888888219992336,
+          "hedges_g": 0.1002785499191495,
+          "g_ci95": [
+            -0.8997607180895252,
+            1.1003178179278241
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 1.0,
+          "p_mannwhitney": 0.7910815129207817,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 1.0
+        },
+        {
+          "A": "GCN",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.5651111187206374,
+          "std_A": 0.024064727044085805,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 6.511111872063735,
+          "hedges_g": 3.6441808036467878,
+          "g_ci95": [
+            1.9519387280974596,
+            5.336422879196116
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "GCN",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.5651111187206374,
+          "std_A": 0.024064727044085805,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": 3.7555556214518004,
+          "hedges_g": 1.539967469757104,
+          "g_ci95": [
+            0.38596845770185517,
+            2.6939664818123528
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.004718198728115028,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "GCN",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5651111187206374,
+          "std_A": 0.024064727044085805,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": 0.9777777956591627,
+          "hedges_g": 0.39331593429098116,
+          "g_ci95": [
+            -0.6168284318851471,
+            1.4034603004671093
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.42578125,
+          "p_mannwhitney": 0.47992869214595724,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.5444415983606558
+        },
+        {
+          "A": "GCN",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5651111187206374,
+          "std_A": 0.024064727044085805,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": 1.5555555025736467,
+          "hedges_g": 0.8387983990688074,
+          "g_ci95": [
+            -0.20880634412065702,
+            1.8864031422582719
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.1640625,
+          "p_mannwhitney": 0.13311987540345063,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.2781929347826087
+        },
+        {
+          "A": "GCN",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5651111187206374,
+          "std_A": 0.024064727044085805,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": 1.5555555555555434,
+          "hedges_g": 0.8168361459991115,
+          "g_ci95": [
+            -0.2283285235435616,
+            1.8620008155417844
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0546875,
+          "p_mannwhitney": 0.12131200914614393,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.11848958333333333
+        },
+        {
+          "A": "GIN",
+          "B": "MSG*",
+          "n": 9,
+          "mean_A": 0.5893333416846063,
+          "std_A": 0.018275666064967572,
+          "mean_B": 0.5473333396679826,
+          "std_B": 0.015556348245303407,
+          "diff_pp": 4.200000201662368,
+          "hedges_g": 2.3570228381551286,
+          "g_ci95": [
+            1.0232782777326084,
+            3.690767398577649
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0010862466258220339,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "GIN",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.5893333416846063,
+          "std_A": 0.018275666064967572,
+          "mean_B": 0.562222230500645,
+          "std_B": 0.03043755013909222,
+          "diff_pp": 2.7111111183961256,
+          "hedges_g": 1.0285162681352482,
+          "g_ci95": [
+            -0.042570789708287204,
+            2.0996033259787836
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.0272753837615853,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.0896139705882353
+        },
+        {
+          "A": "GIN",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.5893333416846063,
+          "std_A": 0.018275666064967572,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 8.933334168460627,
+          "hedges_g": 6.583639840741584,
+          "g_ci95": [
+            3.9217173586062173,
+            9.24556232287695
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "GIN",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.5893333416846063,
+          "std_A": 0.018275666064967572,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": 6.177777917848692,
+          "hedges_g": 2.8815943723013153,
+          "g_ci95": [
+            1.410268164425662,
+            4.352920580176969
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.0005736335109885613,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.027698863636363636
+        },
+        {
+          "A": "GIN",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5893333416846063,
+          "std_A": 0.018275666064967572,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": 3.4000000920560547,
+          "hedges_g": 1.5472218015644916,
+          "g_ci95": [
+            0.39186086829127054,
+            2.702582734837713
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.01171875,
+          "p_mannwhitney": 0.004718198728115028,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.03974184782608696
+        },
+        {
+          "A": "GIN",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5893333416846063,
+          "std_A": 0.018275666064967572,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": 3.9777777989705387,
+          "hedges_g": 2.7527957538466086,
+          "g_ci95": [
+            1.3165210179217963,
+            4.189070489771421
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0004094601088531576,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "GIN",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5893333416846063,
+          "std_A": 0.018275666064967572,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": 3.9777778519524354,
+          "hedges_g": 2.6369874966114017,
+          "g_ci95": [
+            1.2315599208645256,
+            4.042415072358278
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0005586913086291501,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "MSG*",
+          "B": "No Correction M=8",
+          "n": 9,
+          "mean_A": 0.5473333396679826,
+          "std_A": 0.015556348245303407,
+          "mean_B": 0.562222230500645,
+          "std_B": 0.03043755013909222,
+          "diff_pp": -1.4888890832662427,
+          "hedges_g": -0.5866566706337168,
+          "g_ci95": [
+            -1.6098869142894179,
+            0.4365735730219842
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.1333202155896274,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.0896139705882353
+        },
+        {
+          "A": "MSG*",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.5473333396679826,
+          "std_A": 0.015556348245303407,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 4.733333966798259,
+          "hedges_g": 4.098124894420696,
+          "g_ci95": [
+            2.2658418786080183,
+            5.930407910233374
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "MSG*",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.5473333396679826,
+          "std_A": 0.015556348245303407,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": 1.9777777161863241,
+          "hedges_g": 0.9780617727454681,
+          "g_ci95": [
+            -0.08636740472870641,
+            2.0424909502196424
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.11196135426374831,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.0896139705882353
+        },
+        {
+          "A": "MSG*",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5473333396679826,
+          "std_A": 0.015556348245303407,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": -0.8000001096063136,
+          "hedges_g": -0.38482007137911445,
+          "g_ci95": [
+            -1.3945047832524176,
+            0.6248646404941888
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.42578125,
+          "p_mannwhitney": 0.331387096247615,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.5444415983606558
+        },
+        {
+          "A": "MSG*",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5473333396679826,
+          "std_A": 0.015556348245303407,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": -0.22222240269182958,
+          "hedges_g": -0.1767424262669775,
+          "g_ci95": [
+            -1.1782679114110155,
+            0.8247830588770606
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.12890625,
+          "p_mannwhitney": 0.06355298780940026,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.23382994186046513
+        },
+        {
+          "A": "MSG*",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5473333396679826,
+          "std_A": 0.015556348245303407,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": -0.22222234970993293,
+          "hedges_g": -0.16711340860275656,
+          "g_ci95": [
+            -1.1684067271880616,
+            0.8341799099825484
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.42578125,
+          "p_mannwhitney": 0.12131200914614393,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.5444415983606558
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "No-Spikes",
+          "n": 9,
+          "mean_A": 0.562222230500645,
+          "std_A": 0.03043755013909222,
+          "mean_B": 0.5,
+          "std_B": 0.0,
+          "diff_pp": 6.2222230500645015,
+          "hedges_g": 2.753351005833845,
+          "g_ci95": [
+            1.3169268079281664,
+            4.189775203739523
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.562222230500645,
+          "std_A": 0.03043755013909222,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": 3.466666799452567,
+          "hedges_g": 1.236357883146576,
+          "g_ci95": [
+            0.13484241621544268,
+            2.337873350077709
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0078125,
+          "p_mannwhitney": 0.013418657920497472,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.027698863636363636
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.562222230500645,
+          "std_A": 0.03043755013909222,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": 0.6888889736599291,
+          "hedges_g": 0.24212864219519994,
+          "g_ci95": [
+            -0.7613152544380316,
+            1.2455725388284316
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 1.0,
+          "p_mannwhitney": 0.7910815129207817,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 1.0
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.562222230500645,
+          "std_A": 0.03043755013909222,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": 1.2666666805744131,
+          "hedges_g": 0.5474301805617188,
+          "g_ci95": [
+            -0.4727426461641584,
+            1.567603007287596
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.42578125,
+          "p_mannwhitney": 0.3769783016625522,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.5444415983606558
+        },
+        {
+          "A": "No Correction M=8",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.562222230500645,
+          "std_A": 0.03043755013909222,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": 1.2666667335563098,
+          "hedges_g": 0.5380925931418905,
+          "g_ci95": [
+            -0.4813823204136216,
+            1.5575675066974026
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.49609375,
+          "p_mannwhitney": 0.28831753089610856,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.6241179435483871
+        },
+        {
+          "A": "No-Spikes",
+          "B": "OM (SpikeRPGNN full)",
+          "n": 9,
+          "mean_A": 0.5,
+          "std_A": 0.0,
+          "mean_B": 0.5275555625061193,
+          "std_B": 0.02235570960406055,
+          "diff_pp": -2.7555562506119347,
+          "hedges_g": -1.6601469050554087,
+          "g_ci95": [
+            -2.837314807325635,
+            -0.4829790027851828
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "No-Spikes",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5,
+          "std_A": 0.0,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": -5.533334076404572,
+          "hedges_g": -3.2012009577469893,
+          "g_ci95": [
+            -4.762554685841218,
+            -1.6398472296527604
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00016100130228057156,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "No-Spikes",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5,
+          "std_A": 0.0,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": -4.955556369490088,
+          "hedges_g": -9.974401656762927,
+          "g_ci95": [
+            -13.843588169977652,
+            -6.105215143548202
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.00015957125616391894,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "No-Spikes",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5,
+          "std_A": 0.0,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": -4.955556316508192,
+          "hedges_g": -7.519971139946733,
+          "g_ci95": [
+            -10.510021219897334,
+            -4.529921059996132
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.00390625,
+          "p_mannwhitney": 0.0001553377236003895,
+          "verdict": "SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.016036184210526317
+        },
+        {
+          "A": "OM (SpikeRPGNN full)",
+          "B": "Proto-GNN (ANN)",
+          "n": 9,
+          "mean_A": 0.5275555625061193,
+          "std_A": 0.02235570960406055,
+          "mean_B": 0.5553333407640457,
+          "std_B": 0.023280893934970553,
+          "diff_pp": -2.7777778257926378,
+          "hedges_g": -1.159139382751666,
+          "g_ci95": [
+            -2.248799268431176,
+            -0.06947949707215617
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.07421875,
+          "p_mannwhitney": 0.034069195144143936,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "MIXED",
+          "p_bh_fdr": 0.15234375
+        },
+        {
+          "A": "OM (SpikeRPGNN full)",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5275555625061193,
+          "std_A": 0.02235570960406055,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": -2.2000001188781537,
+          "hedges_g": -1.2697765927838607,
+          "g_ci95": [
+            -2.376618139961658,
+            -0.16293504560606364
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.01953125,
+          "p_mannwhitney": 0.006166754221989628,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.05859375
+        },
+        {
+          "A": "OM (SpikeRPGNN full)",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5275555625061193,
+          "std_A": 0.02235570960406055,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": -2.200000065896257,
+          "hedges_g": -1.231901141275699,
+          "g_ci95": [
+            -2.332715138584882,
+            -0.131087143966516
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.0390625,
+          "p_mannwhitney": 0.010285974425114301,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.0896139705882353
+        },
+        {
+          "A": "Proto-GNN (ANN)",
+          "B": "SAGE",
+          "n": 9,
+          "mean_A": 0.5553333407640457,
+          "std_A": 0.023280893934970553,
+          "mean_B": 0.5495555636949009,
+          "std_B": 0.00669161994015378,
+          "diff_pp": 0.577777706914484,
+          "hedges_g": 0.3212548126823103,
+          "g_ci95": [
+            -0.6853037435631717,
+            1.3278133689277922
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.5703125,
+          "p_mannwhitney": 0.7909761303269929,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.695068359375
+        },
+        {
+          "A": "Proto-GNN (ANN)",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5553333407640457,
+          "std_A": 0.023280893934970553,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": 0.5777777598963807,
+          "hedges_g": 0.31233339421294554,
+          "g_ci95": [
+            -0.6938307592304129,
+            1.3184975476563041
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.65234375,
+          "p_mannwhitney": 0.7560555170266807,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.7482766544117647
+        },
+        {
+          "A": "SAGE",
+          "B": "SGC",
+          "n": 9,
+          "mean_A": 0.5495555636949009,
+          "std_A": 0.00669161994015378,
+          "mean_B": 0.5495555631650819,
+          "std_B": 0.008875686230941197,
+          "diff_pp": 5.2981896647708027e-08,
+          "hedges_g": 6.419807589905003e-08,
+          "g_ci95": [
+            -0.9993328775036886,
+            0.9993330058998403
+          ],
+          "min_attainable_p_wilcoxon": 0.00390625,
+          "p_wilcoxon": 0.8203125,
+          "p_mannwhitney": 0.33013625511150835,
+          "verdict": "NOT_SIGNIFICANT",
+          "paired_assumption_ok": true,
+          "paired_vs_unpaired": "CONSISTENT",
+          "p_bh_fdr": 0.888671875
+        }
+      ]
+    }
+  },
+  "headline_comparisons": [
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "Full BPTT",
+      "n": 9,
+      "diff_pp": -8.2,
+      "p_wilcoxon": 0.01953125,
+      "p_bh_fdr": 0.02497438524590164,
+      "hedges_g": -1.496,
+      "g_ci95": [
+        -2.642,
+        -0.35
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "Full BPTT + MC",
+      "n": 9,
+      "diff_pp": -2.11,
+      "p_wilcoxon": 0.42578125,
+      "p_bh_fdr": 0.4487964527027027,
+      "hedges_g": -0.437,
+      "g_ci95": [
+        -1.449,
+        0.576
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "GCN",
+      "n": 9,
+      "diff_pp": 10.38,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.01069078947368421,
+      "hedges_g": 2.786,
+      "g_ci95": [
+        1.341,
+        4.231
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "GIN",
+      "n": 9,
+      "diff_pp": -11.36,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -3.247,
+      "g_ci95": [
+        -4.821,
+        -1.672
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "MSG*",
+      "n": 9,
+      "diff_pp": 17.53,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 4.474,
+      "g_ci95": [
+        2.522,
+        6.426
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "No Correction M=8",
+      "n": 9,
+      "diff_pp": -9.27,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.01069078947368421,
+      "hedges_g": -1.788,
+      "g_ci95": [
+        -2.991,
+        -0.585
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "No-Spikes",
+      "n": 9,
+      "diff_pp": 21.29,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 6.216,
+      "g_ci95": [
+        3.681,
+        8.75
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": -14.36,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -3.281,
+      "g_ci95": [
+        -4.866,
+        -1.697
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": 9.16,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.01069078947368421,
+      "hedges_g": 2.4,
+      "g_ci95": [
+        1.055,
+        3.744
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": 17.56,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 5.099,
+      "g_ci95": [
+        2.943,
+        7.256
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "Full BPTT",
+      "n": 9,
+      "diff_pp": -5.49,
+      "p_wilcoxon": 0.0390625,
+      "p_bh_fdr": 0.047607421875,
+      "hedges_g": -1.092,
+      "g_ci95": [
+        -2.172,
+        -0.012
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "Full BPTT + MC",
+      "n": 9,
+      "diff_pp": 0.6,
+      "p_wilcoxon": 0.42578125,
+      "p_bh_fdr": 0.4487964527027027,
+      "hedges_g": 0.139,
+      "g_ci95": [
+        -0.861,
+        1.14
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "GCN",
+      "n": 9,
+      "diff_pp": 13.09,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 4.344,
+      "g_ci95": [
+        2.434,
+        6.254
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "GIN",
+      "n": 9,
+      "diff_pp": -8.64,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -3.17,
+      "g_ci95": [
+        -4.723,
+        -1.618
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "MSG*",
+      "n": 9,
+      "diff_pp": 20.24,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 6.23,
+      "g_ci95": [
+        3.69,
+        8.769
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "No Correction M=8",
+      "n": 9,
+      "diff_pp": -6.56,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.01069078947368421,
+      "hedges_g": -1.396,
+      "g_ci95": [
+        -2.523,
+        -0.268
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "No-Spikes",
+      "n": 9,
+      "diff_pp": 24.0,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 9.114,
+      "g_ci95": [
+        5.555,
+        12.672
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": -11.64,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -3.075,
+      "g_ci95": [
+        -4.6,
+        -1.55
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": 11.87,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 3.799,
+      "g_ci95": [
+        2.06,
+        5.538
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": 20.27,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 7.63,
+      "g_ci95": [
+        4.601,
+        10.658
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": -13.98,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -1.921,
+      "g_ci95": [
+        -3.153,
+        -0.69
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": 9.53,
+      "p_wilcoxon": 0.01953125,
+      "p_bh_fdr": 0.02497438524590164,
+      "hedges_g": 1.371,
+      "g_ci95": [
+        0.247,
+        2.495
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": 17.93,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 2.655,
+      "g_ci95": [
+        1.245,
+        4.065
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "Full BPTT",
+      "n": 9,
+      "diff_pp": -0.24,
+      "p_wilcoxon": 0.734375,
+      "p_bh_fdr": 0.8183035714285715,
+      "hedges_g": -0.082,
+      "g_ci95": [
+        -1.082,
+        0.917
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "Full BPTT + MC",
+      "n": 9,
+      "diff_pp": 1.38,
+      "p_wilcoxon": 0.203125,
+      "p_bh_fdr": 0.3371010638297872,
+      "hedges_g": 0.569,
+      "g_ci95": [
+        -0.453,
+        1.591
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "GCN",
+      "n": 9,
+      "diff_pp": -0.53,
+      "p_wilcoxon": 0.5703125,
+      "p_bh_fdr": 0.695068359375,
+      "hedges_g": -0.224,
+      "g_ci95": [
+        -1.227,
+        0.779
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "GIN",
+      "n": 9,
+      "diff_pp": -2.96,
+      "p_wilcoxon": 0.02734375,
+      "p_bh_fdr": 0.07899305555555555,
+      "hedges_g": -1.421,
+      "g_ci95": [
+        -2.554,
+        -0.289
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "MSG*",
+      "n": 9,
+      "diff_pp": 1.24,
+      "p_wilcoxon": 0.1640625,
+      "p_bh_fdr": 0.2781929347826087,
+      "hedges_g": 0.637,
+      "g_ci95": [
+        -0.39,
+        1.664
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "No Correction M=8",
+      "n": 9,
+      "diff_pp": -0.24,
+      "p_wilcoxon": 1.0,
+      "p_bh_fdr": 1.0,
+      "hedges_g": -0.089,
+      "g_ci95": [
+        -1.089,
+        0.911
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "No-Spikes",
+      "n": 9,
+      "diff_pp": 5.98,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.016036184210526317,
+      "hedges_g": 3.794,
+      "g_ci95": [
+        2.056,
+        5.531
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": 0.44,
+      "p_wilcoxon": 0.65234375,
+      "p_bh_fdr": 0.7482766544117647,
+      "hedges_g": 0.19,
+      "g_ci95": [
+        -0.812,
+        1.192
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": 1.02,
+      "p_wilcoxon": 0.25,
+      "p_bh_fdr": 0.38235294117647056,
+      "hedges_g": 0.619,
+      "g_ci95": [
+        -0.407,
+        1.645
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=4",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": 1.02,
+      "p_wilcoxon": 0.30078125,
+      "p_bh_fdr": 0.4265625,
+      "hedges_g": 0.598,
+      "g_ci95": [
+        -0.426,
+        1.623
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "Full BPTT",
+      "n": 9,
+      "diff_pp": -1.84,
+      "p_wilcoxon": 0.0390625,
+      "p_bh_fdr": 0.0896139705882353,
+      "hedges_g": -0.636,
+      "g_ci95": [
+        -1.663,
+        0.392
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "Full BPTT + MC",
+      "n": 9,
+      "diff_pp": -0.22,
+      "p_wilcoxon": 0.91015625,
+      "p_bh_fdr": 0.9593538851351351,
+      "hedges_g": -0.095,
+      "g_ci95": [
+        -1.095,
+        0.905
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "GCN",
+      "n": 9,
+      "diff_pp": -2.13,
+      "p_wilcoxon": 0.09765625,
+      "p_bh_fdr": 0.18136160714285715,
+      "hedges_g": -0.927,
+      "g_ci95": [
+        -1.985,
+        0.131
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "GIN",
+      "n": 9,
+      "diff_pp": -4.56,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.027698863636363636,
+      "hedges_g": -2.294,
+      "g_ci95": [
+        -3.612,
+        -0.976
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "MSG*",
+      "n": 9,
+      "diff_pp": -0.36,
+      "p_wilcoxon": 0.65234375,
+      "p_bh_fdr": 0.7482766544117647,
+      "hedges_g": -0.192,
+      "g_ci95": [
+        -1.194,
+        0.81
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "No Correction M=8",
+      "n": 9,
+      "diff_pp": -1.84,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.016036184210526317,
+      "hedges_g": -0.687,
+      "g_ci95": [
+        -1.719,
+        0.345
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "No-Spikes",
+      "n": 9,
+      "diff_pp": 4.38,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.016036184210526317,
+      "hedges_g": 3.019,
+      "g_ci95": [
+        1.509,
+        4.529
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": -1.16,
+      "p_wilcoxon": 0.30078125,
+      "p_bh_fdr": 0.4265625,
+      "hedges_g": -0.512,
+      "g_ci95": [
+        -1.53,
+        0.505
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": -0.58,
+      "p_wilcoxon": 0.25,
+      "p_bh_fdr": 0.38235294117647056,
+      "hedges_g": -0.377,
+      "g_ci95": [
+        -1.386,
+        0.632
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "AMC M=8",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": -0.58,
+      "p_wilcoxon": 0.42578125,
+      "p_bh_fdr": 0.5444415983606558,
+      "hedges_g": -0.363,
+      "g_ci95": [
+        -1.371,
+        0.646
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": -2.78,
+      "p_wilcoxon": 0.07421875,
+      "p_bh_fdr": 0.15234375,
+      "hedges_g": -1.159,
+      "g_ci95": [
+        -2.249,
+        -0.069
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": -2.2,
+      "p_wilcoxon": 0.01953125,
+      "p_bh_fdr": 0.05859375,
+      "hedges_g": -1.27,
+      "g_ci95": [
+        -2.377,
+        -0.163
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    },
+    {
+      "dataset": "PROTEINS",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": -2.2,
+      "p_wilcoxon": 0.0390625,
+      "p_bh_fdr": 0.0896139705882353,
+      "hedges_g": -1.232,
+      "g_ci95": [
+        -2.333,
+        -0.131
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)"
+    }
+  ]
+}

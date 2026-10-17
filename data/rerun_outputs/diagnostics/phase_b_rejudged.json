@@ -1,0 +1,45 @@
+{
+ "note": "verdict recomputed with the same-arm rule; original verdict preserved for audit",
+ "datasets": {
+  "NCI1": {
+   "original_verdict": "H2-causal: firing and accuracy both recover with drive",
+   "corrected_verdict": "drive-restored-but-representation-collapsed",
+   "detail": {
+    "pooled_noise_pp": 4.41,
+    "acc_threshold_pp": 8.81,
+    "n_scale_arms": 5,
+    "s1.0": {
+     "tail3_fire": 0.0,
+     "tail3_acc": 52.00000057617823
+    },
+    "s8.0": {
+     "tail3_fire": 50.0,
+     "tail3_acc": 51.266667241851486
+    },
+    "delta_fire_pp": 50.0,
+    "delta_acc_pp": -0.73,
+    "monotone_in_s": true
+   }
+  },
+  "MUTAG": {
+   "original_verdict": "no-collapse-at-base: STMP firing already saturated (50.0% at scale=1.0) -- dataset does not test H2; verdict suppressed",
+   "corrected_verdict": "no-collapse-at-base",
+   "detail": {
+    "pooled_noise_pp": 9.7,
+    "acc_threshold_pp": 19.4,
+    "n_scale_arms": 5,
+    "s1.0": {
+     "tail3_fire": 50.0,
+     "tail3_acc": 74.93333325783412
+    },
+    "s8.0": {
+     "tail3_fire": 46.18402992278212,
+     "tail3_acc": 74.73333315054576
+    },
+    "delta_fire_pp": -3.82,
+    "delta_acc_pp": -0.2,
+    "monotone_in_s": false
+   }
+  }
+ }
+}

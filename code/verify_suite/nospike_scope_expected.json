@@ -1,0 +1,90 @@
+{
+  "MUTAG": {
+    "1": {
+      "present": true,
+      "om_mean": 71.6667,
+      "om_std": 9.0868,
+      "ns_mean": 74.9778,
+      "ns_std": 8.4288,
+      "delta": 3.3111,
+      "p": 0.652344,
+      "n_pos": 5
+    },
+    "5": {
+      "present": true,
+      "om_mean": 80.0889,
+      "om_std": 7.9007,
+      "ns_mean": 83.4,
+      "ns_std": 6.2,
+      "delta": 3.3111,
+      "p": 0.820312,
+      "n_pos": 5
+    }
+  },
+  "PROTEINS": {
+    "1": {
+      "present": true,
+      "om_mean": 52.7556,
+      "om_std": 2.2356,
+      "ns_mean": 53.5556,
+      "ns_std": 0.9888,
+      "delta": 0.8,
+      "p": 0.15625,
+      "n_pos": 7
+    },
+    "5": {
+      "present": true,
+      "om_mean": 53.9333,
+      "om_std": 2.7129,
+      "ns_mean": 55.6444,
+      "ns_std": 5.1427,
+      "delta": 1.7111,
+      "p": 0.496094,
+      "n_pos": 6
+    }
+  },
+  "NCI1": {
+    "1": {
+      "present": true,
+      "om_mean": 52.0889,
+      "om_std": 2.1121,
+      "ns_mean": 51.5556,
+      "ns_std": 2.5333,
+      "delta": -0.5333,
+      "p": 0.359375,
+      "n_pos": 4
+    },
+    "5": {
+      "present": true,
+      "om_mean": 51.5778,
+      "om_std": 2.6897,
+      "ns_mean": 51.6889,
+      "ns_std": 2.8109,
+      "delta": 0.1111,
+      "p": 0.734375,
+      "n_pos": 4
+    }
+  },
+  "DD": {
+    "1": {
+      "present": true,
+      "om_mean": 52.3556,
+      "om_std": 4.4371,
+      "ns_mean": 52.5778,
+      "ns_std": 1.5312,
+      "delta": 0.2222,
+      "p": 0.25,
+      "n_pos": 7
+    },
+    "5": {
+      "present": true,
+      "om_mean": 52.6222,
+      "om_std": 4.9994,
+      "ns_mean": 52.4,
+      "ns_std": 3.3362,
+      "delta": -0.2222,
+      "p": 0.570312,
+      "n_pos": 6
+    }
+  }
+}

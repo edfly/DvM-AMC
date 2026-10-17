@@ -1,0 +1,12 @@
+{
+ "dataset": "PROTEINS",
+ "shot": 1,
+ "n_episodes": 50,
+ "mspe_fire_pct": 50.0,
+ "stmp_fire_pct_untrained": 49.91901012373453,
+ "mean_support_nodes": 75.34,
+ "mean_query_nodes": 369.16,
+ "mspe_ops_per_eval": 88900.0,
+ "T": 8,
+ "note": "MSPE count is structural (clamp-saturated); verified over 12 training epochs on MUTAG/NCI1 at exactly 50.0% (spike_dynamics_v2_*.json) and at init here."
+}

@@ -1,0 +1,12 @@
+{
+ "dataset": "MUTAG",
+ "shot": 1,
+ "n_episodes": 20,
+ "mspe_fire_pct": 50.0,
+ "stmp_fire_pct_untrained": 50.0,
+ "mean_support_nodes": 35.5,
+ "mean_query_nodes": 170.25,
+ "mspe_ops_per_eval": 41150.0,
+ "T": 8,
+ "note": "MSPE count is structural (clamp-saturated); verified over 12 training epochs on MUTAG/NCI1 at exactly 50.0% (spike_dynamics_v2_*.json) and at init here."
+}

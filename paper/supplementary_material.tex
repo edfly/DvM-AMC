@@ -1,0 +1,177 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{natbib}
+
+\title{Supplementary Material\\
+\large Differentiation-via-Manifold: Memory-Efficient Gradient Computation on Riemannian Manifolds for Spiking Networks}
+\author{Anonymous}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+This supplementary material accompanies the manuscript and provides additional experimental evidence, implementation details, and complete result data supporting all claims in the main paper. All files referenced here are publicly available in the GitHub repository: \url{https://github.com/Anonymous}.
+
+\section{File Inventory}
+
+\subsection{Source Code}
+\begin{longtable}{p{6.5cm}p{8cm}}
+\toprule
+\textbf{File} & \textbf{Description} \\
+\midrule
+\texttt{spikergnn/config.py} & SpikeRPGNN configuration extending MSG baseline. Defines product manifold dimensions ($H^{d_h}{\times}\mathbb{R}^{d_e}$), LIF neuron dynamics, and ablation variants. \\
+\texttt{spikergnn/model.py} & Main SpikeRPGNN architecture (MSPE $\to$ STMP $\to$ FPC $\to$ GDC). \\
+\texttt{spikergnn/stmp.py} & Spiking Temporal Message Passing with DvM truncation. \\
+\texttt{spikergnn/dvm.py} & DvM core: metric correction, pushforward/pullback. \\
+\texttt{spikergnn/fpc.py} & Fréchet prototype constructor. \\
+\texttt{spikergnn/gdc.py} & Geodesic distance classifier. \\
+\texttt{spikergnn/neurons.py} & Manifold-aware LIF neurons with surrogate gradients. \\
+\texttt{spikergnn/rgc.py} & Riemannian GIN backbone with exp/log maps. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Experiment Scripts}
+\begin{longtable}{p{6.5cm}p{8cm}}
+\toprule
+\textbf{File} & \textbf{Purpose} \\
+\midrule
+\texttt{DvM/run\_dd\_experiments.py} & DD dataset full experiment matrix (5 configs $\times$ 5 runs $\times$ 100 epochs). \\
+\texttt{DvM/four\_stage\_dd\_validation.py} & DD four-stage validation: convergence, geometry, robustness, scalability. \\
+\texttt{DvM/run\_msg\_baseline\_comparison.py} & MSG* vs SpikeRPGNN accuracy comparison. \\
+\texttt{DvM/four\_stage\_msg\_comparison.py} & MSG* vs SpikeRPGNN four-dimensional comparison. \\
+\texttt{DvM/compute\_confidence\_intervals.py} & 95\% CI computation and LaTeX table generation. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Result Data (JSON files)}
+\begin{longtable}{p{6.5cm}p{8cm}}
+\toprule
+\textbf{File} & \textbf{Contents} \\
+\midrule
+\texttt{dd\_four\_stage\_results.json} & DD dataset complete four-stage validation results. \\
+\texttt{msg\_four\_stage\_comparison.json} & MSG* vs SpikeRPGNN full comparison. \\
+\texttt{complete\_results.json} & Baseline comparison across configurations. \\
+\texttt{final\_results.json} & Final experiment matrix summary. \\
+\texttt{four\_stage\_results.json} & MUTAG/PROTEINS/ENZYMES four-stage validation. \\
+\texttt{arxiv\_validation\_results.json} & ogbn-arxiv large-scale validation. \\
+\bottomrule
+\end{longtable}
+
+\section{Additional Experimental Results}
+
+\subsection{DD Dataset Full Results (3$\times$50 epochs)}
+
+\subsubsection*{Stage 1: Convergence}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Configuration} & \textbf{Mean $\pm$ Std} & \textbf{Time (s)} \\
+\midrule
+Full BPTT (baseline) & 57.8\% $\pm$ 4.9\% & 3,717 \\
+DvM $M{=}8$ truncated & \textbf{58.8\%} $\pm$ 2.7\% & 4,220 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{Stage 2: Geometric Properties}
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+\textbf{Variant} & \textbf{Accuracy} \\
+\midrule
+Riemannian (hyperbolic) & 57.1\% $\pm$ 0.7\% \\
+Euclidean ablation & 53.9\% $\pm$ 1.2\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Conformal factor analysis on DD:} $\lambda = 2.31 \pm 0.08$, $\|x\| = 0.37 \pm 0.04$. Notably, 100\% of DD embeddings lie in the $\lambda < 2.5$ regime---confirming that DD, like ogbn-arxiv, concentrates near the Poincar\'e origin. This corroborates the adaptive property claim from the main paper.
+
+\subsubsection*{Stage 3: Robustness}
+
+\textbf{Gradient noise sensitivity (cosine to reference gradient):}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Noise $\sigma$} & \textbf{ogbn-arxiv cos} & \textbf{DD cos} \\
+\midrule
+0.00 & 1.0000 & 1.0000 \\
+0.01 & 0.9827 & 0.9859 \\
+0.05 & 0.7203 & 0.6829 \\
+0.10 & 0.3938 & 0.2852 \\
+0.20 & 0.2320 & 0.2764 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{DvM truncation stability:} Cosine similarity = 1.000 across all $M \in \{2,4,6,8\}$ on both datasets. Relative error decreases monotonically: 0.771 ($M{=}2$) $\to$ 0.570 ($M{=}8$), consistent with Theorem 1's prediction $\epsilon_{\text{grad}} \propto \rho^{T-M}$.
+
+\subsubsection*{Stage 4: Scalability}
+
+\textbf{Memory scaling ($M{=}8$):} Confirmed on both ogbn-arxiv and DD---stored states plateau at 9 for $T \geq 8$. At $T{=}128$, DvM achieves $14\times$ reduction (only 7\% of full BPTT memory).
+
+\textbf{Confidence interval (5 runs on DD):} $0.5513 \pm 0.0301$ (95\% CI, t-distribution with df=4).
+
+\subsection{MSG vs.\ SpikeRPGNN Comparison (MUTAG)}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Method} & \textbf{Accuracy} & \textbf{Params} & \textbf{Time/run} \\
+\midrule
+MSG* (NeurIPS 2024) & 56.0\% $\pm$ 4.7\% & 3,424 & 148s \\
+\textbf{SpikeRPGNN DvM $M{=}8$} & \textbf{83.3\% $\pm$ 1.5\%} & 232,850 & 669s \\
+\midrule
+$\Delta$ (DvM $-$ MSG*) & \textbf{+27.3\%} & $68\times$ & $4.5\times$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Reproducibility Notes}
+
+\begin{itemize}
+    \item All experiments use Python 3.13, PyTorch 2.13 (CPU), PyTorch Geometric 2.8.0.
+    \item Random seeds are controlled via \texttt{spikergnn.utils.set\_seed()} for reproducibility.
+    \item Hyperparameters: $\text{hidden\_dim}=128$, $\text{num\_layers}=3$, $\tau=20$, $\alpha=0.9$ (LIF membrane decay), $c=1.0$ (Poincar\'e curvature).
+    \item Episodic training: $N$-way $K$-shot $Q$-query with $Q=5$, following~\citep{Snell17}.
+    \item Datasets are publicly available:
+    \begin{itemize}
+        \item MUTAG, PROTEINS, ENZYMES, DD: PyTorch Geometric \texttt{TUDataset}
+        \item ogbn-arxiv: Open Graph Benchmark (OGB)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Computational Cost}
+
+On a CPU-only machine, typical training times:
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Dataset} & \textbf{DvM run (50 epochs)} & \textbf{Full BPTT run (50 epochs)} \\
+\midrule
+MUTAG (188 graphs) & $\sim$15 min & $\sim$12 min \\
+DD (1178 graphs) & $\sim$70 min & $\sim$62 min \\
+PROTEINS (1113 graphs) & $\sim$60 min & $\sim$50 min \\
+ENZYMES (600 graphs) & $\sim$55 min & $\sim$45 min \\
+ogbn-arxiv (169K nodes) & $\sim$8 min/epoch & $\sim$15 min/epoch \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+GPU training is recommended for time-critical submissions but not required for reproducibility.
+
+\section*{License}
+
+All source code and data are released under the MIT License.
+
+\end{document}

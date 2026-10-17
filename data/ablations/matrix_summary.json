@@ -1,0 +1,650 @@
+{
+  "MUTAG": {
+    "OM": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.7167,
+        "std": 0.0857,
+        "n": 9,
+        "source": "rerun_outputs/MUTAG_OM/MUTAG_1shot_full.json",
+        "energy": {
+          "e_snn_mJ": 3.4812000000000005e-05,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 99.59373920512365,
+          "snn_ops": 38680,
+          "ann_ops": 1862800
+        }
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.8009,
+        "std": 0.0745,
+        "n": 9,
+        "source": "rerun_outputs/MUTAG_OM/MUTAG_5shot_full.json",
+        "energy": {
+          "e_snn_mJ": 5.706090000000001e-05,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 99.33409150320696,
+          "snn_ops": 63401,
+          "ann_ops": 1862800
+        }
+      }
+    },
+    "No-Spikes": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.7927,
+        "std": 0.0481,
+        "n": 9,
+        "source": "rerun_outputs/MUTAG_NoSpikesFixed/MUTAG_1shot_no_spikes.json",
+        "energy": {
+          "e_snn_mJ": 0.0,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 100.0,
+          "snn_ops": 0,
+          "ann_ops": 1862800
+        }
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.8471,
+        "std": 0.0523,
+        "n": 9,
+        "source": "rerun_outputs/MUTAG_NoSpikesFixed/MUTAG_5shot_no_spikes.json",
+        "energy": {
+          "e_snn_mJ": 0.0,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 100.0,
+          "snn_ops": 0,
+          "ann_ops": 1862800
+        }
+      }
+    },
+    "MSG": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5376,
+        "std": 0.0242,
+        "n": 9
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.6153,
+        "std": 0.067,
+        "n": 9
+      }
+    },
+    "MC-A/B": {
+      "Full BPTT": {
+        "mean": 0.7949,
+        "std": 0.0576,
+        "n": 9
+      },
+      "DvM M=8 truncated": {
+        "mean": 0.74,
+        "std": 0.0355,
+        "n": 9
+      },
+      "DvM M=4 truncated": {
+        "mean": 0.7129,
+        "std": 0.0461,
+        "n": 9
+      },
+      "No Correction M=8": {
+        "mean": 0.8056,
+        "std": 0.0524,
+        "n": 9
+      },
+      "Full BPTT + MC": {
+        "mean": 0.734,
+        "std": 0.0459,
+        "n": 9
+      },
+      "Proto-GNN": {
+        "mean": 0.8564,
+        "std": 0.0367,
+        "n": 9
+      }
+    },
+    "GNN": {
+      "1-shot": {
+        "SGC": {
+          "shot": 1,
+          "mean": 0.5373,
+          "std": 0.0047,
+          "n": 9
+        },
+        "GCN": {
+          "shot": 1,
+          "mean": 0.6091,
+          "std": 0.0197,
+          "n": 9
+        },
+        "GIN": {
+          "shot": 1,
+          "mean": 0.8264,
+          "std": 0.0095,
+          "n": 9
+        },
+        "SAGE": {
+          "shot": 1,
+          "mean": 0.6213,
+          "std": 0.0226,
+          "n": 9
+        }
+      },
+      "5-shot": {
+        "SGC": {
+          "shot": 5,
+          "mean": 0.5518,
+          "std": 0.0032,
+          "n": 9
+        },
+        "GCN": {
+          "shot": 5,
+          "mean": 0.7411,
+          "std": 0.038,
+          "n": 9
+        },
+        "GIN": {
+          "shot": 5,
+          "mean": 0.8982,
+          "std": 0.0075,
+          "n": 9
+        },
+        "SAGE": {
+          "shot": 5,
+          "mean": 0.7709,
+          "std": 0.0087,
+          "n": 9
+        }
+      }
+    }
+  },
+  "PROTEINS": {
+    "OM": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5276,
+        "std": 0.0211,
+        "n": 9,
+        "source": "rerun_outputs/PROTEINS_OM/PROTEINS_1shot_full.json",
+        "energy": {
+          "e_snn_mJ": 4.99446e-05,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 99.41713969620301,
+          "snn_ops": 55494,
+          "ann_ops": 1862800
+        }
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5393,
+        "std": 0.0256,
+        "n": 9,
+        "source": "rerun_outputs/PROTEINS_OM/PROTEINS_5shot_full.json",
+        "energy": {
+          "e_snn_mJ": 0.000103212,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 98.7955018625538,
+          "snn_ops": 114680,
+          "ann_ops": 1862800
+        }
+      }
+    },
+    "No-Spikes": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5369,
+        "std": 0.0245,
+        "n": 9,
+        "source": "rerun_outputs/PROTEINS_NoSpikesFixed/PROTEINS_1shot_no_spikes.json",
+        "energy": {
+          "e_snn_mJ": 0.0,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 100.0,
+          "snn_ops": 0,
+          "ann_ops": 1862800
+        }
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5618,
+        "std": 0.0432,
+        "n": 9,
+        "source": "rerun_outputs/PROTEINS_NoSpikesFixed/PROTEINS_5shot_no_spikes.json",
+        "energy": {
+          "e_snn_mJ": 0.0,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 100.0,
+          "snn_ops": 0,
+          "ann_ops": 1862800
+        }
+      }
+    },
+    "MSG": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5473,
+        "std": 0.0147,
+        "n": 9
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5531,
+        "std": 0.0297,
+        "n": 9
+      }
+    },
+    "MC-A/B": {
+      "Full BPTT": {
+        "mean": 0.5622,
+        "std": 0.0338,
+        "n": 9
+      },
+      "DvM M=8 truncated": {
+        "mean": 0.5438,
+        "std": 0.0195,
+        "n": 9
+      },
+      "DvM M=4 truncated": {
+        "mean": 0.5598,
+        "std": 0.0212,
+        "n": 9
+      },
+      "No Correction M=8": {
+        "mean": 0.5622,
+        "std": 0.0304,
+        "n": 9
+      },
+      "Full BPTT + MC": {
+        "mean": 0.546,
+        "std": 0.0247,
+        "n": 9
+      },
+      "Proto-GNN": {
+        "mean": 0.5553,
+        "std": 0.0233,
+        "n": 9
+      }
+    },
+    "GNN": {
+      "1-shot": {
+        "SGC": {
+          "shot": 1,
+          "mean": 0.5496,
+          "std": 0.0089,
+          "n": 9
+        },
+        "GCN": {
+          "shot": 1,
+          "mean": 0.5651,
+          "std": 0.0241,
+          "n": 9
+        },
+        "GIN": {
+          "shot": 1,
+          "mean": 0.5893,
+          "std": 0.0183,
+          "n": 9
+        },
+        "SAGE": {
+          "shot": 1,
+          "mean": 0.5496,
+          "std": 0.0067,
+          "n": 9
+        }
+      },
+      "5-shot": {
+        "SGC": {
+          "shot": 5,
+          "mean": 0.5204,
+          "std": 0.0065,
+          "n": 9
+        },
+        "GCN": {
+          "shot": 5,
+          "mean": 0.5607,
+          "std": 0.0117,
+          "n": 9
+        },
+        "GIN": {
+          "shot": 5,
+          "mean": 0.582,
+          "std": 0.0133,
+          "n": 9
+        },
+        "SAGE": {
+          "shot": 5,
+          "mean": 0.5742,
+          "std": 0.0131,
+          "n": 9
+        }
+      }
+    }
+  },
+  "NCI1": {
+    "OM": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5209,
+        "std": 0.0199,
+        "n": 9,
+        "source": "rerun_outputs/NCI1_OM/NCI1_1shot_full.json",
+        "energy": {
+          "e_snn_mJ": 7.156800000000001e-06,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 99.91647916647216,
+          "snn_ops": 7952,
+          "ann_ops": 1862800
+        }
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5158,
+        "std": 0.0254,
+        "n": 9,
+        "source": "rerun_outputs/NCI1_OM/NCI1_5shot_full.json",
+        "energy": {
+          "e_snn_mJ": 1.82502e-05,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 99.78701767325485,
+          "snn_ops": 20278,
+          "ann_ops": 1862800
+        }
+      }
+    },
+    "No-Spikes": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5138,
+        "std": 0.0293,
+        "n": 9,
+        "source": "rerun_outputs/NCI1_NoSpikesFixed/NCI1_1shot_no_spikes.json",
+        "energy": {
+          "e_snn_mJ": 0.0,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 100.0,
+          "snn_ops": 0,
+          "ann_ops": 1862800
+        }
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5004,
+        "std": 0.0224,
+        "n": 9,
+        "source": "rerun_outputs/NCI1_NoSpikesFixed/NCI1_5shot_no_spikes.json",
+        "energy": {
+          "e_snn_mJ": 0.0,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 100.0,
+          "snn_ops": 0,
+          "ann_ops": 1862800
+        }
+      }
+    },
+    "MSG": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5282,
+        "std": 0.0182,
+        "n": 9
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5202,
+        "std": 0.0174,
+        "n": 9
+      }
+    },
+    "MC-A/B": {
+      "Full BPTT": {
+        "mean": 0.5311,
+        "std": 0.0115,
+        "n": 9
+      },
+      "DvM M=8 truncated": {
+        "mean": 0.5313,
+        "std": 0.0093,
+        "n": 9
+      },
+      "DvM M=4 truncated": {
+        "mean": 0.5333,
+        "std": 0.0084,
+        "n": 9
+      },
+      "No Correction M=8": {
+        "mean": 0.5244,
+        "std": 0.0112,
+        "n": 9
+      },
+      "Full BPTT + MC": {
+        "mean": 0.5222,
+        "std": 0.0148,
+        "n": 9
+      },
+      "Proto-GNN": {
+        "mean": 0.5376,
+        "std": 0.0129,
+        "n": 9
+      }
+    },
+    "GNN": {
+      "1-shot": {
+        "SGC": {
+          "shot": 1,
+          "mean": 0.5191,
+          "std": 0.0095,
+          "n": 9
+        },
+        "GCN": {
+          "shot": 1,
+          "mean": 0.504,
+          "std": 0.0125,
+          "n": 9
+        },
+        "GIN": {
+          "shot": 1,
+          "mean": 0.5447,
+          "std": 0.0109,
+          "n": 9
+        },
+        "SAGE": {
+          "shot": 1,
+          "mean": 0.5167,
+          "std": 0.0181,
+          "n": 9
+        }
+      },
+      "5-shot": {
+        "SGC": {
+          "shot": 5,
+          "mean": 0.5482,
+          "std": 0.0125,
+          "n": 9
+        },
+        "GCN": {
+          "shot": 5,
+          "mean": 0.5584,
+          "std": 0.0283,
+          "n": 9
+        },
+        "GIN": {
+          "shot": 5,
+          "mean": 0.5567,
+          "std": 0.0209,
+          "n": 9
+        },
+        "SAGE": {
+          "shot": 5,
+          "mean": 0.5513,
+          "std": 0.0207,
+          "n": 9
+        }
+      }
+    }
+  },
+  "DD": {
+    "OM": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5236,
+        "std": 0.0418,
+        "n": 9,
+        "source": "rerun_outputs/DD_OM/DD_1shot_full.json",
+        "energy": {
+          "e_snn_mJ": 0.0003371895,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 96.06495247920381,
+          "snn_ops": 374655,
+          "ann_ops": 1862800
+        }
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5262,
+        "std": 0.0471,
+        "n": 9,
+        "source": "rerun_outputs/DD_OM/DD_5shot_full.json",
+        "energy": {
+          "e_snn_mJ": 0.0008287668000000002,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 90.32817824499818,
+          "snn_ops": 920852,
+          "ann_ops": 1862800
+        }
+      }
+    },
+    "No-Spikes": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5284,
+        "std": 0.0269,
+        "n": 9,
+        "source": "rerun_outputs/DD_NoSpikesFixed/DD_1shot_no_spikes.json",
+        "energy": {
+          "e_snn_mJ": 0.0,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 100.0,
+          "snn_ops": 0,
+          "ann_ops": 1862800
+        }
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5313,
+        "std": 0.0389,
+        "n": 9,
+        "source": "rerun_outputs/DD_NoSpikesFixed/DD_5shot_no_spikes.json",
+        "energy": {
+          "e_snn_mJ": 0.0,
+          "e_ann_mJ": 0.008568880000000001,
+          "reduction_pct": 100.0,
+          "snn_ops": 0,
+          "ann_ops": 1862800
+        }
+      }
+    },
+    "MSG": {
+      "1-shot": {
+        "shot": 1,
+        "mean": 0.5067,
+        "std": 0.02,
+        "n": 9
+      },
+      "5-shot": {
+        "shot": 5,
+        "mean": 0.5202,
+        "std": 0.0215,
+        "n": 9
+      }
+    },
+    "MC-A/B": {
+      "Full BPTT": {
+        "mean": 0.5644,
+        "std": 0.0212,
+        "n": 9
+      },
+      "DvM M=8 truncated": {
+        "mean": 0.5447,
+        "std": 0.0208,
+        "n": 9
+      },
+      "DvM M=4 truncated": {
+        "mean": 0.5331,
+        "std": 0.0135,
+        "n": 9
+      },
+      "No Correction M=8": {
+        "mean": 0.5751,
+        "std": 0.0389,
+        "n": 9
+      },
+      "Full BPTT + MC": {
+        "mean": 0.54,
+        "std": 0.0273,
+        "n": 9
+      },
+      "Proto-GNN": {
+        "mean": 0.5393,
+        "std": 0.0152,
+        "n": 9
+      }
+    },
+    "GNN": {
+      "1-shot": {
+        "SGC": {
+          "shot": 1,
+          "mean": 0.5273,
+          "std": 0.0073,
+          "n": 9
+        },
+        "GCN": {
+          "shot": 1,
+          "mean": 0.546,
+          "std": 0.0114,
+          "n": 9
+        },
+        "GIN": {
+          "shot": 1,
+          "mean": 0.5351,
+          "std": 0.0134,
+          "n": 9
+        },
+        "SAGE": {
+          "shot": 1,
+          "mean": 0.5382,
+          "std": 0.0119,
+          "n": 9
+        }
+      },
+      "5-shot": {
+        "SGC": {
+          "shot": 5,
+          "mean": 0.5813,
+          "std": 0.0052,
+          "n": 9
+        },
+        "GCN": {
+          "shot": 5,
+          "mean": 0.5611,
+          "std": 0.0106,
+          "n": 9
+        },
+        "GIN": {
+          "shot": 5,
+          "mean": 0.5953,
+          "std": 0.015,
+          "n": 9
+        },
+        "SAGE": {
+          "shot": 5,
+          "mean": 0.5602,
+          "std": 0.007,
+          "n": 9
+        }
+      }
+    }
+  }
+}

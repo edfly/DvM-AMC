@@ -1,0 +1,82 @@
+{
+  "config": {
+    "dataset": "MUTAG",
+    "seeds": [
+      0
+    ],
+    "epochs": 10,
+    "T": 16,
+    "M": 8,
+    "device": "cuda",
+    "probe_batch": "fixed episode sampled once per seed, reused for every snapshot"
+  },
+  "git_commit": "6d87a4d",
+  "elapsed_s": 717.8,
+  "rows": [
+    {
+      "dataset": "MUTAG",
+      "seed": 0,
+      "epoch": 5,
+      "train_loss": 0.5924793109297752,
+      "val_acc": 0.6633333333333333,
+      "n_correction_steps": 16,
+      "n_shape_groups": 2,
+      "group_sizes": [
+        28,
+        175
+      ],
+      "per_step_factor_min": 4.615401849150658e-06,
+      "per_step_factor_median": 0.1853504404425621,
+      "per_step_factor_max": 26249.685546875,
+      "chain_factor_median_by_group": [
+        1.050278,
+        0.827323
+      ],
+      "chain_factor_median": 1.0502781867980957,
+      "chain_factor_max": 1.0502781867980957,
+      "n_shared_params": 41,
+      "gnorm_ratio": 131142096.0,
+      "cos": -0.3666207492351532,
+      "rel_err": 131142096.0
+    },
+    {
+      "dataset": "MUTAG",
+      "seed": 0,
+      "epoch": 10,
+      "train_loss": 0.5667278349399567,
+      "val_acc": 0.7,
+      "n_correction_steps": 16,
+      "n_shape_groups": 2,
+      "group_sizes": [
+        28,
+        175
+      ],
+      "per_step_factor_min": 4.558127329801209e-06,
+      "per_step_factor_median": 0.3338060565292835,
+      "per_step_factor_max": 37112.0390625,
+      "chain_factor_median_by_group": [
+        1.046084,
+        0.899489
+      ],
+      "chain_factor_median": 1.0460838079452515,
+      "chain_factor_max": 1.0460838079452515,
+      "n_shared_params": 41,
+      "gnorm_ratio": 4459490.5,
+      "cos": 0.13399803638458252,
+      "rel_err": 4459490.0
+    }
+  ],
+  "gates": {
+    "G3_switch_effective": {
+      "min_rel_err": 4459490.0,
+      "switch_effective": true
+    },
+    "G1_gnorm_ratio_min": 4459490.5,
+    "G1_gnorm_ratio_max": 131142096.0,
+    "G1_all_within_1pct": false,
+    "G1_min_cos": -0.3666207492351532,
+    "G1_all_cos_gt_0.9999": false,
+    "verdict": "B_materially_changes_gradient",
+    "verdict_text": "B: MC materially changes the gradient during training; report the epoch and magnitude and re-evaluate the causal story for the observed accuracy gap."
+  }
+}

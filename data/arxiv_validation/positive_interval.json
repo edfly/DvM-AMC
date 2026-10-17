@@ -1,0 +1,60 @@
+{
+  "config": {
+    "c": 1.0,
+    "d_h": 32,
+    "N": 128,
+    "alpha": 0.9,
+    "T": 16,
+    "M": 8,
+    "noise_std": 0.03,
+    "n_trials": 20,
+    "r0": 0.05
+  },
+  "cells": {
+    "rT_0.2": {
+      "rT": 0.2,
+      "lam_ratio": 1.0094,
+      "unc_rel_err": 0.5614,
+      "amc_rel_err": 0.5695,
+      "unc_cos": 1.0,
+      "amc_cos": 1.0,
+      "amc_gain": -0.0082
+    },
+    "rT_0.5": {
+      "rT": 0.5,
+      "lam_ratio": 1.0632,
+      "unc_rel_err": 0.5134,
+      "amc_rel_err": 0.5695,
+      "unc_cos": 1.0,
+      "amc_cos": 1.0,
+      "amc_gain": -0.0561
+    },
+    "rT_1.0": {
+      "rT": 1.0,
+      "lam_ratio": 1.2709,
+      "unc_rel_err": 0.3047,
+      "amc_rel_err": 0.5695,
+      "unc_cos": 1.0,
+      "amc_cos": 1.0,
+      "amc_gain": -0.2648
+    },
+    "rT_1.8": {
+      "rT": 1.8,
+      "lam_ratio": 2.0534,
+      "unc_rel_err": 0.815,
+      "amc_rel_err": 0.5695,
+      "unc_cos": 0.9998,
+      "amc_cos": 1.0,
+      "amc_gain": 0.2455
+    },
+    "rT_2.8": {
+      "rT": 2.8,
+      "lam_ratio": 4.6323,
+      "unc_rel_err": 8.2136,
+      "amc_rel_err": 0.5695,
+      "unc_cos": 0.9988,
+      "amc_cos": 1.0,
+      "amc_gain": 7.6441
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "peak_mb": {
+    "T32_tmFalse": 900.619776,
+    "T32_tmTrue": 316.573696,
+    "T64_tmFalse": 1784.525312,
+    "T64_tmTrue": 541.85728
+  },
+  "device": "cuda"
+}

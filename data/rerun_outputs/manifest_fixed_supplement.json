@@ -1,0 +1,100 @@
+{
+  "finished_at": "2026-10-07T05:14:44.291975",
+  "elapsed_sec": 450704.4699892998,
+  "jobs": [
+    {
+      "dataset": "MUTAG",
+      "method": "OM",
+      "shot": "5",
+      "status": "skipped"
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "No-Spikes",
+      "shot": "1",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\MUTAG_NoSpikesFixed\\MUTAG_1shot_no_spikes.json"
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "No-Spikes",
+      "shot": "5",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\MUTAG_NoSpikesFixed\\MUTAG_5shot_no_spikes.json"
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "OM",
+      "shot": "5",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\PROTEINS_OM\\PROTEINS_5shot_full.json"
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "No-Spikes",
+      "shot": "1",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\PROTEINS_NoSpikesFixed\\PROTEINS_1shot_no_spikes.json"
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "No-Spikes",
+      "shot": "5",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\PROTEINS_NoSpikesFixed\\PROTEINS_5shot_no_spikes.json"
+    },
+    {
+      "dataset": "NCI1",
+      "method": "OM",
+      "shot": "5",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\NCI1_OM\\NCI1_5shot_full.json"
+    },
+    {
+      "dataset": "NCI1",
+      "method": "No-Spikes",
+      "shot": "1",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\NCI1_NoSpikesFixed\\NCI1_1shot_no_spikes.json"
+    },
+    {
+      "dataset": "NCI1",
+      "method": "No-Spikes",
+      "shot": "5",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\NCI1_NoSpikesFixed\\NCI1_5shot_no_spikes.json"
+    },
+    {
+      "dataset": "DD",
+      "method": "OM",
+      "shot": "5",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\DD_OM\\DD_5shot_full.json"
+    },
+    {
+      "dataset": "DD",
+      "method": "No-Spikes",
+      "shot": "1",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\DD_NoSpikesFixed\\DD_1shot_no_spikes.json"
+    },
+    {
+      "dataset": "DD",
+      "method": "No-Spikes",
+      "shot": "5",
+      "status": "done",
+      "returncode": 0,
+      "out_json": "D:\\spikergnn\\DvM\\rerun_outputs\\DD_NoSpikesFixed\\DD_5shot_no_spikes.json"
+    }
+  ]
+}

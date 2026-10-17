@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "started": "2026-10-13T01:29:47.831720",
+    "device": "cuda",
+    "epochs": 3,
+    "n_runs": 1,
+    "shot": 1,
+    "M_fixed": 8,
+    "seed_formula": "seed_base + run_id*100 + shot*10 (identical to run_experiment)",
+    "regimes": [
+      "truncated",
+      "full"
+    ],
+    "Ts": [
+      32,
+      64
+    ],
+    "finished": "2026-10-13T02:14:03.971302"
+  },
+  "results": {
+    "MUTAG": {
+      "T32": {
+        "truncated": {
+          "accs": [
+            0.6000000077486038
+          ],
+          "best_accs": [
+            0.5840000069141388
+          ],
+          "peak_mem_mb": [
+            105.596416
+          ],
+          "T": 32,
+          "regime": "truncated",
+          "mean_acc": 0.6000000077486038,
+          "std_acc": 0.0,
+          "mean_peak_mb": 105.596416,
+          "max_peak_mb": 105.596416
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            271.899648
+          ],
+          "T": 32,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 271.899648,
+              "T": 32,
+              "regime": "full",
+              "dv_m_window": 32,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 271.899648,
+          "max_peak_mb": 271.899648
+        }
+      },
+      "T64": {
+        "truncated": {
+          "accs": [
+            0.72200001090765
+          ],
+          "best_accs": [
+            0.6780000075697898
+          ],
+          "peak_mem_mb": [
+            160.121344
+          ],
+          "T": 64,
+          "regime": "truncated",
+          "mean_acc": 0.72200001090765,
+          "std_acc": 0.0,
+          "mean_peak_mb": 160.121344,
+          "max_peak_mb": 160.121344
+        },
+        "full": {
+          "accs": [],
+          "best_accs": [],
+          "peak_mem_mb": [
+            522.692096
+          ],
+          "T": 64,
+          "regime": "full",
+          "errors": [
+            {
+              "acc": null,
+              "best_acc": null,
+              "peak_mem_mb": 522.692096,
+              "T": 64,
+              "regime": "full",
+              "dv_m_window": 64,
+              "dvm_mode": "full_bptt_mc",
+              "ok": false,
+              "crashed_peak": true,
+              "error": "ValueError('cannot convert float NaN to integer')"
+            }
+          ],
+          "mean_peak_mb": 522.692096,
+          "max_peak_mb": 522.692096
+        }
+      }
+    }
+  }
+}

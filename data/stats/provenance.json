@@ -1,0 +1,997 @@
+{
+  "rows": [
+    {
+      "dataset": "MUTAG",
+      "method": "Full BPTT",
+      "file": "final_results.json",
+      "script": "run_final_matrix.py",
+      "n": 3,
+      "n_declared": 3,
+      "epochs": 50,
+      "device": "cpu",
+      "mean_pct": 80.07,
+      "std_pct": 6.65,
+      "date": "2026-07-23",
+      "sha1_10": "899f80741d",
+      "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU",
+      "accs": [
+        0.836,
+        0.842,
+        0.724
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "AMC M=8",
+      "file": "final_results.json",
+      "script": "run_final_matrix.py",
+      "n": 3,
+      "n_declared": 3,
+      "epochs": 50,
+      "device": "cpu",
+      "mean_pct": 80.73,
+      "std_pct": 5.28,
+      "date": "2026-07-23",
+      "sha1_10": "899f80741d",
+      "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU",
+      "accs": [
+        0.854,
+        0.818,
+        0.75
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "AMC M=4",
+      "file": "final_results.json",
+      "script": "run_final_matrix.py",
+      "n": 3,
+      "n_declared": 3,
+      "epochs": 50,
+      "device": "cpu",
+      "mean_pct": 79.27,
+      "std_pct": 7.63,
+      "date": "2026-07-23",
+      "sha1_10": "899f80741d",
+      "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU",
+      "accs": [
+        0.856,
+        0.814,
+        0.708
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "No Correction M=8",
+      "file": "final_results.json",
+      "script": "run_final_matrix.py",
+      "n": 3,
+      "n_declared": 3,
+      "epochs": 50,
+      "device": "cpu",
+      "mean_pct": 78.47,
+      "std_pct": 4.01,
+      "date": "2026-07-23",
+      "sha1_10": "899f80741d",
+      "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU",
+      "accs": [
+        0.782,
+        0.826,
+        0.746
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "Full BPTT + MC",
+      "file": "final_results.json",
+      "script": "run_final_matrix.py",
+      "n": 3,
+      "n_declared": 3,
+      "epochs": 50,
+      "device": "cpu",
+      "mean_pct": 69.4,
+      "std_pct": 6.95,
+      "date": "2026-07-23",
+      "sha1_10": "899f80741d",
+      "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU",
+      "accs": [
+        0.614,
+        0.74,
+        0.728
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "Proto-GNN (ANN)",
+      "file": "final_results.json",
+      "script": "run_final_matrix.py",
+      "n": 3,
+      "n_declared": 3,
+      "epochs": 50,
+      "device": "cpu",
+      "mean_pct": 85.6,
+      "std_pct": 2.8,
+      "date": "2026-07-23",
+      "sha1_10": "899f80741d",
+      "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU",
+      "accs": [
+        0.824,
+        0.868,
+        0.876
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "Full BPTT",
+      "file": "programfiles/final_results_MUTAG.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 79.49,
+      "std_pct": 5.76,
+      "date": "2026-09-25",
+      "sha1_10": "62fb2b0276",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.85,
+        0.848,
+        0.762,
+        0.844,
+        0.824,
+        0.802,
+        0.784,
+        0.77,
+        0.67
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "AMC M=8",
+      "file": "programfiles/final_results_MUTAG.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 74.0,
+      "std_pct": 3.55,
+      "date": "2026-09-25",
+      "sha1_10": "62fb2b0276",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.748,
+        0.756,
+        0.706,
+        0.718,
+        0.706,
+        0.758,
+        0.812,
+        0.752,
+        0.704
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "AMC M=4",
+      "file": "programfiles/final_results_MUTAG.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 71.29,
+      "std_pct": 4.61,
+      "date": "2026-09-25",
+      "sha1_10": "62fb2b0276",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.688,
+        0.73,
+        0.62,
+        0.726,
+        0.792,
+        0.708,
+        0.696,
+        0.74,
+        0.716
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "No Correction M=8",
+      "file": "programfiles/final_results_MUTAG.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 80.56,
+      "std_pct": 5.24,
+      "date": "2026-09-25",
+      "sha1_10": "62fb2b0276",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.848,
+        0.824,
+        0.766,
+        0.856,
+        0.852,
+        0.796,
+        0.838,
+        0.77,
+        0.7
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "Full BPTT + MC",
+      "file": "programfiles/final_results_MUTAG.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 73.4,
+      "std_pct": 4.59,
+      "date": "2026-09-25",
+      "sha1_10": "62fb2b0276",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.736,
+        0.748,
+        0.684,
+        0.708,
+        0.696,
+        0.786,
+        0.824,
+        0.724,
+        0.7
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "Proto-GNN (ANN)",
+      "file": "programfiles/final_results_MUTAG.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 85.64,
+      "std_pct": 3.67,
+      "date": "2026-09-25",
+      "sha1_10": "62fb2b0276",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.842,
+        0.866,
+        0.882,
+        0.856,
+        0.834,
+        0.808,
+        0.832,
+        0.936,
+        0.852
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "Full BPTT",
+      "file": "programfiles/final_results_PROTEINS.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 56.22,
+      "std_pct": 3.38,
+      "date": "2026-09-27",
+      "sha1_10": "b01baef191",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.544,
+        0.566,
+        0.564,
+        0.552,
+        0.52,
+        0.64,
+        0.54,
+        0.554,
+        0.58
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "AMC M=8",
+      "file": "programfiles/final_results_PROTEINS.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 54.38,
+      "std_pct": 1.95,
+      "date": "2026-09-27",
+      "sha1_10": "b01baef191",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.522,
+        0.56,
+        0.556,
+        0.526,
+        0.528,
+        0.566,
+        0.536,
+        0.528,
+        0.572
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "AMC M=4",
+      "file": "programfiles/final_results_PROTEINS.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 55.98,
+      "std_pct": 2.12,
+      "date": "2026-09-27",
+      "sha1_10": "b01baef191",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.56,
+        0.58,
+        0.554,
+        0.562,
+        0.554,
+        0.57,
+        0.536,
+        0.526,
+        0.596
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "No Correction M=8",
+      "file": "programfiles/final_results_PROTEINS.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 56.22,
+      "std_pct": 3.04,
+      "date": "2026-09-27",
+      "sha1_10": "b01baef191",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.522,
+        0.576,
+        0.56,
+        0.548,
+        0.554,
+        0.628,
+        0.548,
+        0.542,
+        0.582
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "Full BPTT + MC",
+      "file": "programfiles/final_results_PROTEINS.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 54.6,
+      "std_pct": 2.47,
+      "date": "2026-09-27",
+      "sha1_10": "b01baef191",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.538,
+        0.532,
+        0.546,
+        0.534,
+        0.514,
+        0.6,
+        0.532,
+        0.562,
+        0.556
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "Proto-GNN (ANN)",
+      "file": "programfiles/final_results_PROTEINS.json",
+      "script": "run_final_matrix.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": 50,
+      "device": "cuda",
+      "mean_pct": 55.53,
+      "std_pct": 2.33,
+      "date": "2026-09-27",
+      "sha1_10": "b01baef191",
+      "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA",
+      "accs": [
+        0.54,
+        0.564,
+        0.566,
+        0.584,
+        0.522,
+        0.53,
+        0.59,
+        0.544,
+        0.558
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "AMC M=8",
+      "file": "msg_four_stage_comparison.json",
+      "script": "four_stage_msg_comparison.py",
+      "n": 3,
+      "n_declared": 3,
+      "epochs": 50,
+      "device": "cpu",
+      "mean_pct": 83.33,
+      "std_pct": 1.45,
+      "date": "2026-07-27",
+      "sha1_10": "2a10c5fa94",
+      "note": "episodes_per_epoch=10, test_episodes=30; \u8bba\u6587 +27.3pp \u7684\u6765\u6e90",
+      "accs": [
+        0.85,
+        0.8267,
+        0.8233
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "MSG*",
+      "file": "msg_four_stage_comparison.json",
+      "script": "four_stage_msg_comparison.py",
+      "n": 3,
+      "n_declared": 3,
+      "epochs": 50,
+      "device": "cpu",
+      "mean_pct": 56.0,
+      "std_pct": 4.7,
+      "date": "2026-07-27",
+      "sha1_10": "2a10c5fa94",
+      "note": "hidden_dim=32 (3,424 \u53c2\u6570)",
+      "accs": [
+        0.5167,
+        0.5533,
+        0.61
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "OM (ablation=full)",
+      "file": "rerun_outputs/MUTAG_OM/MUTAG_1shot_full.json",
+      "script": "spikergnn.run_experiment (rerun_28configs.py)",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": null,
+      "mean_pct": 71.67,
+      "std_pct": 9.09,
+      "date": "2026-09-24",
+      "sha1_10": "e256a4664d",
+      "note": "\u4e0e run_final_matrix \u4e0d\u540c\u7684\u8bad\u7ec3\u9884\u7b97",
+      "accs": [
+        0.556,
+        0.72,
+        0.794,
+        0.71,
+        0.706,
+        0.776,
+        0.592,
+        0.768,
+        0.828
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "No-Spikes",
+      "file": "rerun_outputs/MUTAG_NoSpikes/MUTAG_1shot_no_spikes.json",
+      "script": "spikergnn.run_experiment",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": null,
+      "mean_pct": 50.0,
+      "std_pct": 0.0,
+      "date": "2026-09-25",
+      "sha1_10": "280e51fb88",
+      "note": "",
+      "accs": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "OM (ablation=full)",
+      "file": "rerun_outputs/PROTEINS_OM/PROTEINS_1shot_full.json",
+      "script": "spikergnn.run_experiment",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": null,
+      "mean_pct": 52.76,
+      "std_pct": 2.24,
+      "date": "2026-09-26",
+      "sha1_10": "12c6f35c32",
+      "note": "",
+      "accs": [
+        0.528,
+        0.542,
+        0.502,
+        0.512,
+        0.54,
+        0.542,
+        0.512,
+        0.502,
+        0.568
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "No-Spikes",
+      "file": "rerun_outputs/PROTEINS_NoSpikes/PROTEINS_1shot_no_spikes.json",
+      "script": "spikergnn.run_experiment",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": null,
+      "mean_pct": 50.0,
+      "std_pct": 0.0,
+      "date": "2026-09-26",
+      "sha1_10": "280e51fb88",
+      "note": "",
+      "accs": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "MSG*",
+      "file": "msg_results/msgstar_results.json",
+      "script": "msg_baseline.run_flexible",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": null,
+      "mean_pct": 53.76,
+      "std_pct": 2.56,
+      "date": "2026-09-26",
+      "sha1_10": "5684bcd54d",
+      "note": "\u767e\u5206\u5236\u5b58\u50a8, \u5df2\u5f52\u4e00\u5316",
+      "accs": [
+        0.5,
+        0.564,
+        0.538,
+        0.522,
+        0.558,
+        0.542,
+        0.512,
+        0.524,
+        0.578
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "MSG*",
+      "file": "msg_results/msgstar_results.json",
+      "script": "msg_baseline.run_flexible",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": null,
+      "mean_pct": 54.73,
+      "std_pct": 1.56,
+      "date": "2026-09-26",
+      "sha1_10": "5684bcd54d",
+      "note": "",
+      "accs": [
+        0.538,
+        0.538,
+        0.542,
+        0.54,
+        0.552,
+        0.586,
+        0.538,
+        0.54,
+        0.552
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "GIN",
+      "file": "programfiles/gnn_gin_MUTAG.json",
+      "script": "train_gnn_baselines.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": "cuda",
+      "mean_pct": 82.64,
+      "std_pct": 0.95,
+      "date": "2026-09-25",
+      "sha1_10": "42c52777fd",
+      "note": "",
+      "accs": [
+        0.832,
+        0.836,
+        0.84,
+        0.818,
+        0.832,
+        0.83,
+        0.816,
+        0.82,
+        0.814
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "GCN",
+      "file": "programfiles/gnn_gcn_MUTAG.json",
+      "script": "train_gnn_baselines.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": "cuda",
+      "mean_pct": 60.91,
+      "std_pct": 1.97,
+      "date": "2026-09-25",
+      "sha1_10": "395146209c",
+      "note": "",
+      "accs": [
+        0.632,
+        0.592,
+        0.65,
+        0.594,
+        0.602,
+        0.596,
+        0.61,
+        0.61,
+        0.596
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "SAGE",
+      "file": "programfiles/gnn_sage_MUTAG.json",
+      "script": "train_gnn_baselines.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": "cuda",
+      "mean_pct": 62.13,
+      "std_pct": 2.26,
+      "date": "2026-09-25",
+      "sha1_10": "a2ea9db858",
+      "note": "",
+      "accs": [
+        0.608,
+        0.656,
+        0.624,
+        0.59,
+        0.652,
+        0.606,
+        0.626,
+        0.63,
+        0.6
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "SGC",
+      "file": "programfiles/gnn_sgc_MUTAG.json",
+      "script": "train_gnn_baselines.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": "cuda",
+      "mean_pct": 53.73,
+      "std_pct": 0.47,
+      "date": "2026-09-25",
+      "sha1_10": "1d361976d1",
+      "note": "",
+      "accs": [
+        0.538,
+        0.528,
+        0.544,
+        0.536,
+        0.54,
+        0.536,
+        0.538,
+        0.534,
+        0.542
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "GIN",
+      "file": "programfiles/gnn_gin_PROTEINS.json",
+      "script": "train_gnn_baselines.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": "cuda",
+      "mean_pct": 58.93,
+      "std_pct": 1.83,
+      "date": "2026-09-27",
+      "sha1_10": "95335b32a2",
+      "note": "",
+      "accs": [
+        0.598,
+        0.59,
+        0.586,
+        0.57,
+        0.572,
+        0.612,
+        0.616,
+        0.596,
+        0.564
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "GCN",
+      "file": "programfiles/gnn_gcn_PROTEINS.json",
+      "script": "train_gnn_baselines.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": "cuda",
+      "mean_pct": 56.51,
+      "std_pct": 2.41,
+      "date": "2026-09-27",
+      "sha1_10": "02be446f24",
+      "note": "",
+      "accs": [
+        0.582,
+        0.608,
+        0.556,
+        0.55,
+        0.59,
+        0.548,
+        0.548,
+        0.534,
+        0.57
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "SAGE",
+      "file": "programfiles/gnn_sage_PROTEINS.json",
+      "script": "train_gnn_baselines.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": "cuda",
+      "mean_pct": 54.96,
+      "std_pct": 0.67,
+      "date": "2026-09-27",
+      "sha1_10": "4e63c32c3e",
+      "note": "",
+      "accs": [
+        0.546,
+        0.544,
+        0.544,
+        0.544,
+        0.554,
+        0.544,
+        0.556,
+        0.552,
+        0.562
+      ]
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "SGC",
+      "file": "programfiles/gnn_sgc_PROTEINS.json",
+      "script": "train_gnn_baselines.py",
+      "n": 9,
+      "n_declared": 9,
+      "epochs": null,
+      "device": "cuda",
+      "mean_pct": 54.96,
+      "std_pct": 0.89,
+      "date": "2026-09-27",
+      "sha1_10": "7d92486769",
+      "note": "",
+      "accs": [
+        0.542,
+        0.566,
+        0.556,
+        0.544,
+        0.56,
+        0.544,
+        0.544,
+        0.548,
+        0.542
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "dataset": "MUTAG",
+      "method": "AMC M=8",
+      "spread_pp": 9.33,
+      "values": [
+        {
+          "mean_pct": 83.33,
+          "n": 3,
+          "file": "msg_four_stage_comparison.json",
+          "date": "2026-07-27",
+          "note": "episodes_per_epoch=10, test_episodes=30; \u8bba\u6587 +27.3pp \u7684\u6765\u6e90"
+        },
+        {
+          "mean_pct": 80.73,
+          "n": 3,
+          "file": "final_results.json",
+          "date": "2026-07-23",
+          "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU"
+        },
+        {
+          "mean_pct": 74.0,
+          "n": 9,
+          "file": "programfiles/final_results_MUTAG.json",
+          "date": "2026-09-25",
+          "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA"
+        }
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "AMC M=4",
+      "spread_pp": 7.98,
+      "values": [
+        {
+          "mean_pct": 79.27,
+          "n": 3,
+          "file": "final_results.json",
+          "date": "2026-07-23",
+          "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU"
+        },
+        {
+          "mean_pct": 71.29,
+          "n": 9,
+          "file": "programfiles/final_results_MUTAG.json",
+          "date": "2026-09-25",
+          "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA"
+        }
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "Full BPTT + MC",
+      "spread_pp": 4.0,
+      "values": [
+        {
+          "mean_pct": 73.4,
+          "n": 9,
+          "file": "programfiles/final_results_MUTAG.json",
+          "date": "2026-09-25",
+          "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA"
+        },
+        {
+          "mean_pct": 69.4,
+          "n": 3,
+          "file": "final_results.json",
+          "date": "2026-07-23",
+          "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU"
+        }
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "MSG*",
+      "spread_pp": 2.24,
+      "values": [
+        {
+          "mean_pct": 56.0,
+          "n": 3,
+          "file": "msg_four_stage_comparison.json",
+          "date": "2026-07-27",
+          "note": "hidden_dim=32 (3,424 \u53c2\u6570)"
+        },
+        {
+          "mean_pct": 53.76,
+          "n": 9,
+          "file": "msg_results/msgstar_results.json",
+          "date": "2026-09-26",
+          "note": "\u767e\u5206\u5236\u5b58\u50a8, \u5df2\u5f52\u4e00\u5316"
+        }
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "No Correction M=8",
+      "spread_pp": 2.09,
+      "values": [
+        {
+          "mean_pct": 80.56,
+          "n": 9,
+          "file": "programfiles/final_results_MUTAG.json",
+          "date": "2026-09-25",
+          "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA"
+        },
+        {
+          "mean_pct": 78.47,
+          "n": 3,
+          "file": "final_results.json",
+          "date": "2026-07-23",
+          "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU"
+        }
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "Full BPTT",
+      "spread_pp": 0.58,
+      "values": [
+        {
+          "mean_pct": 80.07,
+          "n": 3,
+          "file": "final_results.json",
+          "date": "2026-07-23",
+          "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU"
+        },
+        {
+          "mean_pct": 79.49,
+          "n": 9,
+          "file": "programfiles/final_results_MUTAG.json",
+          "date": "2026-09-25",
+          "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA"
+        }
+      ]
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "Proto-GNN (ANN)",
+      "spread_pp": 0.04,
+      "values": [
+        {
+          "mean_pct": 85.64,
+          "n": 9,
+          "file": "programfiles/final_results_MUTAG.json",
+          "date": "2026-09-25",
+          "note": "\u4fee\u590d\u540e\u5b9e\u73b0 (2026-09), CUDA"
+        },
+        {
+          "mean_pct": 85.6,
+          "n": 3,
+          "file": "final_results.json",
+          "date": "2026-07-23",
+          "note": "\u4fee\u590d\u524d\u5b9e\u73b0 (2026-07), CPU"
+        }
+      ]
+    }
+  ],
+  "n_conflicts": 7
+}

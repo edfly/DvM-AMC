@@ -1,0 +1,592 @@
+{
+  "per_method_ci": {
+    "MUTAG": {
+      "OM (SpikeRPGNN full)": {
+        "n": 9,
+        "mean": 0.7166666783723566,
+        "std": 0.09086803853064439,
+        "ci95": [
+          0.6584,
+          0.7691
+        ]
+      },
+      "No-Spikes": {
+        "n": 9,
+        "mean": 0.749777789844407,
+        "std": 0.08428786736680356,
+        "ci95": [
+          0.6973,
+          0.8022
+        ]
+      },
+      "Full BPTT": {
+        "n": 9,
+        "mean": 0.7948889032171832,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "AMC M=8": {
+        "n": 9,
+        "mean": 0.740000010629495,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "AMC M=4": {
+        "n": 9,
+        "mean": 0.7128889002237055,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "No Correction M=8": {
+        "n": 9,
+        "mean": 0.8055555698937841,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "Full BPTT + MC": {
+        "n": 9,
+        "mean": 0.7340000104738607,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "Proto-GNN (ANN)": {
+        "n": 9,
+        "mean": 0.8564444600045681,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "SGC": {
+        "n": 9,
+        "mean": 0.5373333393534024,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "GIN": {
+        "n": 9,
+        "mean": 0.8264444585641226,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "GCN": {
+        "n": 9,
+        "mean": 0.6091111183497642,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "SAGE": {
+        "n": 9,
+        "mean": 0.6213333412011464,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "MSG*": {
+        "n": 9,
+        "mean": 0.537555560933219,
+        "ci95": null,
+        "note": "accs not found"
+      }
+    },
+    "PROTEINS": {
+      "OM (SpikeRPGNN full)": {
+        "n": 9,
+        "mean": 0.5275555625061193,
+        "std": 0.02235570960406055,
+        "ci95": [
+          0.5144,
+          0.5416
+        ]
+      },
+      "No-Spikes": {
+        "n": 9,
+        "mean": 0.5355555614829064,
+        "std": 0.009888264485789187,
+        "ci95": [
+          0.5291,
+          0.5413
+        ]
+      },
+      "Full BPTT": {
+        "n": 9,
+        "mean": 0.5622222305834293,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "AMC M=8": {
+        "n": 9,
+        "mean": 0.5437777850694127,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "AMC M=4": {
+        "n": 9,
+        "mean": 0.5597777857879798,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "No Correction M=8": {
+        "n": 9,
+        "mean": 0.562222230500645,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "Full BPTT + MC": {
+        "n": 9,
+        "mean": 0.546000007076396,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "Proto-GNN (ANN)": {
+        "n": 9,
+        "mean": 0.5553333407640457,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "SGC": {
+        "n": 9,
+        "mean": 0.5495555631650819,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "GIN": {
+        "n": 9,
+        "mean": 0.5893333416846063,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "GCN": {
+        "n": 9,
+        "mean": 0.5651111187206374,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "SAGE": {
+        "n": 9,
+        "mean": 0.5495555636949009,
+        "ci95": null,
+        "note": "accs not found"
+      },
+      "MSG*": {
+        "n": 9,
+        "mean": 0.5473333396679826,
+        "ci95": null,
+        "note": "accs not found"
+      }
+    }
+  },
+  "mutag_contrast_ci": [
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "Full BPTT",
+      "n": 9,
+      "diff_pp": -8.2,
+      "p_wilcoxon": 0.01953125,
+      "p_bh_fdr": 0.02497438524590164,
+      "hedges_g": -1.496,
+      "g_ci95": [
+        -2.642,
+        -0.35
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "Full BPTT + MC",
+      "n": 9,
+      "diff_pp": -2.11,
+      "p_wilcoxon": 0.42578125,
+      "p_bh_fdr": 0.4487964527027027,
+      "hedges_g": -0.437,
+      "g_ci95": [
+        -1.449,
+        0.576
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "GCN",
+      "n": 9,
+      "diff_pp": 10.38,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.01069078947368421,
+      "hedges_g": 2.786,
+      "g_ci95": [
+        1.341,
+        4.231
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "GIN",
+      "n": 9,
+      "diff_pp": -11.36,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -3.247,
+      "g_ci95": [
+        -4.821,
+        -1.672
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "MSG*",
+      "n": 9,
+      "diff_pp": 17.53,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 4.474,
+      "g_ci95": [
+        2.522,
+        6.426
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "No Correction M=8",
+      "n": 9,
+      "diff_pp": -9.27,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.01069078947368421,
+      "hedges_g": -1.788,
+      "g_ci95": [
+        -2.991,
+        -0.585
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "No-Spikes",
+      "n": 9,
+      "diff_pp": 21.29,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 6.216,
+      "g_ci95": [
+        3.681,
+        8.75
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": -14.36,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -3.281,
+      "g_ci95": [
+        -4.866,
+        -1.697
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": 9.16,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.01069078947368421,
+      "hedges_g": 2.4,
+      "g_ci95": [
+        1.055,
+        3.744
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=4",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": 17.56,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 5.099,
+      "g_ci95": [
+        2.943,
+        7.256
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "Full BPTT",
+      "n": 9,
+      "diff_pp": -5.49,
+      "p_wilcoxon": 0.0390625,
+      "p_bh_fdr": 0.047607421875,
+      "hedges_g": -1.092,
+      "g_ci95": [
+        -2.172,
+        -0.012
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "Full BPTT + MC",
+      "n": 9,
+      "diff_pp": 0.6,
+      "p_wilcoxon": 0.42578125,
+      "p_bh_fdr": 0.4487964527027027,
+      "hedges_g": 0.139,
+      "g_ci95": [
+        -0.861,
+        1.14
+      ],
+      "verdict": "NOT_SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "GCN",
+      "n": 9,
+      "diff_pp": 13.09,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 4.344,
+      "g_ci95": [
+        2.434,
+        6.254
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "GIN",
+      "n": 9,
+      "diff_pp": -8.64,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -3.17,
+      "g_ci95": [
+        -4.723,
+        -1.618
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "MSG*",
+      "n": 9,
+      "diff_pp": 20.24,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 6.23,
+      "g_ci95": [
+        3.69,
+        8.769
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "No Correction M=8",
+      "n": 9,
+      "diff_pp": -6.56,
+      "p_wilcoxon": 0.0078125,
+      "p_bh_fdr": 0.01069078947368421,
+      "hedges_g": -1.396,
+      "g_ci95": [
+        -2.523,
+        -0.268
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "No-Spikes",
+      "n": 9,
+      "diff_pp": 24.0,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 9.114,
+      "g_ci95": [
+        5.555,
+        12.672
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": -11.64,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -3.075,
+      "g_ci95": [
+        -4.6,
+        -1.55
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": 11.87,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 3.799,
+      "g_ci95": [
+        2.06,
+        5.538
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "AMC M=8",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": 20.27,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 7.63,
+      "g_ci95": [
+        4.601,
+        10.658
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "Proto-GNN (ANN)",
+      "n": 9,
+      "diff_pp": -13.98,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": -1.921,
+      "g_ci95": [
+        -3.153,
+        -0.69
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "B (baseline)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "SAGE",
+      "n": 9,
+      "diff_pp": 9.53,
+      "p_wilcoxon": 0.01953125,
+      "p_bh_fdr": 0.02497438524590164,
+      "hedges_g": 1.371,
+      "g_ci95": [
+        0.247,
+        2.495
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    },
+    {
+      "dataset": "MUTAG",
+      "A": "OM (SpikeRPGNN full)",
+      "B": "SGC",
+      "n": 9,
+      "diff_pp": 17.93,
+      "p_wilcoxon": 0.00390625,
+      "p_bh_fdr": 0.00609375,
+      "hedges_g": 2.655,
+      "g_ci95": [
+        1.245,
+        4.065
+      ],
+      "verdict": "SIGNIFICANT",
+      "favours": "A (ours)",
+      "boot_diff_ci95": null,
+      "note": "unpaired/missing"
+    }
+  ]
+}

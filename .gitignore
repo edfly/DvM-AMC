@@ -1,0 +1,33 @@
+# ---- LaTeX build artifacts (keep source + PDF only) ----
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.bbl
+paper/*.blg
+paper/*.synctex.gz
+paper/*.idx
+paper/*.ilg
+paper/*.ind
+paper/*.lof
+paper/*.lot
+paper/*.nav
+paper/*.snm
+paper/*~
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# ---- Editor ----
+*.swp
+*~
+.idea/
+.vscode/

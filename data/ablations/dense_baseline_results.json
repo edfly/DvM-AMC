@@ -1,0 +1,668 @@
+{
+  "meta": {
+    "started": "2026-10-13T09:47:15.889247",
+    "device": "cuda",
+    "epochs": 3,
+    "n_runs": 1,
+    "shot": 1,
+    "M_fixed": 8,
+    "ablations": [
+      "full",
+      "no_spikes",
+      "no_spikes_euclid"
+    ],
+    "Ts": [
+      8,
+      16,
+      32
+    ],
+    "note": "spiking vs non-spiking (Riemannian/Euclidean) parameter-matched baselines",
+    "finished": "2026-10-13T11:52:53.151541"
+  },
+  "results": {
+    "MUTAG": {
+      "T8": {
+        "full": {
+          "accs": [
+            0.7100000090897083
+          ],
+          "best_accs": [
+            0.6920000045001506
+          ],
+          "peak_mem_mb": [
+            86.784
+          ],
+          "T": 8,
+          "ablation_tag": "full",
+          "mean_acc": 0.7100000090897083,
+          "std_acc": 0.0,
+          "mean_peak_mb": 86.784,
+          "max_peak_mb": 86.784
+        },
+        "no_spikes": {
+          "accs": [
+            0.6360000099241734
+          ],
+          "best_accs": [
+            0.5900000067055226
+          ],
+          "peak_mem_mb": [
+            67.434496
+          ],
+          "T": 8,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.6360000099241734,
+          "std_acc": 0.0,
+          "mean_peak_mb": 67.434496,
+          "max_peak_mb": 67.434496
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            67.434496
+          ],
+          "T": 8,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 67.434496,
+          "max_peak_mb": 67.434496
+        }
+      },
+      "T16": {
+        "full": {
+          "accs": [
+            0.686000006198883
+          ],
+          "best_accs": [
+            0.662000008970499
+          ],
+          "peak_mem_mb": [
+            93.409792
+          ],
+          "T": 16,
+          "ablation_tag": "full",
+          "mean_acc": 0.686000006198883,
+          "std_acc": 0.0,
+          "mean_peak_mb": 93.409792,
+          "max_peak_mb": 93.409792
+        },
+        "no_spikes": {
+          "accs": [
+            0.5500000071525574
+          ],
+          "best_accs": [
+            0.5440000101923943
+          ],
+          "peak_mem_mb": [
+            70.869504
+          ],
+          "T": 16,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.5500000071525574,
+          "std_acc": 0.0,
+          "mean_peak_mb": 70.869504,
+          "max_peak_mb": 70.869504
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            70.869504
+          ],
+          "T": 16,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 70.869504,
+          "max_peak_mb": 70.869504
+        }
+      },
+      "T32": {
+        "full": {
+          "accs": [
+            0.6640000063180923
+          ],
+          "best_accs": [
+            0.6560000069439411
+          ],
+          "peak_mem_mb": [
+            106.235392
+          ],
+          "T": 32,
+          "ablation_tag": "full",
+          "mean_acc": 0.6640000063180923,
+          "std_acc": 0.0,
+          "mean_peak_mb": 106.235392,
+          "max_peak_mb": 106.235392
+        },
+        "no_spikes": {
+          "accs": [
+            0.6920000037550926
+          ],
+          "best_accs": [
+            0.6700000095367432
+          ],
+          "peak_mem_mb": [
+            79.230464
+          ],
+          "T": 32,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.6920000037550926,
+          "std_acc": 0.0,
+          "mean_peak_mb": 79.230464,
+          "max_peak_mb": 79.230464
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            79.230464
+          ],
+          "T": 32,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 79.230464,
+          "max_peak_mb": 79.230464
+        }
+      }
+    },
+    "PROTEINS": {
+      "T8": {
+        "full": {
+          "accs": [
+            0.4940000084042549
+          ],
+          "best_accs": [
+            0.48800000637769697
+          ],
+          "peak_mem_mb": [
+            287.345664
+          ],
+          "T": 8,
+          "ablation_tag": "full",
+          "mean_acc": 0.4940000084042549,
+          "std_acc": 0.0,
+          "mean_peak_mb": 287.345664,
+          "max_peak_mb": 287.345664
+        },
+        "no_spikes": {
+          "accs": [
+            0.49800000607967376
+          ],
+          "best_accs": [
+            0.5020000077784061
+          ],
+          "peak_mem_mb": [
+            210.107392
+          ],
+          "T": 8,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.49800000607967376,
+          "std_acc": 0.0,
+          "mean_peak_mb": 210.107392,
+          "max_peak_mb": 210.107392
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            210.107392
+          ],
+          "T": 8,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 210.107392,
+          "max_peak_mb": 210.107392
+        }
+      },
+      "T16": {
+        "full": {
+          "accs": [
+            0.49600000619888307
+          ],
+          "best_accs": [
+            0.5100000092387199
+          ],
+          "peak_mem_mb": [
+            312.67584
+          ],
+          "T": 16,
+          "ablation_tag": "full",
+          "mean_acc": 0.49600000619888307,
+          "std_acc": 0.0,
+          "mean_peak_mb": 312.67584,
+          "max_peak_mb": 312.67584
+        },
+        "no_spikes": {
+          "accs": [
+            0.4940000057220459
+          ],
+          "best_accs": [
+            0.5160000072419644
+          ],
+          "peak_mem_mb": [
+            224.644608
+          ],
+          "T": 16,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.4940000057220459,
+          "std_acc": 0.0,
+          "mean_peak_mb": 224.644608,
+          "max_peak_mb": 224.644608
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            224.644608
+          ],
+          "T": 16,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 224.644608,
+          "max_peak_mb": 224.644608
+        }
+      },
+      "T32": {
+        "full": {
+          "accs": [
+            0.4960000064969063
+          ],
+          "best_accs": [
+            0.5080000093579292
+          ],
+          "peak_mem_mb": [
+            368.031232
+          ],
+          "T": 32,
+          "ablation_tag": "full",
+          "mean_acc": 0.4960000064969063,
+          "std_acc": 0.0,
+          "mean_peak_mb": 368.031232,
+          "max_peak_mb": 368.031232
+        },
+        "no_spikes": {
+          "accs": [
+            0.49200000703334806
+          ],
+          "best_accs": [
+            0.5200000075995922
+          ],
+          "peak_mem_mb": [
+            257.906176
+          ],
+          "T": 32,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.49200000703334806,
+          "std_acc": 0.0,
+          "mean_peak_mb": 257.906176,
+          "max_peak_mb": 257.906176
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            257.906176
+          ],
+          "T": 32,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 257.906176,
+          "max_peak_mb": 257.906176
+        }
+      }
+    },
+    "NCI1": {
+      "T8": {
+        "full": {
+          "accs": [
+            0.5500000071525574
+          ],
+          "best_accs": [
+            0.504000004529953
+          ],
+          "peak_mem_mb": [
+            166.092288
+          ],
+          "T": 8,
+          "ablation_tag": "full",
+          "mean_acc": 0.5500000071525574,
+          "std_acc": 0.0,
+          "mean_peak_mb": 166.092288,
+          "max_peak_mb": 166.092288
+        },
+        "no_spikes": {
+          "accs": [
+            0.5520000076293945
+          ],
+          "best_accs": [
+            0.5140000097453594
+          ],
+          "peak_mem_mb": [
+            124.196864
+          ],
+          "T": 8,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.5520000076293945,
+          "std_acc": 0.0,
+          "mean_peak_mb": 124.196864,
+          "max_peak_mb": 124.196864
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            124.196864
+          ],
+          "T": 8,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 124.196864,
+          "max_peak_mb": 124.196864
+        }
+      },
+      "T16": {
+        "full": {
+          "accs": [
+            0.5340000055730343
+          ],
+          "best_accs": [
+            0.4980000099539757
+          ],
+          "peak_mem_mb": [
+            180.148736
+          ],
+          "T": 16,
+          "ablation_tag": "full",
+          "mean_acc": 0.5340000055730343,
+          "std_acc": 0.0,
+          "mean_peak_mb": 180.148736,
+          "max_peak_mb": 180.148736
+        },
+        "no_spikes": {
+          "accs": [
+            0.556000007390976
+          ],
+          "best_accs": [
+            0.5080000104010105
+          ],
+          "peak_mem_mb": [
+            131.801088
+          ],
+          "T": 16,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.556000007390976,
+          "std_acc": 0.0,
+          "mean_peak_mb": 131.801088,
+          "max_peak_mb": 131.801088
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            131.801088
+          ],
+          "T": 16,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 131.801088,
+          "max_peak_mb": 131.801088
+        }
+      },
+      "T32": {
+        "full": {
+          "accs": [
+            0.496000008136034
+          ],
+          "best_accs": [
+            0.4860000094771385
+          ],
+          "peak_mem_mb": [
+            210.108928
+          ],
+          "T": 32,
+          "ablation_tag": "full",
+          "mean_acc": 0.496000008136034,
+          "std_acc": 0.0,
+          "mean_peak_mb": 210.108928,
+          "max_peak_mb": 210.108928
+        },
+        "no_spikes": {
+          "accs": [
+            0.5500000062584877
+          ],
+          "best_accs": [
+            0.5200000102818012
+          ],
+          "peak_mem_mb": [
+            149.825536
+          ],
+          "T": 32,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.5500000062584877,
+          "std_acc": 0.0,
+          "mean_peak_mb": 149.825536,
+          "max_peak_mb": 149.825536
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            149.825536
+          ],
+          "T": 32,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 149.825536,
+          "max_peak_mb": 149.825536
+        }
+      }
+    },
+    "DD": {
+      "T8": {
+        "full": {
+          "accs": [
+            0.5320000088214875
+          ],
+          "best_accs": [
+            0.48800000473856925
+          ],
+          "peak_mem_mb": [
+            1214.74304
+          ],
+          "T": 8,
+          "ablation_tag": "full",
+          "mean_acc": 0.5320000088214875,
+          "std_acc": 0.0,
+          "mean_peak_mb": 1214.74304,
+          "max_peak_mb": 1214.74304
+        },
+        "no_spikes": {
+          "accs": [
+            0.5020000045001507
+          ],
+          "best_accs": [
+            0.4820000059902668
+          ],
+          "peak_mem_mb": [
+            880.826368
+          ],
+          "T": 8,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.5020000045001507,
+          "std_acc": 0.0,
+          "mean_peak_mb": 880.826368,
+          "max_peak_mb": 880.826368
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            880.826368
+          ],
+          "T": 8,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 880.826368,
+          "max_peak_mb": 880.826368
+        }
+      },
+      "T16": {
+        "full": {
+          "accs": [
+            0.5000000074505806
+          ],
+          "best_accs": [
+            0.4860000057518482
+          ],
+          "peak_mem_mb": [
+            1322.752
+          ],
+          "T": 16,
+          "ablation_tag": "full",
+          "mean_acc": 0.5000000074505806,
+          "std_acc": 0.0,
+          "mean_peak_mb": 1322.752,
+          "max_peak_mb": 1322.752
+        },
+        "no_spikes": {
+          "accs": [
+            0.5020000046491623
+          ],
+          "best_accs": [
+            0.4880000062286854
+          ],
+          "peak_mem_mb": [
+            940.276224
+          ],
+          "T": 16,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.5020000046491623,
+          "std_acc": 0.0,
+          "mean_peak_mb": 940.276224,
+          "max_peak_mb": 940.276224
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            940.276224
+          ],
+          "T": 16,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 940.276224,
+          "max_peak_mb": 940.276224
+        }
+      },
+      "T32": {
+        "full": {
+          "accs": [
+            0.4980000042915344
+          ],
+          "best_accs": [
+            0.4920000068843365
+          ],
+          "peak_mem_mb": [
+            1566.112768
+          ],
+          "T": 32,
+          "ablation_tag": "full",
+          "mean_acc": 0.4980000042915344,
+          "std_acc": 0.0,
+          "mean_peak_mb": 1566.112768,
+          "max_peak_mb": 1566.112768
+        },
+        "no_spikes": {
+          "accs": [
+            0.4960000067949295
+          ],
+          "best_accs": [
+            0.5080000036954879
+          ],
+          "peak_mem_mb": [
+            1082.32704
+          ],
+          "T": 32,
+          "ablation_tag": "no_spikes",
+          "mean_acc": 0.4960000067949295,
+          "std_acc": 0.0,
+          "mean_peak_mb": 1082.32704,
+          "max_peak_mb": 1082.32704
+        },
+        "no_spikes_euclid": {
+          "accs": [
+            0.5
+          ],
+          "best_accs": [
+            0.5
+          ],
+          "peak_mem_mb": [
+            1082.32704
+          ],
+          "T": 32,
+          "ablation_tag": "no_spikes_euclid",
+          "mean_acc": 0.5,
+          "std_acc": 0.0,
+          "mean_peak_mb": 1082.32704,
+          "max_peak_mb": 1082.32704
+        }
+      }
+    }
+  }
+}

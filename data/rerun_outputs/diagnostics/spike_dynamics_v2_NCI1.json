@@ -1,0 +1,689 @@
+{
+  "dataset": "NCI1",
+  "shot": 1,
+  "epochs": 12,
+  "seed": 0,
+  "trajectory": [
+    {
+      "epoch": 1,
+      "train_acc": 0.5200000092387199,
+      "train_loss": 0.68995507756869,
+      "reported_train_spikes": 20202,
+      "test_acc": 0.4760000079870224,
+      "reported_test_spikes": 21492,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 88728,
+          "sum_s_out": 44364,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8671418111771345,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.0773626632988453,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 88728,
+          "sum_s_out": 24352,
+          "fire_pct": 27.456394797482062,
+          "cross_call_pct": 33.958333333333336,
+          "ratio_mean": 0.7652398598690827,
+          "ratio_max": 1.4402849674224854,
+          "w_pre_mean": 0.43212310541421173,
+          "u_th": 1.0057072639465332
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8658926859498024,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07692403346300125,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 58,
+          "fire_pct": 15.760869532823563,
+          "cross_call_pct": 37.5,
+          "ratio_mean": 0.6644062399864197,
+          "ratio_max": 1.1836097240447998,
+          "w_pre_mean": 0.28854255750775337,
+          "u_th": 1.0060285329818726
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "train_acc": 0.51333333949248,
+      "train_loss": 0.6929110586643219,
+      "reported_train_spikes": 17463,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 85728,
+          "sum_s_out": 42864,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.867349128300945,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07731724505623182,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 85728,
+          "sum_s_out": 20895,
+          "fire_pct": 24.409541233083775,
+          "cross_call_pct": 37.083333333333336,
+          "ratio_mean": 0.7563585869347056,
+          "ratio_max": 1.2776612043380737,
+          "w_pre_mean": 0.35270815615852674,
+          "u_th": 1.0089727640151978
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.867127999663353,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07709751278162003,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 92,
+          "fire_pct": 25.0,
+          "cross_call_pct": 25.0,
+          "ratio_mean": 0.7564170956611633,
+          "ratio_max": 1.1794700622558594,
+          "w_pre_mean": 0.33764322847127914,
+          "u_th": 1.0090073347091675
+        }
+      }
+    },
+    {
+      "epoch": 3,
+      "train_acc": 0.49666667232910794,
+      "train_loss": 0.6940154234568278,
+      "reported_train_spikes": 13451,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 86368,
+          "sum_s_out": 43184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8681193765252828,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07733873762190342,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 86368,
+          "sum_s_out": 16269,
+          "fire_pct": 18.62309410838255,
+          "cross_call_pct": 24.166666666666668,
+          "ratio_mean": 0.6476784078404307,
+          "ratio_max": 1.191794514656067,
+          "w_pre_mean": 0.27389568239450457,
+          "u_th": 1.009613037109375
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8672655299305916,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07678332179784775,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 46,
+          "fire_pct": 12.500000069849193,
+          "cross_call_pct": 37.5,
+          "ratio_mean": 0.5969661213457584,
+          "ratio_max": 1.090543270111084,
+          "w_pre_mean": 0.20823542401194572,
+          "u_th": 1.0096243619918823
+        }
+      }
+    },
+    {
+      "epoch": 4,
+      "train_acc": 0.5300000076492627,
+      "train_loss": 0.6924272100130717,
+      "reported_train_spikes": 9100,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 88592,
+          "sum_s_out": 44296,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8679756293694179,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07699371613562107,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 88592,
+          "sum_s_out": 11074,
+          "fire_pct": 12.500000011107963,
+          "cross_call_pct": 28.333333333333332,
+          "ratio_mean": 0.6126460612130662,
+          "ratio_max": 1.1146963834762573,
+          "w_pre_mean": 0.2005533424206078,
+          "u_th": 1.0093287229537964
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8662934377789497,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07653560489416122,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 46,
+          "fire_pct": 12.5,
+          "cross_call_pct": 25.0,
+          "ratio_mean": 0.6507839169353247,
+          "ratio_max": 1.0863687992095947,
+          "w_pre_mean": 0.1929688025265932,
+          "u_th": 1.0093162059783936
+        }
+      }
+    },
+    {
+      "epoch": 5,
+      "train_acc": 0.5600000073512396,
+      "train_loss": 0.690607899427414,
+      "reported_train_spikes": 11905,
+      "test_acc": 0.470000007301569,
+      "reported_test_spikes": 34744,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 86696,
+          "sum_s_out": 43348,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8673186822483937,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07675930485129356,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 86696,
+          "sum_s_out": 14198,
+          "fire_pct": 16.35772318841191,
+          "cross_call_pct": 28.75,
+          "ratio_mean": 0.674180663904796,
+          "ratio_max": 1.266175627708435,
+          "w_pre_mean": 0.24479907751083374,
+          "u_th": 1.0077393054962158
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8645469844341278,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07624386250972748,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 92,
+          "fire_pct": 25.0,
+          "cross_call_pct": 25.0,
+          "ratio_mean": 0.6988836191594601,
+          "ratio_max": 1.1455771923065186,
+          "w_pre_mean": 0.3119010515511036,
+          "u_th": 1.0078752040863037
+        }
+      }
+    },
+    {
+      "epoch": 6,
+      "train_acc": 0.5100000083446503,
+      "train_loss": 0.6941896696885427,
+      "reported_train_spikes": 10469,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 85584,
+          "sum_s_out": 42792,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8662494912743568,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.0769016453375419,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 85584,
+          "sum_s_out": 12440,
+          "fire_pct": 14.338472383969929,
+          "cross_call_pct": 25.625,
+          "ratio_mean": 0.6344032048558196,
+          "ratio_max": 1.2145371437072754,
+          "w_pre_mean": 0.2803787436025838,
+          "u_th": 1.0086793899536133
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8636796623468399,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07650574296712875,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 51,
+          "fire_pct": 13.858695887029171,
+          "cross_call_pct": 37.5,
+          "ratio_mean": 0.6598329041153193,
+          "ratio_max": 1.1985470056533813,
+          "w_pre_mean": 0.2922959327697754,
+          "u_th": 1.008676290512085
+        }
+      }
+    },
+    {
+      "epoch": 7,
+      "train_acc": 0.5266666700442632,
+      "train_loss": 0.6935201386610667,
+      "reported_train_spikes": 9229,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 86248,
+          "sum_s_out": 43124,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8662627747903268,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07687106542289257,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 86248,
+          "sum_s_out": 11200,
+          "fire_pct": 12.994741716926606,
+          "cross_call_pct": 25.208333333333332,
+          "ratio_mean": 0.6194447487282256,
+          "ratio_max": 1.2090405225753784,
+          "w_pre_mean": 0.2701665690479179,
+          "u_th": 1.0083814859390259
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.865046963095665,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07646556198596954,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 46,
+          "fire_pct": 12.500000069849193,
+          "cross_call_pct": 25.0,
+          "ratio_mean": 0.6083595268428326,
+          "ratio_max": 1.1408860683441162,
+          "w_pre_mean": 0.26260080747306347,
+          "u_th": 1.0083407163619995
+        }
+      }
+    },
+    {
+      "epoch": 8,
+      "train_acc": 0.490000008046627,
+      "train_loss": 0.6931874016920726,
+      "reported_train_spikes": 9042,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 85696,
+          "sum_s_out": 42848,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.866580118983984,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07684055157005787,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 85696,
+          "sum_s_out": 10712,
+          "fire_pct": 12.499999979384787,
+          "cross_call_pct": 13.958333333333334,
+          "ratio_mean": 0.6235803172302743,
+          "ratio_max": 1.182013750076294,
+          "w_pre_mean": 0.2645082585824033,
+          "u_th": 1.0076613426208496
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8652876615524292,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.0763966366648674,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 46,
+          "fire_pct": 12.500000069849193,
+          "cross_call_pct": 25.0,
+          "ratio_mean": 0.580200519412756,
+          "ratio_max": 1.1057449579238892,
+          "w_pre_mean": 0.2261413037776947,
+          "u_th": 1.0076472759246826
+        }
+      }
+    },
+    {
+      "epoch": 9,
+      "train_acc": 0.5266666720310847,
+      "train_loss": 0.6913037896156311,
+      "reported_train_spikes": 9418,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 89320,
+          "sum_s_out": 44660,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.866706508025527,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07662568241357803,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 89320,
+          "sum_s_out": 11165,
+          "fire_pct": 12.50000000174623,
+          "cross_call_pct": 26.041666666666668,
+          "ratio_mean": 0.5892939401480058,
+          "ratio_max": 1.1208313703536987,
+          "w_pre_mean": 0.2092430701479316,
+          "u_th": 1.00656259059906
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8651655241847038,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07627224177122116,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 46,
+          "fire_pct": 12.5,
+          "cross_call_pct": 25.0,
+          "ratio_mean": 0.5909429620951414,
+          "ratio_max": 1.1153620481491089,
+          "w_pre_mean": 0.21371657215058804,
+          "u_th": 1.006494164466858
+        }
+      }
+    },
+    {
+      "epoch": 10,
+      "train_acc": 0.49000001003344856,
+      "train_loss": 0.695213661591212,
+      "reported_train_spikes": 6572,
+      "test_acc": 0.5200000068545342,
+      "reported_test_spikes": 0,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 83272,
+          "sum_s_out": 41636,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8668879687786102,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07660069204866886,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 83272,
+          "sum_s_out": 8001,
+          "fire_pct": 9.747283799370052,
+          "cross_call_pct": 21.041666666666668,
+          "ratio_mean": 0.5934758799926688,
+          "ratio_max": 1.133639931678772,
+          "w_pre_mean": 0.18704034020192922,
+          "u_th": 1.0067870616912842
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8659658879041672,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07638763636350632,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 0,
+          "fire_pct": 0.0,
+          "cross_call_pct": 0.0,
+          "ratio_mean": 0.3322470495477319,
+          "ratio_max": 0.6943312287330627,
+          "w_pre_mean": 0.09227740205824375,
+          "u_th": 1.0069440603256226
+        }
+      }
+    },
+    {
+      "epoch": 11,
+      "train_acc": 0.45666667371988295,
+      "train_loss": 0.6938101987044016,
+      "reported_train_spikes": 0,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 89000,
+          "sum_s_out": 44500,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8675719235092402,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07673686494429906,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 89000,
+          "sum_s_out": 0,
+          "fire_pct": 0.0,
+          "cross_call_pct": 0.0,
+          "ratio_mean": 0.2504835802673673,
+          "ratio_max": 0.6943312287330627,
+          "w_pre_mean": 0.07013498162850737,
+          "u_th": 1.0085773468017578
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8660290315747261,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.0765320211648941,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 0,
+          "fire_pct": 0.0,
+          "cross_call_pct": 0.0,
+          "ratio_mean": 0.2771591180935502,
+          "ratio_max": 0.6000844240188599,
+          "w_pre_mean": 0.07802809774875641,
+          "u_th": 1.008584976196289
+        }
+      }
+    },
+    {
+      "epoch": 12,
+      "train_acc": 0.4866666714350382,
+      "train_loss": 0.6935169557730357,
+      "reported_train_spikes": 0,
+      "test_acc": null,
+      "reported_test_spikes": null,
+      "train": {
+        "mspe": {
+          "n_calls": 480,
+          "nodes": 85616,
+          "sum_s_out": 42808,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8678835189590851,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.076883406812946,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 480,
+          "nodes": 85616,
+          "sum_s_out": 0,
+          "fire_pct": 0.0,
+          "cross_call_pct": 0.0,
+          "ratio_mean": 0.19390488140440235,
+          "ratio_max": 0.5780807733535767,
+          "w_pre_mean": 0.05445758385273317,
+          "u_th": 1.0083924531936646
+        }
+      },
+      "probe": {
+        "mspe": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 184,
+          "fire_pct": 50.0,
+          "cross_call_pct": 50.0,
+          "ratio_mean": 0.8666598424315453,
+          "ratio_max": 1.1400001049041748,
+          "w_pre_mean": 0.07671846449375153,
+          "u_th": 1.0
+        },
+        "stmp": {
+          "n_calls": 8,
+          "nodes": 368,
+          "sum_s_out": 0,
+          "fire_pct": 0.0,
+          "cross_call_pct": 0.0,
+          "ratio_mean": 0.1598776588216424,
+          "ratio_max": 0.47797781229019165,
+          "w_pre_mean": 0.044567129109054804,
+          "u_th": 1.0083755254745483
+        }
+      }
+    }
+  ],
+  "verdict": [
+    "final: reported=0  mspe fire=50.0% (Ssum=42808)  stmp fire=0.0% (Ssum=0)",
+    "=> G3 consistent: the STMP neuron itself emits no spikes at the final epoch (the reported zero is faithful FOR STMP).",
+    "=> G2: collapse is LOCALISED TO STMP; MSPE still fires 50.0% -> the reported count (STMP-only) understates total network spiking.",
+    "trend reported : 20202, 17463, 13451, 9100, 11905, 10469, 9229, 9042, 9418, 6572, 0, 0",
+    "trend mspe fire: 50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%",
+    "trend stmp fire: 27%, 24%, 19%, 13%, 16%, 14%, 13%, 12%, 13%, 10%, 0%, 0%",
+    "trend stmp w/u_th: 0.430, 0.350, 0.271, 0.199, 0.243, 0.278, 0.268, 0.262, 0.208, 0.186, 0.070, 0.054"
+  ]
+}

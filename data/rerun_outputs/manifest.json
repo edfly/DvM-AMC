@@ -1,0 +1,50 @@
+{
+  "finished_at": "2026-10-17T00:39:41.602329",
+  "elapsed_sec": 146876.25774168968,
+  "jobs": [
+    {
+      "dataset": "MUTAG",
+      "method": "No-Spikes",
+      "status": "skipped"
+    },
+    {
+      "dataset": "MUTAG",
+      "method": "No-Spikes-5shot",
+      "status": "done",
+      "returncode": 0
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "No-Spikes",
+      "status": "skipped"
+    },
+    {
+      "dataset": "PROTEINS",
+      "method": "No-Spikes-5shot",
+      "status": "done",
+      "returncode": 0
+    },
+    {
+      "dataset": "NCI1",
+      "method": "No-Spikes",
+      "status": "skipped"
+    },
+    {
+      "dataset": "NCI1",
+      "method": "No-Spikes-5shot",
+      "status": "done",
+      "returncode": 0
+    },
+    {
+      "dataset": "DD",
+      "method": "No-Spikes",
+      "status": "skipped"
+    },
+    {
+      "dataset": "DD",
+      "method": "No-Spikes-5shot",
+      "status": "done",
+      "returncode": 0
+    }
+  ]
+}
