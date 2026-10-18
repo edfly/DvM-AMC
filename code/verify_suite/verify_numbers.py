@@ -202,8 +202,23 @@ def check_nospike(text, oks, fails):
 
 def main():
     if not os.path.exists(TEX):
-        print(f"MISSING: {TEX}")
-        return 1
+        print("=" * 70)
+        print("NUMBER TRACEABILITY CHECK (tables -> JSON artifacts)")
+        print("=" * 70)
+        print("[skip] manuscript tex not present in this checkout "
+              "(paper/ is intentionally excluded from the published repo).")
+        print("        Restore paper/DvM_Paper_Anonymous.tex locally to run "
+              "the table->JSON traceability check.")
+        print("        Data JSONs remain present; JSON-only consistency is "
+              "covered by audit_data.py.")
+        # Sanity-check that every cited source JSON still exists on disk.
+        missing = [jp for _, jp, _, _ in TABLES if not os.path.exists(jp)]
+        if missing:
+            for m in missing:
+                print(f"  [!!] source JSON missing: {m}")
+            return 1
+        print("ALL SOURCE JSONS PRESENT (tex traceability skipped).")
+        return 0
     text = open(TEX, encoding="utf-8").read()
     oks, fails = 0, []
     print("=" * 70)

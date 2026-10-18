@@ -55,15 +55,22 @@ for c in "${CHECKS[@]}"; do
 done
 
 if [ "$#" -gt 0 ] && [ "$1" = "--compile" ]; then
-  echo
-  echo "[+] compiling $TEXFULL"
-  hr
-  "$PDFLATEX" -interaction=nonstopmode "$TEXFULL" >/tmp/vs_c1.log 2>&1
-  "$PDFLATEX" -interaction=nonstopmode "$TEXFULL" >/tmp/vs_c2.log 2>&1
-  n=$(grep -ac "undefined" "${TEXFULL%.tex}.log" 2>/dev/null | head -1 | tr -d '[:space:]')
-  n=${n:-0}
-  echo "undefined refs: $n"
-  [ "$n" -eq 0 ] || fail=1
+  if [ ! -f "$TEXFULL" ]; then
+    echo
+    echo "[+] compile requested but manuscript tex not present in this checkout"
+    echo "    (paper/ is intentionally excluded from the published repo) — skipping."
+    hr
+  else
+    echo
+    echo "[+] compiling $TEXFULL"
+    hr
+    "$PDFLATEX" -interaction=nonstopmode "$TEXFULL" >/tmp/vs_c1.log 2>&1
+    "$PDFLATEX" -interaction=nonstopmode "$TEXFULL" >/tmp/vs_c2.log 2>&1
+    n=$(grep -ac "undefined" "${TEXFULL%.tex}.log" 2>/dev/null | head -1 | tr -d '[:space:]')
+    n=${n:-0}
+    echo "undefined refs: $n"
+    [ "$n" -eq 0 ] || fail=1
+  fi
 fi
 
 echo

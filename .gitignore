@@ -18,6 +18,9 @@ paper/*.nav
 paper/*.snm
 paper/*~
 
+# ---- Manuscript excluded from the published repo (kept local for double-blind) ----
+paper/
+
 # ---- Python ----
 __pycache__/
 *.py[cod]
