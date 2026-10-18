@@ -106,6 +106,7 @@
 %   interval'); its 'AMC gain' column header clarified to 'AMC gain (uncorr.-AMC)'. All other
 %   review findings were PASS (0 dangling citations, clean tex structure, machine-consistency
 %   suite green, all mandatory declarations present). No accuracy number changed.
+% Paper version: v60 (2026-10-18: math-logic audit revisions per post/math_audit_report.md. P0 -- reframed Eq.main_correction and Theorem 2 as the AMC correction OPERATOR rather than the textbook Riemannian pullback; added Remark (round-trip cancellation) proving the canonical Riemannian/autograd gradient carries no conformal factor, so the per-step multiplier is a defined re-scaling, not the canonical pullback; weakened the 'AMC reproduces the true Riemannian gradient' claim (M=T sentinel is internal-consistency, circular). P1 -- qualified the positive-interval 'cosine 1.0 in every cell' claim to the radial synthetic chain only. P2 -- clarified the uniform C bound's domain of validity (lambda_x <= 2/(c epsilon) requires c <= 4/(1+epsilon)^2, satisfied by c=1 used in all experiments). Softened 'Riemannian metric correction' framing in abstract/intro/contributions/algorithm to 'conformal correction operator'. No accuracy number or table changed; the v59 snapshot remains the canonical v59 source.
 % v37 (2026-10-03: w/o Spikes post-fix disclosure — line 862 rewritten;
 %               new paragraph in Sec."Accuracy Relative to Non-Spiking Baselines";
 %               Conclusion negative result (iv) added; non-spiking continuous
@@ -325,7 +326,7 @@
 
 % ------------------------------------------------------------
 \begin{abstract}
-Training spiking neural networks on Riemannian manifolds requires backpropagation through time (BPTT), whose memory grows linearly with the sequence length. We treat this as a three-way memory--accuracy--energy trade-off and report all three sides. Analytic Metric Correction (AMC) replaces full BPTT with truncated backpropagation plus an analytic correction of the Riemannian metric factor, giving $O(M)$ stored states: fourteen times fewer states at $T{=}128$. We prove the gradient error is bounded by $C(1-\rho^{T-M})$ with $C$ uniformly bounded in $T$, and confirm the bound's shape on the real model (maximum relative error $6.3\times10^{-4}$ over 56 units; exact agreement with full BPTT at $M{=}T$) without claiming tightness. The accuracy side is measured rather than assumed: AMC is 5.5 points below full BPTT on MUTAG ($p{=}0.048$) and 6.6 points below the no-correction control, reaching $74.0\%$ against $53.8\%$ for the MSG baseline and $85.6\%$ for a dense ANN encoder. Under an analytical energy model the spiking model uses $89$--$99.2\%$ less \emph{estimated} energy, yet the STMP stage is silent on three of four datasets, where accuracy collapses to chance. A mechanism result bounds what the correction can deliver: it telescopes exactly to the endpoint ratio $\lambda_0^2/\lambda_T^2$ and is near-identity once trajectories reach a stationary norm (median $|\Delta\cos|=3\times10^{-6}$ over 260 measurements). We withdraw an earlier claim of 46-percentage-point degradation from removing the correction.
+Training spiking neural networks on Riemannian manifolds requires backpropagation through time (BPTT), whose memory grows linearly with the sequence length. We treat this as a three-way memory--accuracy--energy trade-off and report all three sides. Analytic Metric Correction (AMC) replaces full BPTT with truncated backpropagation plus an analytic conformal correction operator (the AMC correction), giving $O(M)$ stored states: fourteen times fewer states at $T{=}128$. We prove the gradient error is bounded by $C(1-\rho^{T-M})$ with $C$ uniformly bounded in $T$, and confirm the bound's shape on the real model (maximum relative error $6.3\times10^{-4}$ over 56 units; exact agreement with the full-window AMC reference at $M{=}T$) without claiming tightness, and without claiming the correction equals the textbook Riemannian pullback (Remark in \S\ref{sec:method}). The accuracy side is measured rather than assumed: AMC is 5.5 points below full BPTT on MUTAG ($p{=}0.048$) and 6.6 points below the no-correction control, reaching $74.0\%$ against $53.8\%$ for the MSG baseline and $85.6\%$ for a dense ANN encoder. Under an analytical energy model the spiking model uses $89$--$99.2\%$ less \emph{estimated} energy, yet the STMP stage is silent on three of four datasets, where accuracy collapses to chance. A mechanism result bounds what the correction can deliver: it telescopes exactly to the endpoint ratio $\lambda_0^2/\lambda_T^2$ and is near-identity once trajectories reach a stationary norm (median $|\Delta\cos|=3\times10^{-6}$ over 260 measurements). We withdraw an earlier claim of 46-percentage-point degradation from removing the correction.
 \end{abstract}
 
 \begin{keywords}
@@ -344,7 +345,7 @@ Backpropagation through time (BPTT) is the standard algorithm for training recur
 
 When the recurrent computation operates on a \textit{Riemannian manifold}, the memory problem is compounded: each time step involves expensive exponential map $\exp_p: T_p\mathcal{M} \to \mathcal{M}$ and logarithmic map $\log_p: \mathcal{M} \to T_p\mathcal{M}$ operations. These geometric primitives cannot be efficiently recomputed during backward pass (as done in gradient checkpointing~\citep{Chen16Checkpoint}) because they involve nonlinear operations (hyperbolic trigonometric functions, M\"obius addition) with non-trivial numerical stability constraints.
 
-\textbf{The question we ask.} Memory, accuracy, and energy are not independently optimizable in this setting, and the three pull against each other. Truncating the recurrence saves memory but biases the gradient. The metric correction that removes the metric-factor part of that bias costs an additional pullback at every step. And the spiking pathway that supplies the energy saving is the same pathway whose silence collapses accuracy on three of the four datasets we study. This paper therefore does \emph{not} present a method that wins on accuracy. We treat the design as a \emph{three-way memory--accuracy--energy trade-off} and report all three sides: we prove that the memory saving comes with a gradient error that is \emph{bounded}---and, under a stability projection, uniformly bounded in the sequence length $T$; we measure what the accuracy side actually costs; and we show that the metric correction, the component one would expect to supply the accuracy, telescopes exactly to an endpoint ratio and is therefore near-identity at our operating points. Characterising where this trade-off is favourable, and where it is not, is the contribution.
+\textbf{The question we ask.} Memory, accuracy, and energy are not independently optimizable in this setting, and the three pull against each other. Truncating the recurrence saves memory but biases the gradient. The AMC conformal correction that re-anchors the metric factor costs an additional operation at every step. And the spiking pathway that supplies the energy saving is the same pathway whose silence collapses accuracy on three of the four datasets we study. This paper therefore does \emph{not} present a method that wins on accuracy. We treat the design as a \emph{three-way memory--accuracy--energy trade-off} and report all three sides: we prove that the memory saving comes with a gradient error that is \emph{bounded}---and, under a stability projection, uniformly bounded in the sequence length $T$; we measure what the accuracy side actually costs; and we show that the metric correction, the component one would expect to supply the accuracy, telescopes exactly to an endpoint ratio and is therefore near-identity at our operating points. Characterising where this trade-off is favourable, and where it is not, is the contribution.
 
 \subsection{Related Work and Gap}
 
@@ -358,14 +359,14 @@ When the recurrent computation operates on a \textit{Riemannian manifold}, the m
 
 \textbf{Manifold Spiking Networks.} The most closely related architecture is MSG~\citep{Sun24MSG} (NeurIPS 2024), which introduced manifold-valued spiking neurons for graph learning. MSG uses standard BPTT with $O(T)$ memory and does not address the gradient truncation problem. In the Euclidean domain, spiking graph networks such as SpikingGCN~\citep{Zhu22} have demonstrated the viability of graph-structured temporal processing. Prior work has also combined hyperbolic representation learning with spiking neural networks; such approaches target hyperbolic encoding for static SNN inputs rather than gradient computation through recurrent manifold state transitions. AMC is complementary to these works: it can be integrated into any manifold-valued recurrent architecture (including MSG's MSNeuron and the hyperbolic SNN models above) to provide memory-efficient training without modifying the forward dynamics.
 
-\textbf{Provenance and Relationship to MSG.} We record the origin of this work explicitly. Our initial motivation---namely, differentiating through manifold-valued recurrent state---and the framing of the problem are inspired by MSG~\citep{Sun24MSG}, which introduced manifold-valued spiking neurons and trained them with standard BPTT. We therefore attribute to MSG the formulation of manifold-valued spiking neurons that this work builds upon. This paper does \emph{not} claim credit for introducing manifold-valued spiking neurons, nor for the phrase ``differentiation via manifold''; we adopt the neutral name AMC throughout precisely to avoid confusion with the terminology introduced in~\citep{Sun24MSG}. The specific contribution we add is, to the best of our knowledge, (i) the replacement of MSG's full BPTT by truncated BPTT, (ii) an analytically derived Riemannian metric correction that makes this truncation exact with respect to the metric factor, and (iii) a bound on the resulting gradient approximation error.
+\textbf{Provenance and Relationship to MSG.} We record the origin of this work explicitly. Our initial motivation---namely, differentiating through manifold-valued recurrent state---and the framing of the problem are inspired by MSG~\citep{Sun24MSG}, which introduced manifold-valued spiking neurons and trained them with standard BPTT. We therefore attribute to MSG the formulation of manifold-valued spiking neurons that this work builds upon. This paper does \emph{not} claim credit for introducing manifold-valued spiking neurons, nor for the phrase ``differentiation via manifold''; we adopt the neutral name AMC throughout precisely to avoid confusion with the terminology introduced in~\citep{Sun24MSG}. The specific contribution we add is, to the best of our knowledge, (i) the replacement of MSG's full BPTT by truncated BPTT, (ii) an analytically derived conformal correction operator whose metric action telescopes exactly (the AMC correction), and (iii) a bound on the resulting gradient approximation error, where the correction is treated as a defined operator rather than as the canonical Riemannian pullback.
 
-\textbf{This Work.} We characterise the memory--accuracy--energy trade-off of training manifold-valued spiking networks under truncated BPTT, rather than claiming an accuracy win for a new method. Concretely, AMC replaces full BPTT by truncated BPTT and corrects the resulting Riemannian metric factor analytically, giving $O(M)$ stored states independent of $T$; we prove that the induced gradient error is bounded by $C(1-\rho^{T-M})$ with $C$ uniformly bounded in $T$; and we establish a mechanism result that bounds what \emph{any} such correction can deliver, namely that the per-step correction telescopes exactly to the endpoint ratio $\lambda_0^2/\lambda_T^2$ and is consequently near-identity whenever the trajectory has reached a stationary norm. We then report the accuracy and energy consequences of this trade-off in full, including the regimes in which it is unfavourable.
+\textbf{This Work.} We characterise the memory--accuracy--energy trade-off of training manifold-valued spiking networks under truncated BPTT, rather than claiming an accuracy win for a new method. Concretely, AMC replaces full BPTT by truncated BPTT and applies an analytic conformal correction operator, giving $O(M)$ stored states independent of $T$; we prove that the induced gradient error is bounded by $C(1-\rho^{T-M})$ with $C$ uniformly bounded in $T$; and we establish a mechanism result that bounds what \emph{any} such correction can deliver, namely that the per-step correction telescopes exactly to the endpoint ratio $\lambda_0^2/\lambda_T^2$ and is consequently near-identity whenever the trajectory has reached a stationary norm. We then report the accuracy and energy consequences of this trade-off in full, including the regimes in which it is unfavourable.
 
 \subsection{Contributions}
 
 \begin{enumerate}
-    \item \textbf{Analytical Metric Correction.} We derive the exact form of the Riemannian pullback through the state transition map on product manifolds $H^{d_h} \times \mathbb{R}^{d_e}$, expressed in terms of the Poincar\'e ball conformal factor $\lambda_x = 2/(1-c\|x\|^2)$.
+    \item \textbf{Analytical Metric Correction.} We define an analytic conformal correction \emph{operator} and derive its exact telescoping property: the per-step multiplier $\lambda_t^2/\lambda_{t+1}^2$ collapses to the endpoint ratio $\lambda_0^2/\lambda_T^2$, independent of the curvature and the intermediate states. We analyse this operator directly and measure its effect empirically, rather than asserting equality with the textbook Riemannian pullback (Remark~\ref{rem:roundtrip}).
     
     \item \textbf{AMC Gradient Mechanism.} We present the complete pushforward/pullback algorithm (Algorithm~1) with per-step metric correction, and its $O(M)$ truncated variant: window-exterior steps are detached from the autograd graph (spikergnn/stmp.py), so the retained graph spans only the last $M$ steps and the peak GPU allocation is $O(M)$ bytes, not $O(T)$.
     
@@ -382,7 +383,7 @@ When the recurrent computation operates on a \textit{Riemannian manifold}, the m
 \section{Mathematical Preliminaries}
 \label{sec:prelim}
 
-\textbf{Scope of the manifold assumption.} Throughout, the geometric assumption concerns the \emph{hidden states} $p(t)\in\mathcal{M}$ produced by the recurrent (spiking) transition map $\phi_t$, and not the input features. Graph inputs reside in the ambient Euclidean feature space and are mapped onto $\mathcal{M}$ once by the projection stage described in Fig.~\ref{fig:architecture}; every subsequent recurrent state---including those discarded by truncation---is an element of $\mathcal{M}$. The learnable parameters (layer weights and biases) are ordinary Euclidean tensors and are \emph{not} assumed to lie on $\mathcal{M}$; only the recurrent state is. We also distinguish the hidden state from the gradient that is transported through it: Theorem~2 below is a statement about pullback along $\phi_t$, so it constrains how a gradient defined on \emph{states} is transported, and it makes no claim about the metric of the input space.
+\textbf{Scope of the manifold assumption.} Throughout, the geometric assumption concerns the \emph{hidden states} $p(t)\in\mathcal{M}$ produced by the recurrent (spiking) transition map $\phi_t$, and not the input features. Graph inputs reside in the ambient Euclidean feature space and are mapped onto $\mathcal{M}$ once by the projection stage described in Fig.~\ref{fig:architecture}; every subsequent recurrent state---including those discarded by truncation---is an element of $\mathcal{M}$. The learnable parameters (layer weights and biases) are ordinary Euclidean tensors and are \emph{not} assumed to lie on $\mathcal{M}$; only the recurrent state is. We also distinguish the hidden state from the gradient that is transported through it: Theorem~2 below analyses the algebra of the AMC correction operator applied along $\phi_t$, so it concerns how the correction transforms the adjoint transported along \emph{states}, and it makes no claim about the metric of the input space.
 
 \subsection{Riemannian Gradient vs.\ Euclidean Gradient}
 
@@ -411,7 +412,7 @@ Consider a state transition $\phi: p(t) \mapsto p(t+1)$. Autograd computes the E
 \label{eq:euclidean_chain}
 \end{equation}
 
-However, this ignores the metric $g$. To obtain the correct Riemannian gradient, we must: (i) convert the incoming Euclidean gradient to Riemannian via $g^{-1}$, (ii) pull back through $\phi$, (iii) convert back to Euclidean via $g$. Combining these steps yields the \textbf{metric correction formula}:
+AMC does not invoke a generic manifold-autodiff library. Instead it applies a \textbf{per-step conformal correction multiplier} to the autograd vector--Jacobian product. We define this correction as the operator below and analyse its algebraic properties (telescoping, boundedness) directly. We do \emph{not} claim that this multiplier equals the textbook Riemannian gradient pullback: under a full metric round-trip the conformal factors cancel and leave the Euclidean autograd unchanged (Remark~\ref{rem:roundtrip}). The AMC correction formula is:
 \begin{equation}
 \boxed{\frac{\partial\mathcal{L}}{\partial p(t)}\bigg|_{\mathbb{E}}
  = \frac{\lambda_{p(t)}^2}{\lambda_{p(t+1)}^2}
@@ -420,9 +421,11 @@ However, this ignores the metric $g$. To obtain the correct Riemannian gradient,
 \label{eq:main_correction}
 \end{equation}
 
-\textbf{Interpretation.} The factor $\lambda_{p(t)}^2 / \lambda_{p(t+1)}^2$ corrects for how the Riemannian volume element changes between $p(t)$ and $p(t+1)$. When the state moves closer to the boundary, $\lambda_{p(t+1)} > \lambda_{p(t)}$ and the correction factor is $<1$, counteracting the metric stretching. This prefactor multiplies the standard autograd VJP $(D\phi)^\top \cdot \partial\mathcal{L}/\partial p(t+1)$. For the Euclidean component of a product manifold $H^{d_h} \times \mathbb{R}^{d_e}$, $\lambda \equiv 1$ and no correction is needed.
+\textbf{Interpretation.} The multiplier $\lambda_{p(t)}^2 / \lambda_{p(t+1)}^2$ rescales the autograd vector--Jacobian product by the ratio of endpoint conformal factors. When the state is near-stationary in norm across the step, $\lambda_{p(t)}\approx\lambda_{p(t+1)}$ and the multiplier is $\approx 1$ (no rescaling). This prefactor multiplies the standard autograd VJP $(D\phi)^\top \cdot \partial\mathcal{L}/\partial p(t+1)$. For the Euclidean component of a product manifold $H^{d_h} \times \mathbb{R}^{d_e}$, $\lambda \equiv 1$ and no correction is applied. As an operator it is exact in the sense that its factors telescope (below); it is \emph{not} claimed to be the canonical Riemannian or Euclidean gradient of the loss.
 
-\textbf{Relation to Natural Gradient.} The correction factor can be interpreted through the lens of natural gradient descent~\citep{Amari98}: the Riemannian metric $g$ defines the natural gradient $\tilde{\nabla}\mathcal{L} = g^{-1}\nabla^{\mathbb{E}}\mathcal{L}$, and Eq.~\eqref{eq:main_correction} is the chain rule for natural gradients through $\phi$. Unlike generic natural gradient methods that require storing and inverting the Fisher information matrix, our correction uses the closed-form conformal factor of the Poincar\'e ball, making it $O(d)$ per step.
+\medskip\noindent\textbf{Remark (round-trip cancellation).}\label{rem:roundtrip} For a scalar loss $\mathcal{L}$ and a coordinate representation of the manifold states, the Euclidean gradient computed by ordinary autograd already satisfies $\partial\mathcal{L}/\partial p(t)|_{\mathbb{E}} = (D_{p(t)}\phi)^\top \cdot \partial\mathcal{L}/\partial p(t+1)|_{\mathbb{E}}$ (Eq.~\eqref{eq:euclidean_chain}); no conformal factor appears, because converting a tangent vector to a covector and back through $g$ cancels the metric. A full Riemannian round-trip (raise with $g^{-1}$, pull back, lower with $g$) therefore leaves the autograd VJP unchanged. Eq.~\eqref{eq:main_correction} is consequently \emph{not} the canonical Riemannian pullback: it is a defined conformal re-scaling layered on top of autograd. Its role in this paper is fixed by its algebraic properties and by measurement, not by a claim of equality with the textbook gradient.
+
+\textbf{Relation to Natural Gradient.} The correction can be viewed as a conformal re-scaling of the autograd VJP using the closed-form Poincar\'e conformal factor, which is $O(d)$ per step and therefore reminiscent of natural-gradient methods~\citep{Amari98} (the natural gradient rescales gradients by $g^{-1}$). We treat Eq.~\eqref{eq:main_correction} as a \emph{defined operator} rather than asserting that it is the natural-gradient chain rule, because---as Remark~\ref{rem:roundtrip} shows---the canonical natural-gradient chain rule for a scalar loss leaves the Euclidean autograd unchanged.
 
 % ------------------------------------------------------------
 \section{The AMC Algorithm}
@@ -430,7 +433,7 @@ However, this ignores the metric $g$. To obtain the correct Riemannian gradient,
 
 \subsection{Full AMC: Per-Step Metric Correction}
 
-Algorithm~\ref{alg:dvm_full} presents the complete AMC forward-backward pass. During the forward pass, all $T$ manifold states are stored. During backward, the metric correction factor $\lambda_{p(t)}^2 / \lambda_{p(t+1)}^2$ is applied at each step, converting the Euclidean autograd gradient to the correct Riemannian gradient.
+Algorithm~\ref{alg:dvm_full} presents the complete AMC forward-backward pass. During the forward pass, all $T$ manifold states are stored. During backward, the AMC correction multiplier $\lambda_{p(t)}^2 / \lambda_{p(t+1)}^2$ is applied at each step; we do not claim this equals the textbook Riemannian gradient (Remark~\ref{rem:roundtrip}).
 
 \begin{algorithm}[htbp]
 \footnotesize
@@ -438,7 +441,7 @@ Algorithm~\ref{alg:dvm_full} presents the complete AMC forward-backward pass. Du
 \label{alg:dvm_full}
 \begin{algorithmic}[1]
 \Require Initial state $p(0) \in \mathcal{M}$, sequence length $T$, curvature $c$
-\Ensure Riemannian gradient $\nabla^{\mathcal{M}}\mathcal{L}$ w.r.t.\ $p(0)$
+\Ensure AMC-corrected gradient w.r.t.\ $p(0)$
 \State \textbf{Forward:}
 \For{$t = 0$ to $T-1$}
     \State $p(t+1) \leftarrow \phi_t(p(t))$ \Comment{LIF update}
@@ -457,7 +460,7 @@ Algorithm~\ref{alg:dvm_full} presents the complete AMC forward-backward pass. Du
 \end{algorithmic}
 \end{algorithm}
 
-\textbf{Correctness.} By Eq.~\eqref{eq:main_correction}, each backward step applies the metric correction factor followed by the transpose Jacobian. The composition of $T$ such steps yields the correct gradient pullback through the entire state chain. This is a direct computational realization of Theorem~1 (see Appendix~\ref{sec:theorem_proof}).
+\textbf{Correctness (of the AMC operator).} Each backward step applies the AMC correction multiplier (Eq.~\eqref{eq:main_correction}) followed by the transpose Jacobian. The composition of the multipliers telescopes to the endpoint ratio $\lambda_0^2/\lambda_T^2$, so the operator's conformal action is exact and contributes no approximation error beyond the Jacobian truncation analysed in Theorem~1 (Appendix~\ref{sec:theorem_proof} gives the underlying algebra). We do not claim the result equals the textbook Riemannian gradient (Remark~\ref{rem:roundtrip}).
 
 \textbf{Complexity.} Full AMC requires storing $2T$ manifold states (each of dimension $d$), giving memory $O(Td)$ — same asymptotic complexity as standard BPTT. The metric correction adds $O(d)$ computation per step (element-wise multiplication).
 
@@ -471,7 +474,7 @@ To achieve $O(M)$ stored states independent of $T$, we truncate the backward pas
 \label{alg:dvm_truncated}
 \begin{algorithmic}[1]
 \Require Initial state $p(0)$, sequence length $T$, window $M$, contraction $\rho$
-\Ensure Approximate Riemannian gradient w.r.t.\ $p(0)$
+\Ensure approximate AMC-corrected gradient w.r.t.\ $p(0)$
 \State \textbf{Forward:}
 \For{$t = 0$ to $T-1$}
     \State $p(t+1) \leftarrow \phi_t(p(t))$
@@ -671,19 +674,19 @@ C \;:=\; \frac{\nabla_T}{1-\rho} \cdot \left(\frac{2}{c\epsilon}\right)^{2}
 \;\geq\; \frac{\nabla_T}{1-\rho} \cdot \sup_{p,q}\,\frac{\lambda_p^2}{\lambda_q^2},
 \label{eq:constant_C}
 \end{equation}
-the supremum being taken over the numerically stable region $\|x\|\le 1/\sqrt{c}-\epsilon$.
+the supremum being taken over the numerically stable region $\|x\|\le 1/\sqrt{c}-\epsilon$, under which $\lambda_x\le 2/(c\epsilon)$ whenever $c\le 4/(1+\epsilon)^2$ (satisfied by the $c{=}1$ used in all experiments), so $C$ is finite.
 
 \textbf{Theorem 1 (Gradient error bound for truncated AMC).}
-Under the contractive-state assumption $\|D_{p}\phi_t\|\le\rho<1$, a bounded loss gradient at the final state, and the stability projection $\|x\|\le 1/\sqrt{c}-\epsilon$, the gradient achieved by truncated AMC differs from the exact Riemannian gradient by at most the quantity on the right-hand side of Eq.~\eqref{eq:error_bound}. The proof is given below; Appendix~\ref{sec:theorem_proof} establishes the underlying chain rule as Theorem~2 and gives its complete derivation.
+Under the contractive-state assumption $\|D_{p}\phi_t\|\le\rho<1$, a bounded loss gradient at the final state, and the stability projection $\|x\|\le 1/\sqrt{c}-\epsilon$, the gradient achieved by truncated AMC differs from the \emph{full-window AMC gradient} (the $M{=}T$ reference, in which the conformal correction telescopes exactly) by at most the quantity on the right-hand side of Eq.~\eqref{eq:error_bound}. Here ``full-window AMC'' denotes the same operator applied over all $T$ steps; we do \emph{not} claim it equals the textbook Riemannian gradient (Remark~\ref{rem:roundtrip}). The proof is given below; Appendix~\ref{sec:theorem_proof} establishes the underlying algebra of the AMC correction as Theorem~2.
 
 \textbf{Remark (why $\lambda_T$ does not break $T$-uniformity).} The conformal factor $\lambda_T$ is evaluated at the final state $p(T)$ and therefore does depend on $T$. Uniformity is recovered by the stability projection: for all states inside $\|x\|\le 1/\sqrt{c}-\epsilon$ the ratio $\lambda_p^2/\lambda_q^2$ is bounded by $(2/(c\epsilon))^2$ independently of where the trajectory sits and of how long it is. Replacing the trajectory-dependent ratio $\lambda_0^2/\lambda_T^2$ by this uniform bound is what makes $C$ in Eq.~\eqref{eq:constant_C} a constant in $T$; the sharper, trajectory-dependent form is retained in the left-hand inequality of Eq.~\eqref{eq:error_bound} and in Corollary~1. Without the stability projection the constant would in general grow with $T$ as the trajectory approaches the ideal boundary.
 
-\textbf{Proof.} The true gradient at $p(0)$ is obtained by pulling back $\nabla_T$ through all $T$ transitions, with per-step metric correction. Let $J_t = (D_{p(t)}\phi_t)^\top$ denote the transpose Jacobian at step $t$, and $r_t = \lambda_t^2/\lambda_{t+1}^2$ the metric correction factor. Then:
+\textbf{Proof.} The full-window AMC gradient at $p(0)$ is obtained by pulling back $\nabla_T$ through all $T$ transitions, applying the per-step AMC correction $r_t$. Let $J_t = (D_{p(t)}\phi_t)^\top$ denote the transpose Jacobian at step $t$, and $r_t = \lambda_t^2/\lambda_{t+1}^2$ the AMC correction multiplier. Then:
 \begin{equation}
 \nabla_{true} = r_0 J_0 \, r_1 J_1 \, \cdots \, r_{T-1} J_{T-1} \, \nabla_T
 \end{equation}
 
-The product of correction factors telescopes: $\prod_{t=0}^{T-1} r_t = \lambda_0^2/\lambda_T^2$, depending only on endpoints. Since $p(0)$ is the initial state (stored once at negligible $O(1)$ memory cost), $\lambda_0$ is always available. The same telescoping applies to any contiguous sub-sequence: $\prod_{t=0}^{T-M-1} r_t = \lambda_0^2/\lambda_{T-M}^2$. Thus \textbf{the metric correction approximation is exact}---$\bar{r} = \lambda_0^2/\lambda_{T-M}^2$ can be computed from the stored initial state with zero error ($\Delta_r = 0$). The gradient error therefore arises \textit{solely} from replacing the Jacobian product $J_0 \cdots J_{T-M-1}$ with $\rho^{T-M}$.
+The product of correction factors telescopes: $\prod_{t=0}^{T-1} r_t = \lambda_0^2/\lambda_T^2$, depending only on endpoints. Since $p(0)$ is the initial state (stored once at negligible $O(1)$ memory cost), $\lambda_0$ is always available. The same telescoping applies to any contiguous sub-sequence: $\prod_{t=0}^{T-M-1} r_t = \lambda_0^2/\lambda_{T-M}^2$. Thus \textbf{the AMC correction is exact as an operator}---$\bar{r} = \lambda_0^2/\lambda_{T-M}^2$ can be computed from the stored initial state with zero error ($\Delta_r = 0$). The gradient error therefore arises \textit{solely} from replacing the Jacobian product $J_0 \cdots J_{T-M-1}$ with $\rho^{T-M}$.
 
 The operator norm of discarded Jacobians satisfies $\|J_0 J_1 \cdots J_{T-M-1}\| \leq \rho^{T-M}$. Applying the geometric series to the Jacobian truncation error and factoring out the exact metric correction:
 \begin{multline}
@@ -699,7 +702,7 @@ The operator norm of discarded Jacobians satisfies $\|J_0 J_1 \cdots J_{T-M-1}\|
 \label{eq:proof_bound}
 \end{multline}
 
-For points within the numerically stable region ($\|x\| \leq 1/\sqrt{c} - \epsilon$), $\lambda_0^2/\lambda_T^2 \leq (2/(c\epsilon))^2$ is bounded. Defining $C$ as in Eq.~\eqref{eq:constant_C}---that is, absorbing the uniform conformal-factor bound into the constant, rather than leaving the trajectory-dependent ratio $\lambda_0^2/\lambda_T^2$ outside it---we obtain $T$-independent $C$ and hence the stated bound. Notably, the metric correction contributes \textit{zero additional error} thanks to the telescoping property---a key advantage over heuristic correction schemes. $\square$
+For points within the numerically stable region ($\|x\| \leq 1/\sqrt{c} - \epsilon$), $\lambda_0^2/\lambda_T^2 \leq (2/(c\epsilon))^2$ is bounded. Defining $C$ as in Eq.~\eqref{eq:constant_C}---that is, absorbing the uniform conformal-factor bound into the constant, rather than leaving the trajectory-dependent ratio $\lambda_0^2/\lambda_T^2$ outside it---we obtain $T$-independent $C$ and hence the stated bound. Notably, the AMC correction contributes \textit{zero additional error} thanks to the telescoping property---a key advantage over heuristic correction schemes. (This is a property of the AMC operator; it does not by itself certify equality with the textbook Riemannian gradient.) $\square$
 
 \textbf{Corollary 1.} As $T \to \infty$ with fixed $M$, the trajectory-dependent form gives $\epsilon_{grad} \leq (\nabla_T/(1-\rho))\cdot(1-\rho^{T-M})\cdot\lambda_0^2/\lambda_T^2 \to (\nabla_T/(1-\rho))\cdot\lambda_0^2/\lambda_T^2$, while the uniform form gives $\epsilon_{grad} \leq C(1-\rho^{T-M}) \to C$. In both cases \emph{the bound does not grow with $T$}: it converges to a finite limit determined by the gradient magnitude, the contraction rate and---in the uniform form---the stability margin $\epsilon$. The uniform form is the one used whenever a $T$-independent constant is claimed.
 
@@ -736,7 +739,7 @@ SLTT~\citep{Meng23SLTT} & $O(d)$ & Euclidean \\
 The correction factor $r_t = \lambda_t^2 / \lambda_{t+1}^2$ has the following properties:
 
 \begin{enumerate}
-    \item \textbf{Boundedness.} Since $\lambda_x \in [2, \infty)$ for $x \in \mathbb{D}^n_c$, we have $r_t \in (0, \infty)$. In practice, with the numerical stability projection $\|x\| \leq 1/\sqrt{c} - \epsilon$, $\lambda_x \leq 2/(c\epsilon)$, giving $r_t \in [c\epsilon/2, 2/(c\epsilon)]$.
+    \item \textbf{Boundedness.} Since $\lambda_x \in [2, \infty)$ for $x \in \mathbb{D}^n_c$, we have $r_t \in (0, \infty)$. Under the numerical stability projection $\|x\| \leq 1/\sqrt{c} - \epsilon$, a uniform bound on $\lambda_x$ is available: $\lambda_x \leq 2/(\epsilon\sqrt{c}\,(2-\epsilon\sqrt{c}))$, which is at most $2/(c\epsilon)$ whenever $c \leq 4/(1+\epsilon)^2$. All reported experiments use $c{=}1$, so this bound is in force and $r_t \in [c\epsilon/2, 2/(c\epsilon)]$ is finite; the constant $C$ in Eq.~\eqref{eq:constant_C} is therefore well defined.
     
     \item \textbf{Variance across the ball.} Points near the origin ($\|x\| \approx 0$) have $\lambda_x \approx 2$, so $r_t \approx 1$ (no correction needed). Points near the boundary have large $\lambda$, and small changes in position can cause large changes in $r_t$.
     
@@ -1077,7 +1080,7 @@ Because we fixed the decision rule before running the first sweep---the conditio
 What remains true, and is what we now claim, is narrower:
 
 \begin{itemize}
-    \item The per-step correction is \emph{exact} (the telescoping above is an identity), so AMC reproduces the true Riemannian gradient whenever the window covers the whole trajectory; this is verified numerically by the $M=T$ sentinel of Section~\ref{sec:robustness}.
+    \item The per-step correction \emph{telescopes exactly} (the product $\prod_t \lambda_t^2/\lambda_{t+1}^2 = \lambda_0^2/\lambda_T^2$ is an identity), so the AMC operator's conformal action is exact and the $M{=}T$ sentinel confirms this internal consistency (the corrected and uncorrected full-window gradients agree to the precision of the telescoping). We do \emph{not} claim this certifies equality with the textbook Riemannian gradient: the sentinel reuses the same AMC multiplier, so it validates the operator's self-consistency rather than an independent Riemannian benchmark (Remark~\ref{rem:roundtrip}).
     \item Its numerical contribution over a shorter window equals the endpoint ratio $\lambda_{T-M}^2/\lambda_T^2$. Whenever the trajectory is norm-stationary across that window---the regime we observe on all four TU benchmarks---the correction is practically free to omit and changes the gradient by $\sim10^{-3}$ or less.
     \item We state this as a limitation of the mechanism's practical impact at our operating point, not as evidence that geometry is irrelevant to the model: the hyperbolic component remains in the forward pass and in the architecture.
     \item \textbf{Correction operator is curvature-aware.} \texttt{conformal\_factor} now takes the manifold curvature $c$ as a required argument (no implicit default), and \texttt{apply\_dvm} defaults to $c{=}\texttt{self.manifold.c}$ so the truncated / main-training path that invokes it (Section~\ref{sec:robustness}) now uses the learned curvature instead of a silent $c{=}1.0$. The in-graph \texttt{PerStepMetricCorrection} path used for all reported results was already curvature-aware. Because every reported OM configuration uses $c{=}1.0$, this change is numerically inert for those results and leaves every reported accuracy unchanged; it removes the earlier curvature-agnostic limitation for the $c{\neq}1.0$ regime. The negligible-at-TU conclusion is unchanged for \emph{any} $c$, because the window ratio $k\approx1$ there.
@@ -1123,7 +1126,7 @@ Leaf radius $r_T$ & $\lambda_T/\lambda_0$ & uncorr.\ rel$_{\text{err}}$ & AMC re
 \end{tabular}
 \end{table}
 
-The telescoping identity makes the AMC-corrected gradient direction exactly
+For the radial synthetic chain studied here---in which the discarded Jacobian is a scalar, so the only distortion between the truncated and full-window gradients is the conformal re-anchoring---the telescoping identity makes the AMC-corrected gradient direction exactly
 equal to the ground truth (cosine $1.0$ in every cell), leaving only the
 $\rho^{T-M}$ forgetting penalty; its relative error is therefore the constant
 $1-\rho^{T-M}=0.5695$, \emph{independent of dispersion}. The uncorrected
@@ -1488,36 +1491,23 @@ precision, and we note that confirming the non-significant contrasts at higher
 power would require more seeds per fold---a larger study we leave to future work
 because it would not change any claim made here.
 
-\section{Proof of Theorem 2 (Complete Pushforward/Pullback)}
+\section{Proof of Theorem 2 (Algebra of the AMC Correction)}
 \label{sec:theorem_proof}
 
-\textbf{Theorem 2 (Chain rule for manifold state transitions).} Let $\mathcal{L}: \mathcal{M} \to \mathbb{R}$ be a loss function and $\phi: \mathcal{M} \to \mathcal{M}$ a manifold transformation (state transition). The gradient of $\mathcal{L}$ with respect to parameters $\theta$ through $\phi$ is:
+\textbf{Theorem 2 (Algebra of the AMC correction through a state transition).} Let $\mathcal{L}: \mathcal{M} \to \mathbb{R}$ be a loss function and $\phi: \mathcal{M} \to \mathcal{M}$ a manifold state transition. The AMC correction operator applied at step $t$ transforms the autograd vector--Jacobian product by the conformal multiplier
 \begin{equation}
-\frac{\partial\mathcal{L}}{\partial\theta} = \mflat_{p}\left[(D_p\phi)^* \nabla_{p}\mathcal{L}\right]^\top \frac{\partial p}{\partial\theta}
-\end{equation}
-
-\textbf{Proof.} By the chain rule on manifolds, the Riemannian gradient of $\mathcal{L} \circ \phi$ at $p$ is:
-\begin{equation}
-\nabla_p(\mathcal{L} \circ \phi) = (D_p\phi)^* \nabla_{\phi(p)}\mathcal{L}
-\end{equation}
-where $(D_p\phi)^*: T^*_{\phi(p)}\mathcal{M} \to T^*_p\mathcal{M}$ is the pullback of cotangent vectors.
-
-The musical isomorphism $\mflat_p: T^*_p\mathcal{M} \to T_p\mathcal{M}$ converts this cotangent vector to a tangent vector:
-\begin{equation}
-v = \mflat_p\left[(D_p\phi)^* \nabla_{\phi(p)}\mathcal{L}\right]
-\end{equation}
-
-For the Poincar\'e ball, $\mflat_p$ is simply division by the conformal factor squared: $v = \omega / \lambda_p^2$, where $\omega = (D_p\phi)^* \nabla_{\phi(p)}\mathcal{L}$.
-
-The Euclidean gradient (what autograd computes) is related to the Riemannian gradient by the metric. In the standard coordinate basis, the pullback $(D_p\phi)^*$ acting on a covector $v^*$ is $(D_p\phi)^\top \cdot v^*$, provided the metric is subsequently corrected via the musical isomorphism.
-\begin{multline}
-\frac{\partial\mathcal{L}}{\partial\theta}\bigg|_{\mathbb{E}}
+\frac{\partial\mathcal{L}}{\partial\theta}\bigg|_{\text{AMC},t}
  = \frac{\lambda_p^2}{\lambda_{\phi(p)}^2} \cdot
    (D_p\phi)^\top \cdot
    \frac{\partial\mathcal{L}}{\partial\phi(p)}\bigg|_{\mathbb{E}} \cdot
-   \frac{\partial\phi(p)}{\partial\theta}
-\end{multline}
-which is exactly Eq.~\eqref{eq:main_correction}. $\square$
+   \frac{\partial\phi(p)}{\partial\theta},
+\label{eq:amc_operator}
+\end{equation}
+which is exactly Eq.~\eqref{eq:main_correction}.
+
+\textbf{Proof.} Starting from the Euclidean chain rule, autograd computes $\partial\mathcal{L}/\partial\phi(p)|_{\mathbb{E}}$ at the successor state. The AMC operator multiplies this incoming adjoint by the conformal ratio $\lambda_p^2/\lambda_{\phi(p)}^2$ before applying the transpose Jacobian of $\phi$ and continuing to the parameters $\theta$. On the Poincar\'e ball this factor is division by $\lambda_{\phi(p)}^2$ followed by multiplication by $\lambda_p^2$, i.e.\ the closed-form conformal re-scaling of Eq.~\eqref{eq:main_correction}. $\square$
+
+\noindent\textbf{Does this equal the textbook Riemannian pullback?} No. As shown in Remark~\ref{rem:roundtrip}, a full Riemannian round-trip (raise with $g^{-1}$, pull back, lower with $g$) leaves the Euclidean autograd VJP unchanged, so the canonical Riemannian gradient of a scalar loss carries no conformal factor. Eq.~\eqref{eq:amc_operator} is therefore a \emph{defined operator} layered on autograd, not the canonical pullback; its justification in this paper is the telescoping identity (Eq.~\eqref{eq:main_correction}) and its measured behaviour, not a claim of equality with the textbook gradient.
 
 
 % ------------------------------------------------------------
@@ -1710,7 +1700,7 @@ This checklist follows the standardized format for machine learning reproducibil
 
 \begin{itemize}
     \item[\checkmark] All assumptions are stated and justified.
-    \item[\checkmark] Theorem~1: complete proof given in Section~\ref{sec:theory} (main text); the underlying chain rule is established as Theorem~2 in Appendix~\ref{sec:theorem_proof}.
+    \item[\checkmark] Theorem~1: complete proof given in Section~\ref{sec:theory} (main text); the underlying algebra of the AMC correction is established as Theorem~2 in Appendix~\ref{sec:theorem_proof}.
     \item[\checkmark] Corollary~1--2: derived directly from Theorem~1.
     \item[-] Empirical validation of contraction assumption: $\rho$ is taken as $\alpha=0.9$ (LIF membrane decay). The exact spectral norm of the coupled dynamics is not computed; this is stated as a limitation.
 \end{itemize}

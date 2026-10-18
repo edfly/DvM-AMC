@@ -1,5 +1,8 @@
 # ---- LaTeX build artifacts (keep source + PDF only) ----
 paper/*.aux
+paper/*.abs
+paper/*.fls
+paper/*.fdb_latexmk
 paper/*.log
 paper/*.out
 paper/*.toc
